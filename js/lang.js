@@ -71,6 +71,7 @@ const TRANSLATIONS = {
     bridge_link:    "Visit the art portfolio ↗",
 
     footer_copy:    "© Guillaume Delye — All rights reserved",
+    footer_docs:    "Services & terms",
 
     back_home:      "← Back",
     photo_count:    "images",
@@ -176,6 +177,7 @@ const TRANSLATIONS = {
     bridge_link:    "Voir le portfolio artistique ↗",
 
     footer_copy:    "© Guillaume Delye — Tous droits réservés",
+    footer_docs:    "Services & conditions",
 
     back_home:      "← Retour",
     photo_count:    "images",
@@ -279,6 +281,7 @@ const TRANSLATIONS = {
     bridge_link:    "Visitar el portfolio artístico ↗",
 
     footer_copy:    "© Guillaume Delye — Todos los derechos reservados",
+    footer_docs:    "Servicios y términos",
 
     back_home:      "← Volver",
     photo_count:    "imágenes",
