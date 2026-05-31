@@ -216,9 +216,9 @@ const GALLERY_DATA = {
       es: "Eventos & Reportaje"
     },
     description: {
-      en: "Concert reportage, festivals, and literary readings — from Feniks Festival to bookshop spectacles.",
-      fr: "Reportage concert, festivals et lectures littéraires — du Feniks Festival aux spectacles en librairie.",
-      es: "Reportaje de conciertos, festivales y lecturas literarias — desde Feniks Festival hasta espectáculos en librerías."
+      en: "Concert reportage, festivals, cultural events and literary readings — from the Feniks Festival and Medellín rooftop gatherings to bookshop spectacles.",
+      fr: "Reportage concert, festivals, événements culturels et lectures littéraires — du Feniks Festival et des rooftops de Medellín aux spectacles en librairie.",
+      es: "Reportaje de conciertos, festivales, eventos culturales y lecturas literarias — desde el Feniks Festival y encuentros en azoteas de Medellín hasta espectáculos en librerías."
     },
     images: [
       {
@@ -292,6 +292,86 @@ const GALLERY_DATA = {
           fr: "Portrait de l'autrice-lectrice avec un livre et une lampe allumée dans une librairie pendant un spectacle littéraire, photographie de reportage",
           es: "Retrato de la autora-lectora con libro y lámpara encendida en librería durante un espectáculo literario, fotografía de reportaje"
         }
+      },
+      {
+        file: "blackout-medellin-rooftop-event-woman-city-skyline-mountains-golden-hour-w2b.jpg",
+        alt: {
+          en: "Woman on a rooftop overlooking the full Medellín skyline and surrounding mountains at golden hour, Blackout event reportage photography",
+          fr: "Femme sur un rooftop surplombant toute la skyline de Medellín et les montagnes environnantes à l'heure dorée, photographie de reportage de l'événement Blackout",
+          es: "Mujer en una azotea con vista al skyline completo de Medellín y las montañas al atardecer dorado, fotografía de reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-party-men-toasting-aguardiente-skyline-w2b.jpg",
+        alt: {
+          en: "Group of men toasting with aguardiente shots on a rooftop against the Medellín skyline and mountains, Blackout party reportage photography",
+          fr: "Groupe d'hommes trinquant avec des shots d'aguardiente sur un rooftop face à la skyline et aux montagnes de Medellín, reportage de la soirée Blackout",
+          es: "Grupo de hombres brindando con shots de aguardiente en una azotea frente al skyline y las montañas de Medellín, reportaje de la fiesta Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-party-two-women-golden-hour-skyline-w2b.jpg",
+        alt: {
+          en: "Two women side by side smiling on a rooftop at golden hour with the Medellín skyline behind, Blackout event reportage photography",
+          fr: "Deux femmes côte à côte souriant sur un rooftop à l'heure dorée avec la skyline de Medellín en arrière-plan, photographie de reportage de l'événement Blackout",
+          es: "Dos mujeres juntas sonriendo en una azotea al atardecer dorado con el skyline de Medellín detrás, fotografía de reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-dj-decks-comuna-hillside-sunset-w2b.jpg",
+        alt: {
+          en: "DJ playing at the decks on a rooftop at sunset with a colourful Medellín comuna hillside behind, Blackout event music reportage",
+          fr: "DJ aux platines sur un rooftop au coucher du soleil avec une comuna colorée de Medellín à flanc de colline en arrière-plan, reportage musical de l'événement Blackout",
+          es: "DJ en las tornamesas en una azotea al atardecer con una colorida comuna de Medellín en la ladera al fondo, reportaje musical del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-couple-football-jersey-city-lights-night-w2b.jpg",
+        alt: {
+          en: "Joyful couple laughing on a rooftop at night, man in an Atlético Nacional football jersey, Medellín city lights glittering behind, Blackout party reportage",
+          fr: "Couple joyeux riant sur un rooftop la nuit, homme en maillot de football de l'Atlético Nacional, lumières de Medellín scintillant en arrière-plan, reportage de la soirée Blackout",
+          es: "Pareja alegre riendo en una azotea de noche, hombre con camiseta de fútbol del Atlético Nacional, luces de Medellín brillando detrás, reportaje de la fiesta Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-party-woman-black-dress-night-flash-w2b.jpg",
+        alt: {
+          en: "Woman in a black dress smiling at a rooftop party at night, flash portrait with city lights behind, Blackout event reportage photography",
+          fr: "Femme en robe noire souriant lors d'une soirée sur un rooftop la nuit, portrait au flash avec les lumières de la ville en arrière-plan, photographie de reportage de l'événement Blackout",
+          es: "Mujer con vestido negro sonriendo en una fiesta nocturna en una azotea, retrato con flash y luces de la ciudad detrás, fotografía de reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-nightlife-three-women-bar-table-smiling-night-flash-w2b.jpg",
+        alt: {
+          en: "Three women smiling together at a bar table at night, one flashing a peace sign, warm night-flash nightlife photography at the Blackout Medellín event",
+          fr: "Trois femmes souriant ensemble à une table de bar la nuit, l'une faisant un signe de paix, photographie de nightlife au flash chaud à l'événement Blackout à Medellín",
+          es: "Tres mujeres sonriendo juntas en una mesa de bar de noche, una haciendo el signo de la paz, fotografía nocturna con flash cálido en el evento Blackout de Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-nightlife-two-women-peace-signs-bar-night-flash-w2b.jpg",
+        alt: {
+          en: "Two joyful women throwing peace signs at a bar at night, beaming smiles under warm flash, Blackout Medellín nightlife reportage photography",
+          fr: "Deux femmes joyeuses faisant des signes de paix dans un bar la nuit, larges sourires sous un flash chaud, reportage nightlife Blackout à Medellín",
+          es: "Dos mujeres alegres haciendo el signo de la paz en un bar de noche, amplias sonrisas bajo flash cálido, reportaje de vida nocturna Blackout en Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-nightlife-man-dancefloor-smiling-night-flash-w2b.jpg",
+        alt: {
+          en: "Smiling man with a beard on a crowded dancefloor at night throwing two peace signs, energetic night-flash nightlife photography at the Blackout Medellín event",
+          fr: "Homme souriant barbu sur une piste de danse bondée la nuit faisant deux signes de paix, photographie de nightlife énergique au flash à l'événement Blackout à Medellín",
+          es: "Hombre sonriente con barba en una pista de baile llena de noche haciendo dos signos de la paz, fotografía de vida nocturna enérgica con flash en el evento Blackout de Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-nightlife-women-dancing-laughing-drinks-night-flash-w2b.jpg",
+        alt: {
+          en: "Group of women dancing and laughing with drinks in hand on a nightclub floor, candid night-flash nightlife reportage at the Blackout Medellín event",
+          fr: "Groupe de femmes dansant et riant un verre à la main sur la piste d'un club, reportage nightlife spontané au flash à l'événement Blackout à Medellín",
+          es: "Grupo de mujeres bailando y riendo con copas en mano en la pista de un club, reportaje espontáneo de vida nocturna con flash en el evento Blackout de Medellín"
+        }
       }
     ]
   },
@@ -306,9 +386,9 @@ const GALLERY_DATA = {
       es: "Retratos"
     },
     description: {
-      en: "Family portraits and intimate group sessions — black and white film portraiture.",
-      fr: "Portraits de famille et séances de groupe intimes — portraits argentiques en noir et blanc.",
-      es: "Retratos de familia y sesiones de grupo íntimas — retratos analógicos en blanco y negro."
+      en: "Portraiture across two registers — black and white film family sessions and colour environmental portraits shot on Medellín rooftops.",
+      fr: "Le portrait sous deux registres — séances de famille argentiques en noir et blanc et portraits environnementaux en couleur réalisés sur les rooftops de Medellín.",
+      es: "Retrato en dos registros — sesiones de familia analógicas en blanco y negro y retratos ambientales en color realizados en azoteas de Medellín."
     },
     images: [
       {
@@ -341,6 +421,46 @@ const GALLERY_DATA = {
           en: "Black and white summer portrait of three men of different ages seated in white garden chairs against a hedge, film photography",
           fr: "Portrait estival noir et blanc de trois hommes d'âges différents assis sur des chaises de jardin blanches devant une haie, photographie argentique",
           es: "Retrato veraniego en blanco y negro de tres hombres de distintas edades sentados en sillas de jardín blancas frente a un seto, fotografía analógica"
+        }
+      },
+      {
+        file: "medellin-rooftop-portrait-woman-amber-sunglasses-golden-hour-blackout-w2b.jpg",
+        alt: {
+          en: "Golden-hour portrait of a woman with curly hair and amber-tinted sunglasses holding a finger to her lips, warm side light, Medellín rooftop colour portrait",
+          fr: "Portrait à l'heure dorée d'une femme aux cheveux bouclés et lunettes ambrées, un doigt sur les lèvres, lumière latérale chaude, portrait couleur sur un rooftop de Medellín",
+          es: "Retrato al atardecer dorado de una mujer de cabello rizado y gafas de sol ámbar con un dedo en los labios, luz lateral cálida, retrato a color en una azotea de Medellín"
+        }
+      },
+      {
+        file: "medellin-rooftop-portrait-young-woman-curly-hair-dusk-bokeh-blackout-w2b.jpg",
+        alt: {
+          en: "Soft dusk portrait of a young woman with curly hair and a light blue top against glowing bokeh lights, Medellín rooftop colour portraiture",
+          fr: "Portrait doux au crépuscule d'une jeune femme aux cheveux bouclés et haut bleu clair devant des lumières bokeh, portrait couleur sur un rooftop de Medellín",
+          es: "Retrato suave al anochecer de una joven de cabello rizado y top azul claro frente a luces bokeh, retrato a color en una azotea de Medellín"
+        }
+      },
+      {
+        file: "medellin-rooftop-portrait-woman-white-dress-golden-hour-skyline-blackout-w2b.jpg",
+        alt: {
+          en: "Contemplative golden-hour portrait of a woman in a white dress at a rooftop bar with the Medellín skyline behind, warm colour environmental portrait",
+          fr: "Portrait contemplatif à l'heure dorée d'une femme en robe blanche dans un bar en rooftop avec la skyline de Medellín en arrière-plan, portrait environnemental couleur chaude",
+          es: "Retrato contemplativo al atardecer dorado de una mujer con vestido blanco en un bar en azotea con el skyline de Medellín detrás, retrato ambiental a color cálido"
+        }
+      },
+      {
+        file: "medellin-environmental-portrait-man-round-glasses-locs-cityscape-blackout-w2b.jpg",
+        alt: {
+          en: "Environmental portrait of a man with locs, round sunglasses and a gold Africa pendant against the daytime Medellín cityscape, colour portraiture",
+          fr: "Portrait environnemental d'un homme aux locks, lunettes rondes et pendentif Afrique doré devant le paysage urbain de Medellín en journée, portrait couleur",
+          es: "Retrato ambiental de un hombre con locs, gafas redondas y colgante de África dorado frente al paisaje urbano de Medellín de día, retrato a color"
+        }
+      },
+      {
+        file: "medellin-rooftop-portrait-man-locs-africa-pendant-comuna-lights-blackout-w2b.jpg",
+        alt: {
+          en: "Rooftop portrait of a smiling man with locs and a gold Africa pendant, colourful Medellín comuna lights glowing behind at dusk, colour environmental portrait",
+          fr: "Portrait sur rooftop d'un homme souriant aux locks et pendentif Afrique doré, lumières colorées d'une comuna de Medellín en arrière-plan au crépuscule, portrait environnemental couleur",
+          es: "Retrato en azotea de un hombre sonriente con locs y colgante de África dorado, coloridas luces de una comuna de Medellín brillando detrás al anochecer, retrato ambiental a color"
         }
       }
     ]
