@@ -13,7 +13,7 @@ const GALLERY_DATA = {
   "fashion": {
     id: "fashion",
     folder: "images/fashion/",
-    coverIndex: 0,
+    coverIndex: 4, // model-red-bikini-coastal-portrait-corsica (vibrant colour cover; Vogue cover still inside)
     title: {
       en: "Fashion & Editorial",
       fr: "Mode & Éditorial",
@@ -95,7 +95,7 @@ const GALLERY_DATA = {
   "restaurants": {
     id: "restaurants",
     folder: "images/restaurants/",
-    coverIndex: 0,
+    coverIndex: 7, // la-gaffe-vegetable-circle (colourful fine-dining plate)
     title: {
       en: "Restaurants & Hospitality",
       fr: "Restaurants & Hôtellerie",
@@ -209,7 +209,7 @@ const GALLERY_DATA = {
   "events": {
     id: "events",
     folder: "images/events/",
-    coverIndex: 0,
+    coverIndex: 12, // blackout-medellin-rooftop-dj-decks-comuna-hillside-sunset
     title: {
       en: "Events & Reportage",
       fr: "Événements & Reportage",
@@ -379,7 +379,7 @@ const GALLERY_DATA = {
   "portraits": {
     id: "portraits",
     folder: "images/portraits/",
-    coverIndex: 0,
+    coverIndex: 4, // medellin-rooftop-portrait-woman-amber-sunglasses (colour hero)
     title: {
       en: "Portraits",
       fr: "Portraits",
@@ -461,6 +461,14 @@ const GALLERY_DATA = {
           en: "Rooftop portrait of a smiling man with locs and a gold Africa pendant, colourful Medellín comuna lights glowing behind at dusk, colour environmental portrait",
           fr: "Portrait sur rooftop d'un homme souriant aux locks et pendentif Afrique doré, lumières colorées d'une comuna de Medellín en arrière-plan au crépuscule, portrait environnemental couleur",
           es: "Retrato en azotea de un hombre sonriente con locs y colgante de África dorado, coloridas luces de una comuna de Medellín brillando detrás al anochecer, retrato ambiental a color"
+        }
+      },
+      {
+        file: "medellin-close-up-portrait-man-locs-round-sunglasses-gold-africa-pendant-blackout-w2b.jpg",
+        alt: {
+          en: "Striking close-up portrait of a man with locs and round gold sunglasses biting the chain of his gold Africa pendant, Medellín hillside in hard sunlight behind, colour portraiture",
+          fr: "Portrait rapproché saisissant d'un homme aux locks et lunettes rondes dorées mordant la chaîne de son pendentif Afrique doré, colline de Medellín en pleine lumière en arrière-plan, portrait couleur",
+          es: "Impactante retrato en primer plano de un hombre con locs y gafas redondas doradas mordiendo la cadena de su colgante de África dorado, ladera de Medellín a plena luz detrás, retrato a color"
         }
       }
     ]
