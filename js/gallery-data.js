@@ -13,80 +13,72 @@ const GALLERY_DATA = {
   "fashion": {
     id: "fashion",
     folder: "images/fashion/",
-    coverIndex: 4, // model-red-bikini-coastal-portrait-corsica (vibrant colour cover; Vogue cover still inside)
+    coverIndex: 4, // model-red-bikini-stone-wall-sea-portrait (colour, scenic — safe cover)
     title: {
       en: "Fashion & Editorial",
       fr: "Mode & Éditorial",
       es: "Moda & Editorial"
     },
     description: {
-      en: "Editorial fashion, lookbooks, and magazine covers — Mediterranean and Corsican locations.",
-      fr: "Mode éditoriale, lookbooks et couvertures de magazine — décors méditerranéens et corses.",
-      es: "Moda editorial, lookbooks y portadas de revista — escenarios mediterráneos y corsos."
+      en: "Editorial fashion shot on the Corsican coast at Saint-Florent — a self-directed series on film.",
+      fr: "Mode éditoriale réalisée sur la côte corse à Saint-Florent — une série auto-produite, argentique.",
+      es: "Moda editorial realizada en la costa corsa de Saint-Florent — una serie autoproducida, analógica."
     },
     images: [
       {
-        file: "vogue-cover-shape-of-a-star-editorial-rocky-cove-black-white-w2b.jpg",
+        file: "model-rocky-cove-arms-raised-black-white-fashion-saint-florent-corsica-w2b.jpg",
         alt: {
-          en: "Vogue magazine cover The Shape of a Star — model in a rocky cove, black and white fashion editorial",
-          fr: "Couverture Vogue The Shape of a Star — mannequin dans une crique rocheuse, éditorial mode noir et blanc",
-          es: "Portada Vogue The Shape of a Star — modelo en una cala rocosa, editorial de moda blanco y negro"
+          en: "Model standing in a rocky cove with arms raised overhead, black and white film fashion editorial, Saint-Florent, Corsica",
+          fr: "Mannequin debout dans une crique rocheuse, bras levés au-dessus de la tête, éditorial mode argentique noir et blanc, Saint-Florent, Corse",
+          es: "Modelo de pie en una cala rocosa con los brazos en alto, editorial de moda analógico en blanco y negro, Saint-Florent, Córcega"
         }
       },
       {
-        file: "cosmopolitan-cover-caught-by-the-sea-white-dress-coastal-w2b.jpg",
+        file: "model-harbour-wall-coast-black-white-fashion-saint-florent-corsica-w2b.jpg",
         alt: {
-          en: "Cosmopolitan magazine cover Caught by the Sea — model in a white dress on coastal stone, fashion editorial",
-          fr: "Couverture Cosmopolitan Caught by the Sea — mannequin en robe blanche sur la pierre côtière, éditorial mode",
-          es: "Portada Cosmopolitan Caught by the Sea — modelo con vestido blanco sobre piedra costera, editorial moda"
+          en: "Model seated on a stone harbour wall by the sea, halter top and trousers, black and white film fashion editorial, Saint-Florent, Corsica",
+          fr: "Mannequin assise sur un mur de quai en pierre au bord de l'eau, haut dos-nu et pantalon, éditorial mode argentique noir et blanc, Saint-Florent, Corse",
+          es: "Modelo sentada en un muro de piedra del puerto junto al mar, top halter y pantalón, editorial de moda analógico en blanco y negro, Saint-Florent, Córcega"
         }
       },
       {
-        file: "model-white-dress-stone-coast-saint-florent-corsica-fashion-w2b.jpg",
+        file: "model-seated-rocks-coast-black-white-fashion-saint-florent-corsica-w2b.jpg",
         alt: {
-          en: "Model reclining in a white dress on a stone harbour wall, Saint Florent Corsica in background, colour film fashion editorial",
-          fr: "Mannequin allongée en robe blanche sur un mur de port en pierre, Saint Florent en Corse en arrière-plan, éditorial mode argentique couleur",
-          es: "Modelo recostada con vestido blanco sobre muro de puerto de piedra, Saint Florent Córcega al fondo, editorial moda analógico color"
+          en: "Model seated against coastal rocks in hard sunlight, black and white film fashion editorial, Saint-Florent, Corsica",
+          fr: "Mannequin assise contre les rochers du littoral en pleine lumière, éditorial mode argentique noir et blanc, Saint-Florent, Corse",
+          es: "Modelo sentada contra las rocas de la costa a plena luz, editorial de moda analógico en blanco y negro, Saint-Florent, Córcega"
         }
       },
       {
-        file: "model-red-bikini-rocky-ruins-mediterranean-fashion-colour-w2b.jpg",
+        file: "model-white-dress-coastal-stone-saint-florent-corsica-fashion-w2b.jpg",
         alt: {
-          en: "Model in a red bikini against weathered stone ruins surrounded by Mediterranean scrub, colour film fashion photography",
-          fr: "Mannequin en bikini rouge contre des ruines en pierre usée entourée de maquis méditerranéen, photographie de mode argentique couleur",
-          es: "Modelo en bikini rojo contra ruinas de piedra envejecida rodeada de matorral mediterráneo, fotografía de moda analógico color"
+          en: "Model reclining on a coastal stone slab in a white slip dress, the village of Saint-Florent and sparkling sea behind, colour film fashion editorial, Corsica",
+          fr: "Mannequin allongée sur une dalle de pierre côtière en robe nuisette blanche, le village de Saint-Florent et la mer scintillante en arrière-plan, éditorial mode argentique couleur, Corse",
+          es: "Modelo recostada sobre una losa de piedra costera con vestido lencero blanco, el pueblo de Saint-Florent y el mar centelleante al fondo, editorial de moda analógico color, Córcega"
         }
       },
       {
-        file: "model-red-bikini-coastal-portrait-corsica-fashion-w2b.jpg",
+        file: "model-red-bikini-stone-wall-sea-portrait-saint-florent-corsica-fashion-w2b.jpg",
         alt: {
-          en: "Coastal portrait of a model in a red bikini against a stone wall with Corsican coast and mountains, colour film fashion",
-          fr: "Portrait côtier d'une mannequin en bikini rouge contre un mur en pierre avec la côte corse et les montagnes, mode argentique couleur",
-          es: "Retrato costero de modelo en bikini rojo contra muro de piedra con costa corsa y montañas, moda analógico color"
+          en: "Coastal portrait of a model in a red bikini leaning against a stone wall, sea and Corsican mountains behind, colour film fashion editorial, Saint-Florent",
+          fr: "Portrait côtier d'une mannequin en bikini rouge adossée à un mur en pierre, mer et montagnes corses en arrière-plan, éditorial mode argentique couleur, Saint-Florent",
+          es: "Retrato costero de una modelo en bikini rojo apoyada en un muro de piedra, mar y montañas corsas al fondo, editorial de moda analógico color, Saint-Florent"
         }
       },
       {
-        file: "model-mediterranean-villa-chains-swimwear-black-white-fashion-w2b.jpg",
+        file: "model-red-bikini-floating-turquoise-water-saint-florent-corsica-fashion-w2b.jpg",
         alt: {
-          en: "Model in swimwear seated on stone with chains and Mediterranean villa shutters behind, black and white fashion editorial",
-          fr: "Mannequin en maillot assise sur la pierre avec chaînes et volets de villa méditerranéenne en arrière-plan, éditorial mode noir et blanc",
-          es: "Modelo en bañador sentada sobre piedra con cadenas y persianas de villa mediterránea detrás, editorial moda blanco y negro"
+          en: "Model in a red bikini floating on her back in clear turquoise water, overhead colour film fashion editorial, Saint-Florent, Corsica",
+          fr: "Mannequin en bikini rouge flottant sur le dos dans une eau turquoise limpide, éditorial mode argentique couleur en vue plongeante, Saint-Florent, Corse",
+          es: "Modelo en bikini rojo flotando de espaldas en agua turquesa cristalina, editorial de moda analógico color en vista cenital, Saint-Florent, Córcega"
         }
       },
       {
-        file: "model-yacht-orange-dress-portrait-mediterranean-summer-fashion-w2b.jpg",
+        file: "model-coral-halter-braid-back-portrait-saint-florent-corsica-fashion-w2b.jpg",
         alt: {
-          en: "Model in a coral and orange floral dress relaxing on a yacht deck, summer Mediterranean fashion editorial",
-          fr: "Mannequin en robe à motifs floraux corail et orange se détendant sur le pont d'un yacht, éditorial mode estival méditerranéen",
-          es: "Modelo con vestido floral coral y naranja descansando en cubierta de yate, editorial moda mediterránea de verano"
-        }
-      },
-      {
-        file: "model-pink-bikini-pool-yacht-summer-editorial-fashion-w2b.jpg",
-        alt: {
-          en: "Model in a vibrant pink bikini emerging from turquoise water at the edge of a yacht swim platform, summer fashion editorial",
-          fr: "Mannequin en bikini rose vif émergeant d'une eau turquoise au bord d'une plateforme de bain de yacht, éditorial mode estival",
-          es: "Modelo con bikini rosa vibrante emergiendo del agua turquesa al borde de una plataforma de baño de yate, editorial moda verano"
+          en: "Back portrait of a model with a long braid in a coral halter top against turquoise water, colour film fashion editorial, Saint-Florent, Corsica",
+          fr: "Portrait de dos d'une mannequin à la longue tresse, haut dos-nu corail devant une eau turquoise, éditorial mode argentique couleur, Saint-Florent, Corse",
+          es: "Retrato de espaldas de una modelo con una larga trenza y top halter coral frente al agua turquesa, editorial de moda analógico color, Saint-Florent, Córcega"
         }
       }
     ]
@@ -102,9 +94,9 @@ const GALLERY_DATA = {
       es: "Restaurantes & Hostelería"
     },
     description: {
-      en: "Restaurant atmospheres and culinary editorial — La Gaffe and A Stretta in Corsica.",
-      fr: "Ambiances de restaurant et éditorial gastronomique — La Gaffe et A Stretta en Corse.",
-      es: "Ambientes de restaurante y editorial culinario — La Gaffe y A Stretta en Córcega."
+      en: "Restaurant atmospheres and culinary editorial in Corsica — commissioned work for A Stretta, and a self-directed hospitality series shot on location at La Gaffe.",
+      fr: "Ambiances de restaurant et éditorial gastronomique en Corse — travail en commande pour A Stretta, et une série hôtellerie auto-produite réalisée sur place à La Gaffe.",
+      es: "Ambientes de restaurante y editorial culinario en Córcega — trabajo por encargo para A Stretta, y una serie de hostelería autoproducida realizada en La Gaffe."
     },
     images: [
       {

@@ -20,7 +20,10 @@ const TRANSLATIONS = {
 
     sec_work:       "Selected Work",
     sec_about:      "Studio",
-    sec_clients:    "Featured In",
+    sec_clients_commissioned: "Commissioned",
+    sec_clients_personal:     "Personal & concept work",
+    clients_lagaffe:          "La Gaffe hospitality series",
+    clients_concepts:         "Editorial concepts",
     view_gallery:   "View",
 
     gal_fashion_title:      "Fashion & Editorial",
@@ -36,7 +39,7 @@ const TRANSLATIONS = {
     about_h2_1:     "Editorial-grade images,",
     about_h2_2:     "delivered on brief.",
     about_p1:       "I'm Guillaume Delye — a French photographer based in Medellín. I make pictures that earn their place on a cover, a menu, or a press release. Every shoot ships ready-to-publish — colour-graded, retouched, and captioned.",
-    about_p2:       "Recent work: covers for Vogue and Cosmopolitan, the launch campaigns for La Gaffe and A Stretta in Corsica, and festival reportage for Feniks. Brief → shoot → edit → deliver, typically inside 10–14 days.",
+    about_p2:       "Recent work: commissioned shoots for A Stretta and the Feniks Festival, and event reportage for Blackout Colombia — alongside self-directed projects like the La Gaffe hospitality series in Corsica and spec editorial concepts. Brief → shoot → edit → deliver, typically inside 10–14 days.",
     about_art_nod:  "Also working in fine art — see the personal portfolio",
     about_read:     "Read more",
 
@@ -50,15 +53,6 @@ const TRANSLATIONS = {
     proc_3_text:    "Hand-graded selects, full retouching, file delivery in your specs.",
     proc_4_title:   "Deliver",
     proc_4_text:    "Final files in 10–14 days. Rush turnarounds available.",
-
-    /* Trust signals */
-    sec_testimonials: "Selected words",
-    test_1_quote:    "Guillaume turned a complicated brief into a single calm image. We used it on the cover.",
-    test_1_attr:     "— Editorial Director, Cosmopolitan",
-    test_2_quote:    "He shoots like he's already seen the magazine. Every frame on every shoot is usable.",
-    test_2_attr:     "— Creative Lead, La Gaffe",
-    test_3_quote:    "Reliable, fast, and the images speak. We rebooked within a week.",
-    test_3_attr:     "— Producer, Feniks Festival",
 
     /* Rates / availability */
     rates_label:    "Day rate from",
@@ -105,10 +99,12 @@ const TRANSLATIONS = {
     about_page_title:  "Guillaume Delye",
     about_page_lead:   "Editorial &amp; commercial photographer · Medellín.",
     about_page_p1:     "I'm Guillaume Delye — a French photographer based in Medellín, Colombia. I shoot fashion, hospitality, and reportage for editorial and brand clients across Europe and Latin America.",
-    about_page_p2:     "Recent: covers for Vogue and Cosmopolitan, the launch shoot for La Gaffe (Corsica) and A Stretta, and festival reportage for Feniks. I shoot tight selects on set, deliver final files in 10–14 days, and bill in EUR or USD.",
+    about_page_p2:     "Recent: commissioned work for A Stretta and the Feniks Festival, and event reportage for Blackout Colombia in Medellín — plus self-directed projects: the La Gaffe hospitality series in Corsica and spec editorial concepts. I shoot tight selects on set, deliver final files in 10–14 days, and bill in EUR or USD.",
     about_page_p3:     "On assignment across Latin America, France, the Mediterranean — and where the brief takes us. Send a brief and I will reply within 48 hours.",
     about_page_clients_label: "Selected clients",
-    about_page_clients: "Vogue · Cosmopolitan · La Gaffe · A Stretta · Feniks Festival",
+    about_page_clients: "A Stretta · Feniks Festival · Blackout Colombia",
+    about_page_selfdirected_label: "Self-directed",
+    about_page_selfdirected: "La Gaffe hospitality series · editorial concepts",
     about_page_locations_label: "Locations",
     about_page_locations: "Medellín · Latin America · France · Mediterranean · International",
   },
@@ -130,7 +126,10 @@ const TRANSLATIONS = {
 
     sec_work:       "Travaux sélectionnés",
     sec_about:      "Studio",
-    sec_clients:    "Vu dans",
+    sec_clients_commissioned: "Commandes",
+    sec_clients_personal:     "Travaux personnels & concepts",
+    clients_lagaffe:          "Série hôtellerie La Gaffe",
+    clients_concepts:         "Concepts éditoriaux",
     view_gallery:   "Voir",
 
     gal_fashion_title:      "Mode & Éditorial",
@@ -145,7 +144,7 @@ const TRANSLATIONS = {
     about_h2_1:     "Des images au niveau éditorial,",
     about_h2_2:     "livrées sur brief.",
     about_p1:       "Je suis Guillaume Delye — photographe français basé à Medellín. Je fais des images dignes d'une couverture, d'une carte ou d'un communiqué. Chaque shooting est livré prêt à publier — étalonné, retouché, légendé.",
-    about_p2:       "Récemment : couvertures pour Vogue et Cosmopolitan, campagnes de lancement pour La Gaffe et A Stretta en Corse, reportage pour le festival Feniks. Brief → shooting → édition → livraison, généralement sous 10 à 14 jours.",
+    about_p2:       "Récemment : prises de vue en commande pour A Stretta et le festival Feniks, et reportage de l'événement Blackout Colombia — aux côtés de projets personnels comme la série hôtellerie La Gaffe en Corse et des concepts éditoriaux. Brief → shooting → édition → livraison, généralement sous 10 à 14 jours.",
     about_art_nod:  "Aussi actif en photographie d'art — voir le portfolio personnel",
     about_read:     "En savoir plus",
 
@@ -158,14 +157,6 @@ const TRANSLATIONS = {
     proc_3_text:    "Sélection retouchée à la main, étalonnage, livraison aux specs.",
     proc_4_title:   "Livraison",
     proc_4_text:    "Fichiers finaux sous 10–14 jours. Express possible.",
-
-    sec_testimonials: "Quelques mots",
-    test_1_quote:    "Guillaume a transformé un brief compliqué en une seule image calme. On l'a mise en couverture.",
-    test_1_attr:     "— Directrice éditoriale, Cosmopolitan",
-    test_2_quote:    "Il photographie comme s'il avait déjà vu le magazine. Chaque image est exploitable.",
-    test_2_attr:     "— Direction créative, La Gaffe",
-    test_3_quote:    "Fiable, rapide, des images qui parlent. Re-réservé une semaine plus tard.",
-    test_3_attr:     "— Production, festival Feniks",
 
     rates_label:    "Tarif jour à partir de",
     rates_editorial:"Éditorial · à partir de 1 200 € / jour",
@@ -209,10 +200,12 @@ const TRANSLATIONS = {
     about_page_title:  "Guillaume Delye",
     about_page_lead:   "Photographe éditorial &amp; commercial · Medellín.",
     about_page_p1:     "Je suis Guillaume Delye — photographe français basé à Medellín, Colombie. Je shoote mode, hôtellerie-restauration et reportage pour des clients éditoriaux et de marque, en Europe et en Amérique latine.",
-    about_page_p2:     "Récemment : couvertures Vogue et Cosmopolitan, le shooting de lancement pour La Gaffe (Corse) et A Stretta, reportage festival pour Feniks. Sélection serrée à la prise de vue, livraison sous 10 à 14 jours, facturation EUR ou USD.",
+    about_page_p2:     "Récemment : travail en commande pour A Stretta et le festival Feniks, et reportage de l'événement Blackout Colombia à Medellín — ainsi que des projets personnels : la série hôtellerie La Gaffe en Corse et des concepts éditoriaux. Sélection serrée à la prise de vue, livraison sous 10 à 14 jours, facturation EUR ou USD.",
     about_page_p3:     "En mission en Amérique latine, en France, en Méditerranée — et là où le brief mène. Envoyez un brief, réponse sous 48 heures.",
     about_page_clients_label: "Clients sélectionnés",
-    about_page_clients: "Vogue · Cosmopolitan · La Gaffe · A Stretta · Feniks Festival",
+    about_page_clients: "A Stretta · Feniks Festival · Blackout Colombia",
+    about_page_selfdirected_label: "Travaux personnels",
+    about_page_selfdirected: "Série hôtellerie La Gaffe · concepts éditoriaux",
     about_page_locations_label: "Zones d'intervention",
     about_page_locations: "Medellín · Amérique latine · France · Missions internationales",
   },
@@ -234,7 +227,10 @@ const TRANSLATIONS = {
 
     sec_work:       "Trabajos seleccionados",
     sec_about:      "Estudio",
-    sec_clients:    "Visto en",
+    sec_clients_commissioned: "Por encargo",
+    sec_clients_personal:     "Trabajo personal y conceptual",
+    clients_lagaffe:          "Serie hostelería La Gaffe",
+    clients_concepts:         "Conceptos editoriales",
     view_gallery:   "Ver",
 
     gal_fashion_title:      "Moda & Editorial",
@@ -249,7 +245,7 @@ const TRANSLATIONS = {
     about_h2_1:     "Imágenes con calidad editorial,",
     about_h2_2:     "entregadas según el brief.",
     about_p1:       "Soy Guillaume Delye — fotógrafo francés afincado en Medellín. Hago imágenes que se ganan su sitio en una portada, una carta o una nota de prensa. Cada sesión se entrega lista para publicar — etalonada, retocada y subtitulada.",
-    about_p2:       "Reciente: portadas para Vogue y Cosmopolitan, las campañas de lanzamiento de La Gaffe y A Stretta en Córcega, reportaje del festival Feniks. Brief → sesión → edición → entrega, normalmente en 10–14 días.",
+    about_p2:       "Reciente: encargos para A Stretta y el festival Feniks, y reportaje del evento Blackout Colombia — junto a proyectos personales como la serie de hostelería La Gaffe en Córcega y conceptos editoriales. Brief → sesión → edición → entrega, normalmente en 10–14 días.",
     about_art_nod:  "También activo en fotografía artística — ver el portfolio personal",
     about_read:     "Leer más",
 
@@ -262,14 +258,6 @@ const TRANSLATIONS = {
     proc_3_text:    "Selección retocada a mano, etalonaje, archivos según specs.",
     proc_4_title:   "Entrega",
     proc_4_text:    "Archivos finales en 10–14 días. Express disponible.",
-
-    sec_testimonials: "Algunas palabras",
-    test_1_quote:    "Guillaume convirtió un brief complicado en una sola imagen tranquila. Fue a portada.",
-    test_1_attr:     "— Directora editorial, Cosmopolitan",
-    test_2_quote:    "Fotografía como si ya hubiera visto la revista. Cada toma es publicable.",
-    test_2_attr:     "— Dirección creativa, La Gaffe",
-    test_3_quote:    "Fiable, rápido, imágenes que hablan. Repetimos a la semana.",
-    test_3_attr:     "— Producción, festival Feniks",
 
     rates_label:    "Tarifa por día desde",
     rates_editorial:"Editorial · desde 1 200 € / día",
@@ -313,10 +301,12 @@ const TRANSLATIONS = {
     about_page_title:  "Guillaume Delye",
     about_page_lead:   "Fotógrafo editorial &amp; comercial · Medellín.",
     about_page_p1:     "Soy Guillaume Delye — fotógrafo francés afincado en Medellín, Colombia. Trabajo en moda, hostelería y reportaje para clientes editoriales y de marca, en Europa y Latinoamérica.",
-    about_page_p2:     "Reciente: portadas Vogue y Cosmopolitan, sesión de lanzamiento para La Gaffe (Córcega) y A Stretta, reportaje del festival Feniks. Selección cerrada en set, entrega final en 10–14 días, facturación EUR o USD.",
+    about_page_p2:     "Reciente: trabajo por encargo para A Stretta y el festival Feniks, y reportaje del evento Blackout Colombia en Medellín — además de proyectos personales: la serie de hostelería La Gaffe en Córcega y conceptos editoriales. Selección cerrada en set, entrega final en 10–14 días, facturación EUR o USD.",
     about_page_p3:     "En misión por Latinoamérica, Francia, el Mediterráneo — y a donde lleve el brief. Envía un brief y respondo en 48 horas.",
     about_page_clients_label: "Clientes seleccionados",
-    about_page_clients: "Vogue · Cosmopolitan · La Gaffe · A Stretta · Feniks Festival",
+    about_page_clients: "A Stretta · Feniks Festival · Blackout Colombia",
+    about_page_selfdirected_label: "Trabajo personal",
+    about_page_selfdirected: "Serie hostelería La Gaffe · conceptos editoriales",
     about_page_locations_label: "Zonas",
     about_page_locations: "Medellín · América Latina · Francia · Encargos internacionales",
   }
