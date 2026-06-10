@@ -259,11 +259,11 @@ const TRANSLATIONS = {
     proc_4_title:   "Entrega",
     proc_4_text:    "Archivos finales en 10–14 días. Express disponible.",
 
-    rates_label:    "Tarifa por día desde",
-    rates_editorial:"Editorial · desde 1 200 € / día",
-    rates_hospo:    "Hostelería · paquete desde 2 400 €",
-    rates_event:    "Evento &amp; reportaje · media jornada desde 700 €",
-    rates_note:     "Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
+    rates_label:    "Tarifa desde",
+    rates_editorial:"Editorial · desde $1.800.000 / día",
+    rates_hospo:    "Hostelería · paquete desde $2.500.000",
+    rates_event:    "Evento &amp; reportaje · media jornada desde $900.000",
+    rates_note:     "Precios en COP. Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
 
     bridge_text:    "Una práctica paralela en fotografía artística.",
     bridge_link:    "Visitar el portfolio artístico ↗",
