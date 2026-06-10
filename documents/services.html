@@ -13,173 +13,182 @@
   <header class="doc-topbar no-print">
     <a href="index.html" class="doc-topbar-brand">W2b<span class="dot"></span>Documentos</a>
     <div class="doc-topbar-actions">
-      <a href="index.html" class="btn-doc ghost">← Todos los documentos</a>
-      <button class="btn-doc primary" onclick="window.print()">Descargar PDF</button>
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en">EN</button><span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="fr">FR</button><span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+      <div class="cur-switcher" role="group" aria-label="Currency">
+        <button class="cur-btn" data-cur="EUR">€&nbsp;EUR</button><span class="lang-sep">|</span>
+        <button class="cur-btn" data-cur="COP">$&nbsp;COP</button>
+      </div>
+      <a href="index.html" class="btn-doc ghost" data-i18n="srv_back_docs">← Todos los documentos</a>
+      <button class="btn-doc primary" onclick="window.print()" data-i18n="srv_download_pdf">Descargar PDF</button>
     </div>
   </header>
 
   <main class="doc-page">
 
     <header class="doc-header">
-      <p class="doc-eyebrow">Servicios fotográficos · Medellín</p>
-      <h1 class="doc-title">Tarifas y <em>paquetes.</em></h1>
+      <p class="doc-eyebrow" data-i18n="srv_eyebrow">Servicios fotográficos · Medellín</p>
+      <h1 class="doc-title" data-i18n="srv_title">Tarifas y <em>paquetes.</em></h1>
       <div class="doc-meta">
-        <span>Vigente desde mayo 2026</span>
-        <span>Precios en COP</span>
+        <span data-i18n="srv_meta_valid">Vigente desde mayo 2026</span>
+        <span data-price="srv_meta_currency">Precios en COP</span>
         <span>W2b · Guillaume Delye</span>
       </div>
     </header>
 
     <section class="doc-section">
-      <p>Fotografía editorial de retrato y eventos para la escena cultural y musical de Medellín — pensada para campaña, no para registro. Tres paquetes estándar. Términos claros, entrega predecible, licencia amplia para uso del organizador.</p>
+      <p data-i18n="srv_intro">Fotografía editorial de retrato y eventos para la escena cultural y musical de Medellín — pensada para campaña, no para registro. Tres paquetes estándar. Términos claros, entrega predecible, licencia amplia para uso del organizador.</p>
 
-      <div class="doc-quote">
+      <div class="doc-quote" data-i18n="srv_quote">
         "Calidad editorial. Tiempos firmes. Términos claros."
       </div>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">01</span>Los paquetes</h2>
+      <h2><span class="num">01</span><span data-i18n="srv_s1_h">Los paquetes</span></h2>
 
       <div class="tier-grid">
         <article class="tier-card">
           <p class="tier-eyebrow">Hero Imagery</p>
-          <h3 class="tier-name">Cobertura curada</h3>
-          <p class="tier-price">$450.000</p>
-          <p class="tier-unit">COP · 1.5–2 h</p>
+          <h3 class="tier-name" data-i18n="srv_t1_name">Cobertura curada</h3>
+          <p class="tier-price" data-price="srv_t1_price">$450.000</p>
+          <p class="tier-unit" data-price="srv_t1_unit">COP · 1.5–2 h</p>
           <ul>
-            <li>15–20 fotografías editadas</li>
-            <li>Entrega en 72 horas</li>
-            <li>Formatos vertical, cuadrado y 3:2</li>
-            <li>Ideal para listados y redes</li>
+            <li data-i18n="srv_t1_li1">15–20 fotografías editadas</li>
+            <li data-i18n="srv_t1_li2">Entrega en 72 horas</li>
+            <li data-i18n="srv_t1_li3">Formatos vertical, cuadrado y 3:2</li>
+            <li data-i18n="srv_t1_li4">Ideal para listados y redes</li>
           </ul>
         </article>
 
         <article class="tier-card featured">
-          <p class="tier-eyebrow">Cobertura Editorial</p>
-          <h3 class="tier-name">Arco narrativo completo</h3>
-          <p class="tier-price">$1.100.000</p>
-          <p class="tier-unit">COP · 3–5 h</p>
+          <p class="tier-eyebrow" data-i18n="srv_t2_eyebrow">Cobertura Editorial</p>
+          <h3 class="tier-name" data-i18n="srv_t2_name">Arco narrativo completo</h3>
+          <p class="tier-price" data-price="srv_t2_price">$1.100.000</p>
+          <p class="tier-unit" data-price="srv_t2_unit">COP · 3–5 h</p>
           <ul>
-            <li>40–60 fotografías editadas</li>
-            <li>Entrega en 5 días hábiles</li>
-            <li>5–8 imágenes "hero" curadas</li>
-            <li>Retratos, atmósfera, público</li>
+            <li data-i18n="srv_t2_li1">40–60 fotografías editadas</li>
+            <li data-i18n="srv_t2_li2">Entrega en 5 días hábiles</li>
+            <li data-i18n="srv_t2_li3">5–8 imágenes "hero" curadas</li>
+            <li data-i18n="srv_t2_li4">Retratos, atmósfera, público</li>
           </ul>
         </article>
 
         <article class="tier-card">
-          <p class="tier-eyebrow">Sesión Pre-Evento</p>
-          <h3 class="tier-name">Retrato de campaña</h3>
-          <p class="tier-price">$650.000</p>
-          <p class="tier-unit">COP · 1–2 h</p>
+          <p class="tier-eyebrow" data-i18n="srv_t3_eyebrow">Sesión Pre-Evento</p>
+          <h3 class="tier-name" data-i18n="srv_t3_name">Retrato de campaña</h3>
+          <p class="tier-price" data-price="srv_t3_price">$650.000</p>
+          <p class="tier-unit" data-price="srv_t3_unit">COP · 1–2 h</p>
           <ul>
-            <li>10–15 retratos editados</li>
-            <li>Entrega en 5 días hábiles</li>
-            <li>Material campaign-ready</li>
-            <li>Sola o combinada con cobertura</li>
+            <li data-i18n="srv_t3_li1">10–15 retratos editados</li>
+            <li data-i18n="srv_t3_li2">Entrega en 5 días hábiles</li>
+            <li data-i18n="srv_t3_li3">Material campaign-ready</li>
+            <li data-i18n="srv_t3_li4">Sola o combinada con cobertura</li>
           </ul>
         </article>
       </div>
 
       <div class="callout">
-        <p class="callout-label">Combo recomendado</p>
-        <p>Sesión Pre-Evento + Cobertura Editorial con <strong>10% de descuento</strong> sobre la suma. Llega con material listo para publicar antes y durante el evento.</p>
+        <p class="callout-label" data-i18n="srv_combo_label">Combo recomendado</p>
+        <p data-i18n="srv_combo_text">Sesión Pre-Evento + Cobertura Editorial con <strong>10% de descuento</strong> sobre la suma. Llega con material listo para publicar antes y durante el evento.</p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">02</span>Qué incluye cada paquete</h2>
+      <h2><span class="num">02</span><span data-i18n="srv_s2_h">Qué incluye cada paquete</span></h2>
       <ul>
-        <li><strong>Edición profesional</strong> de cada fotografía entregable — color, exposición, retoque editorial</li>
-        <li><strong>Tres formatos por imagen</strong> — vertical (4:5 y 9:16), cuadrado (1:1), horizontal (3:2)</li>
-        <li><strong>Entrega digital</strong> en alta resolución vía enlace descargable, válido 60 días</li>
-        <li><strong>Tiempos contractuales</strong> — entrega tardía se compensa con descuento de hasta 15%</li>
-        <li><strong>Licencia amplia</strong> para uso de marketing del evento contratado y ediciones futuras del mismo evento</li>
-        <li><strong>Sin costos ocultos</strong> — los precios son finales para el alcance contratado</li>
+        <li data-i18n="srv_s2_li1"><strong>Edición profesional</strong> de cada fotografía entregable — color, exposición, retoque editorial</li>
+        <li data-i18n="srv_s2_li2"><strong>Tres formatos por imagen</strong> — vertical (4:5 y 9:16), cuadrado (1:1), horizontal (3:2)</li>
+        <li data-i18n="srv_s2_li3"><strong>Entrega digital</strong> en alta resolución vía enlace descargable, válido 60 días</li>
+        <li data-i18n="srv_s2_li4"><strong>Tiempos contractuales</strong> — entrega tardía se compensa con descuento de hasta 15%</li>
+        <li data-i18n="srv_s2_li5"><strong>Licencia amplia</strong> para uso de marketing del evento contratado y ediciones futuras del mismo evento</li>
+        <li data-i18n="srv_s2_li6"><strong>Sin costos ocultos</strong> — los precios son finales para el alcance contratado</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">03</span>Lo que no está incluido</h2>
-      <p>Para mantener los precios claros, los siguientes elementos se cotizan aparte cuando aplican:</p>
+      <h2><span class="num">03</span><span data-i18n="srv_s3_h">Lo que no está incluido</span></h2>
+      <p data-i18n="srv_s3_intro">Para mantener los precios claros, los siguientes elementos se cotizan aparte cuando aplican:</p>
       <ul>
-        <li>Desplazamiento fuera del área metropolitana de Medellín</li>
-        <li>Sublicencia para uso de patrocinadores o terceras marcas</li>
-        <li>Uso en publicidad pagada masiva (TV, exterior, banners pagos)</li>
-        <li>Sesiones adicionales o extensión de horas en el momento</li>
-        <li>Asistente o segundo fotógrafo, cuando el evento lo requiera</li>
-        <li>Cesión total de derechos patrimoniales (vs. licencia)</li>
+        <li data-i18n="srv_s3_li1">Desplazamiento fuera del área metropolitana de Medellín</li>
+        <li data-i18n="srv_s3_li2">Sublicencia para uso de patrocinadores o terceras marcas</li>
+        <li data-i18n="srv_s3_li3">Uso en publicidad pagada masiva (TV, exterior, banners pagos)</li>
+        <li data-i18n="srv_s3_li4">Sesiones adicionales o extensión de horas en el momento</li>
+        <li data-i18n="srv_s3_li5">Asistente o segundo fotógrafo, cuando el evento lo requiera</li>
+        <li data-i18n="srv_s3_li6">Cesión total de derechos patrimoniales (vs. licencia)</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">04</span>Términos de pago</h2>
+      <h2><span class="num">04</span><span data-i18n="srv_s4_h">Términos de pago</span></h2>
       <ul>
-        <li><strong>50% de anticipo</strong> a la firma del contrato — confirma la fecha en agenda</li>
-        <li><strong>50% restante</strong> dentro de los 5 días posteriores a la entrega</li>
-        <li>Factura electrónica DIAN emitida a nombre del contratante</li>
-        <li>Transferencia bancaria, Bancolombia QR o tarjeta vía plataforma</li>
+        <li data-i18n="srv_s4_li1"><strong>50% de anticipo</strong> a la firma del contrato — confirma la fecha en agenda</li>
+        <li data-i18n="srv_s4_li2"><strong>50% restante</strong> dentro de los 5 días posteriores a la entrega</li>
+        <li data-i18n="srv_s4_li3">Factura electrónica DIAN emitida a nombre del contratante</li>
+        <li data-i18n="srv_s4_li4">Transferencia bancaria, Bancolombia QR o tarjeta vía plataforma</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">05</span>Cancelación</h2>
-      <p>Política escalada — clara y justa para ambas partes:</p>
+      <h2><span class="num">05</span><span data-i18n="srv_s5_h">Cancelación</span></h2>
+      <p data-i18n="srv_s5_intro">Política escalada — clara y justa para ambas partes:</p>
       <ul>
-        <li><strong>Más de 14 días antes:</strong> devolución del 100% del anticipo</li>
-        <li><strong>Entre 8 y 14 días:</strong> se retiene el 30% del anticipo</li>
-        <li><strong>Entre 3 y 7 días:</strong> se retiene el 70%</li>
-        <li><strong>Menos de 72 horas o no-show:</strong> se retiene el 100% y se debe el 50% del saldo</li>
+        <li data-i18n="srv_s5_li1"><strong>Más de 14 días antes:</strong> devolución del 100% del anticipo</li>
+        <li data-i18n="srv_s5_li2"><strong>Entre 8 y 14 días:</strong> se retiene el 30% del anticipo</li>
+        <li data-i18n="srv_s5_li3"><strong>Entre 3 y 7 días:</strong> se retiene el 70%</li>
+        <li data-i18n="srv_s5_li4"><strong>Menos de 72 horas o no-show:</strong> se retiene el 100% y se debe el 50% del saldo</li>
       </ul>
-      <p>En caso de fuerza mayor (orden de autoridad pública, emergencia sanitaria), las partes acuerdan reprogramación sin penalidad.</p>
+      <p data-i18n="srv_s5_p">En caso de fuerza mayor (orden de autoridad pública, emergencia sanitaria), las partes acuerdan reprogramación sin penalidad.</p>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">06</span>Licencia y derechos de autor</h2>
-      <p>Las fotografías son obra protegida por la Ley 23 de 1982. El fotógrafo conserva la titularidad. El organizador recibe una licencia amplia para uso propio del evento:</p>
+      <h2><span class="num">06</span><span data-i18n="srv_s6_h">Licencia y derechos de autor</span></h2>
+      <p data-i18n="srv_s6_intro">Las fotografías son obra protegida por la Ley 23 de 1982. El fotógrafo conserva la titularidad. El organizador recibe una licencia amplia para uso propio del evento:</p>
 
-      <h3>Incluido en la licencia del organizador</h3>
+      <h3 data-i18n="srv_s6_h3a">Incluido en la licencia del organizador</h3>
       <ul>
-        <li>Marketing y comunicaciones del evento contratado, sin límite temporal</li>
-        <li>Futuras ediciones del mismo evento, sin costo adicional</li>
-        <li>Redes sociales, sitio web, materiales de prensa propios</li>
-        <li>Presentaciones a patrocinadores y reportes internos</li>
+        <li data-i18n="srv_s6_a_li1">Marketing y comunicaciones del evento contratado, sin límite temporal</li>
+        <li data-i18n="srv_s6_a_li2">Futuras ediciones del mismo evento, sin costo adicional</li>
+        <li data-i18n="srv_s6_a_li3">Redes sociales, sitio web, materiales de prensa propios</li>
+        <li data-i18n="srv_s6_a_li4">Presentaciones a patrocinadores y reportes internos</li>
       </ul>
 
-      <h3>Requiere acuerdo adicional</h3>
+      <h3 data-i18n="srv_s6_h3b">Requiere acuerdo adicional</h3>
       <ul>
-        <li>Cesión o sublicencia a terceros (marcas, medios, productoras)</li>
-        <li>Publicidad pagada de productos distintos al evento mismo</li>
-        <li>Modificaciones que afecten la integridad de la obra</li>
+        <li data-i18n="srv_s6_b_li1">Cesión o sublicencia a terceros (marcas, medios, productoras)</li>
+        <li data-i18n="srv_s6_b_li2">Publicidad pagada de productos distintos al evento mismo</li>
+        <li data-i18n="srv_s6_b_li3">Modificaciones que afecten la integridad de la obra</li>
       </ul>
 
       <div class="callout">
-        <p class="callout-label">Crédito al autor</p>
-        <p>El organizador acuerda mencionar a <strong>@W2b</strong> en todas las publicaciones de las fotografías en redes sociales. Es estándar de la industria editorial y construye reputación para ambas partes.</p>
+        <p class="callout-label" data-i18n="srv_credit_label">Crédito al autor</p>
+        <p data-i18n="srv_credit_text">El organizador acuerda mencionar a <strong>@W2b</strong> en todas las publicaciones de las fotografías en redes sociales. Es estándar de la industria editorial y construye reputación para ambas partes.</p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">07</span>El proceso, paso a paso</h2>
+      <h2><span class="num">07</span><span data-i18n="srv_s7_h">El proceso, paso a paso</span></h2>
       <ol>
-        <li><strong>Brief</strong> — conversación inicial de 15 a 30 minutos para entender el evento, las expectativas visuales y los entregables clave</li>
-        <li><strong>Cotización</strong> dentro de las 48 horas, con paquete recomendado y términos por escrito</li>
-        <li><strong>Contrato y anticipo</strong> — confirma la fecha y desencadena el bloqueo de agenda</li>
-        <li><strong>Briefing operativo</strong> previo al evento — locaciones, talento, restricciones, contactos en el lugar</li>
-        <li><strong>Cobertura</strong> el día acordado</li>
-        <li><strong>Selección y edición</strong> — el fotógrafo curaduría las imágenes finales conforme al paquete</li>
-        <li><strong>Entrega</strong> dentro del plazo contractual vía enlace descargable</li>
-        <li><strong>Pago final y factura</strong></li>
+        <li data-i18n="srv_s7_li1"><strong>Brief</strong> — conversación inicial de 15 a 30 minutos para entender el evento, las expectativas visuales y los entregables clave</li>
+        <li data-i18n="srv_s7_li2"><strong>Cotización</strong> dentro de las 48 horas, con paquete recomendado y términos por escrito</li>
+        <li data-i18n="srv_s7_li3"><strong>Contrato y anticipo</strong> — confirma la fecha y desencadena el bloqueo de agenda</li>
+        <li data-i18n="srv_s7_li4"><strong>Briefing operativo</strong> previo al evento — locaciones, talento, restricciones, contactos en el lugar</li>
+        <li data-i18n="srv_s7_li5"><strong>Cobertura</strong> el día acordado</li>
+        <li data-i18n="srv_s7_li6"><strong>Selección y edición</strong> — el fotógrafo curaduría las imágenes finales conforme al paquete</li>
+        <li data-i18n="srv_s7_li7"><strong>Entrega</strong> dentro del plazo contractual vía enlace descargable</li>
+        <li data-i18n="srv_s7_li8"><strong>Pago final y factura</strong></li>
       </ol>
     </section>
 
     <section class="doc-section">
-      <h2><span class="num">08</span>Para contratar</h2>
-      <p>Escribe describiendo el evento (fecha, lugar, número estimado de asistentes, objetivo del material). Respuesta dentro de 48 horas con paquete recomendado y siguientes pasos.</p>
+      <h2><span class="num">08</span><span data-i18n="srv_s8_h">Para contratar</span></h2>
+      <p data-i18n="srv_s8_p">Escribe describiendo el evento (fecha, lugar, número estimado de asistentes, objetivo del material). Respuesta dentro de 48 horas con paquete recomendado y siguientes pasos.</p>
 
       <div class="callout">
-        <p class="callout-label">Contacto</p>
+        <p class="callout-label" data-i18n="srv_contact_label">Contacto</p>
         <p><strong>Guillaume Delye · W2b</strong><br>
         w2bphoto@gmail.com<br>
         Medellín, Colombia</p>
@@ -187,15 +196,18 @@
     </section>
 
     <div class="doc-cta no-print" style="text-align:center;margin:3rem 0 1rem;">
-      <a href="../contact.html" class="btn-doc primary">Contactar →</a>
+      <a href="../contact.html" class="btn-doc primary" data-i18n="srv_contact_btn">Contactar →</a>
     </div>
 
     <footer class="doc-footer">
       <span>W2b · Guillaume Delye · Cédula de Extranjería 8251672</span>
-      <span>Tarifas vigentes desde mayo 2026. Sujetas a actualización con aviso previo.</span>
+      <span data-i18n="srv_footer_2">Tarifas vigentes desde mayo 2026. Sujetas a actualización con aviso previo.</span>
     </footer>
 
   </main>
+
+  <script src="../js/lang.js"></script>
+  <script src="../js/services-i18n.js"></script>
 
 </body>
 </html>
