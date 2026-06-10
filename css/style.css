@@ -1303,7 +1303,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   border-left: 2px solid var(--gold);
   padding: 1.75rem 2rem;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content 1fr max-content;
   gap: 1.5rem 2.5rem;
   align-items: start;
 }
@@ -1330,6 +1330,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-display);
   font-size: 1.05rem;
   color: var(--near-black);
+}
+
+.rates-cta {
+  align-self: center;
+  white-space: nowrap;
 }
 
 .rates-note {
