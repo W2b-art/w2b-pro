@@ -138,6 +138,30 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .lang-sep { color: var(--border); }
 
+/* Currency switcher — mirrors the language switcher */
+.cur-switcher {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cur-switcher button {
+  color: var(--text-muted);
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.cur-switcher button:hover,
+.cur-switcher button.active {
+  color: var(--gold-dark);
+  background: var(--gold-light);
+}
+
 /* Mobile toggle */
 .nav-toggle {
   display: none;

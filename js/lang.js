@@ -55,10 +55,13 @@ const TRANSLATIONS = {
     proc_4_text:    "Final files in 10–14 days. Rush turnarounds available.",
 
     /* Rates / availability */
-    rates_label:    "Day rate from",
-    rates_editorial:"Editorial · from €1,200 / day",
-    rates_hospo:    "Hospitality · package from €2,400",
-    rates_event:    "Event &amp; reportage · half-day from €700",
+    rates_label:    "Rates from",
+    rates_editorial_EUR: "Editorial · from €1,200 / day",
+    rates_editorial_COP: "Editorial · from $1,800,000 / day",
+    rates_hospo_EUR:     "Hospitality · package from €2,400",
+    rates_hospo_COP:     "Hospitality · package from $2,500,000",
+    rates_event_EUR:     "Event &amp; reportage · half-day from €700",
+    rates_event_COP:     "Event &amp; reportage · half-day from $900,000",
     rates_note:     "All rates exclude travel, licensing, and post. Detailed quote within 48h of brief.",
     rates_services_link: "Full rates &amp; services →",
 
@@ -159,10 +162,13 @@ const TRANSLATIONS = {
     proc_4_title:   "Livraison",
     proc_4_text:    "Fichiers finaux sous 10–14 jours. Express possible.",
 
-    rates_label:    "Tarif jour à partir de",
-    rates_editorial:"Éditorial · à partir de 1 200 € / jour",
-    rates_hospo:    "Hôtellerie-restauration · forfait à partir de 2 400 €",
-    rates_event:    "Événement &amp; reportage · demi-journée à partir de 700 €",
+    rates_label:    "Tarifs à partir de",
+    rates_editorial_EUR: "Éditorial · à partir de 1 200 € / jour",
+    rates_editorial_COP: "Éditorial · à partir de $1 800 000 / jour",
+    rates_hospo_EUR:     "Hôtellerie-restauration · forfait à partir de 2 400 €",
+    rates_hospo_COP:     "Hôtellerie-restauration · forfait à partir de $2 500 000",
+    rates_event_EUR:     "Événement &amp; reportage · demi-journée à partir de 700 €",
+    rates_event_COP:     "Événement &amp; reportage · demi-journée à partir de $900 000",
     rates_note:     "Hors déplacements, droits, post-prod. Devis détaillé sous 48h après brief.",
     rates_services_link: "Tarifs &amp; services →",
 
@@ -261,11 +267,14 @@ const TRANSLATIONS = {
     proc_4_title:   "Entrega",
     proc_4_text:    "Archivos finales en 10–14 días. Express disponible.",
 
-    rates_label:    "Tarifa desde",
-    rates_editorial:"Editorial · desde $1.800.000 / día",
-    rates_hospo:    "Hostelería · paquete desde $2.500.000",
-    rates_event:    "Evento &amp; reportaje · media jornada desde $900.000",
-    rates_note:     "Precios en COP. Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
+    rates_label:    "Tarifas desde",
+    rates_editorial_EUR: "Editorial · desde 1 200 € / día",
+    rates_editorial_COP: "Editorial · desde $1.800.000 / día",
+    rates_hospo_EUR:     "Hostelería · paquete desde 2 400 €",
+    rates_hospo_COP:     "Hostelería · paquete desde $2.500.000",
+    rates_event_EUR:     "Evento &amp; reportaje · media jornada desde 700 €",
+    rates_event_COP:     "Evento &amp; reportaje · media jornada desde $900.000",
+    rates_note:     "Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
     rates_services_link: "Tarifas y servicios →",
 
     bridge_text:    "Una práctica paralela en fotografía artística.",
@@ -317,6 +326,35 @@ const TRANSLATIONS = {
 
 let currentLang = localStorage.getItem('w2b_lang') || 'en';
 
+/* Currency is independent of language. The default follows the language
+   (es → COP, otherwise EUR) until the user explicitly picks one, after
+   which their choice sticks across languages and pages. */
+let currencyExplicit = localStorage.getItem('w2b_currency') !== null;
+let currentCurrency = localStorage.getItem('w2b_currency')
+  || (currentLang === 'es' ? 'COP' : 'EUR');
+
+/* Price-bearing elements use data-price="key"; the displayed value is
+   resolved as TRANSLATIONS[lang][key + '_' + currency], so price text
+   varies by BOTH language and currency. */
+function applyPrices() {
+  const t = TRANSLATIONS[currentLang];
+  if (!t) return;
+  document.querySelectorAll('[data-price]').forEach(el => {
+    const key = el.getAttribute('data-price') + '_' + currentCurrency;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.cur-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-cur') === currentCurrency);
+  });
+}
+
+function applyCurrency(cur) {
+  currentCurrency = cur;
+  currencyExplicit = true;
+  localStorage.setItem('w2b_currency', cur);
+  applyPrices();
+}
+
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('w2b_lang', lang);
@@ -343,12 +381,21 @@ function applyLang(lang) {
   });
 
   document.documentElement.lang = lang;
+
+  /* If the user hasn't explicitly chosen a currency, follow the language. */
+  if (!currencyExplicit) {
+    currentCurrency = (lang === 'es') ? 'COP' : 'EUR';
+  }
+  applyPrices();
 }
 
 function initLang() {
   applyLang(currentLang);
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+  });
+  document.querySelectorAll('.cur-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyCurrency(btn.getAttribute('data-cur')));
   });
 }
 
