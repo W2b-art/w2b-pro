@@ -279,7 +279,7 @@ const TRANSLATIONS = {
     form_name:      "Nombre &amp; empresa",
     form_email:     "Correo",
     form_service:   "Tipo de proyecto",
-    form_budget:    "Presupuesto",
+    form_budget:    "Presupuesto (COP)",
     form_dates:     "Fechas &amp; lugar de la sesión",
     form_message:   "El brief — para qué es la imagen, quién la verá, qué es éxito",
     form_submit:    "Enviar brief →",
@@ -292,10 +292,10 @@ const TRANSLATIONS = {
     srv_portraits:    "Retrato",
     srv_other:        "Aún no decidido — hablemos",
 
-    bud_under_1k:     "Menos de 1 000 €",
-    bud_1_3k:         "1 000 € – 3 000 €",
-    bud_3_8k:         "3 000 € – 8 000 €",
-    bud_8k_plus:      "8 000 € y más",
+    bud_under_1k:     "Menos de $1.000.000",
+    bud_1_3k:         "$1.000.000 – $3.000.000",
+    bud_3_8k:         "$3.000.000 – $8.000.000",
+    bud_8k_plus:      "Más de $8.000.000",
     bud_unsure:       "No estoy seguro·a — abierto·a a consejo",
 
     about_page_title:  "Guillaume Delye",
