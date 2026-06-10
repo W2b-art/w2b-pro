@@ -60,6 +60,7 @@ const TRANSLATIONS = {
     rates_hospo:    "Hospitality · package from €2,400",
     rates_event:    "Event &amp; reportage · half-day from €700",
     rates_note:     "All rates exclude travel, licensing, and post. Detailed quote within 48h of brief.",
+    rates_services_link: "Full rates &amp; services →",
 
     bridge_text:    "A separate practice in fine art photography.",
     bridge_link:    "Visit the art portfolio ↗",
@@ -163,6 +164,7 @@ const TRANSLATIONS = {
     rates_hospo:    "Hôtellerie-restauration · forfait à partir de 2 400 €",
     rates_event:    "Événement &amp; reportage · demi-journée à partir de 700 €",
     rates_note:     "Hors déplacements, droits, post-prod. Devis détaillé sous 48h après brief.",
+    rates_services_link: "Tarifs &amp; services →",
 
     bridge_text:    "Une pratique parallèle en photographie d'art.",
     bridge_link:    "Voir le portfolio artistique ↗",
@@ -264,6 +266,7 @@ const TRANSLATIONS = {
     rates_hospo:    "Hostelería · paquete desde $2.500.000",
     rates_event:    "Evento &amp; reportaje · media jornada desde $900.000",
     rates_note:     "Precios en COP. Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
+    rates_services_link: "Tarifas y servicios →",
 
     bridge_text:    "Una práctica paralela en fotografía artística.",
     bridge_link:    "Visitar el portfolio artístico ↗",
