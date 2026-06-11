@@ -16,7 +16,7 @@
       srv_meta_currency_EUR: "Prices in EUR",
       srv_meta_currency_COP: "Prices in COP",
 
-      srv_intro:        "Editorial portrait and event photography for Medellín's cultural and music scene — made for campaigns, not just documentation. Three standard packages. Clear terms, predictable delivery, and a broad licence for the organiser's use.",
+      srv_intro:        "Editorial photography across four areas — editorial &amp; fashion, restaurants &amp; hospitality, events &amp; reportage, and portraits. Made for campaigns, not just documentation. Pick a category below for its packages. Clear terms, predictable delivery, and a broad licence for your use.",
       srv_quote:        "\"Editorial quality. Firm timelines. Clear terms.\"",
 
       srv_s1_h:         "The packages",
@@ -125,7 +125,7 @@
       srv_meta_currency_EUR: "Prix en EUR",
       srv_meta_currency_COP: "Prix en COP",
 
-      srv_intro:        "Photographie éditoriale de portrait et d'événement pour la scène culturelle et musicale de Medellín — pensée pour la campagne, pas pour le simple compte rendu. Trois forfaits standard. Des conditions claires, une livraison prévisible et une licence large pour l'usage de l'organisateur.",
+      srv_intro:        "Photographie éditoriale sur quatre domaines — éditorial &amp; mode, restaurants &amp; hôtellerie, événements &amp; reportage, et portraits. Pensée pour la campagne, pas pour le simple compte rendu. Choisissez une catégorie ci-dessous pour ses forfaits. Conditions claires, livraison prévisible et licence large pour votre usage.",
       srv_quote:        "« Qualité éditoriale. Délais fermes. Conditions claires. »",
 
       srv_s1_h:         "Les forfaits",
@@ -234,7 +234,7 @@
       srv_meta_currency_EUR: "Precios en EUR",
       srv_meta_currency_COP: "Precios en COP",
 
-      srv_intro:        "Fotografía editorial de retrato y eventos para la escena cultural y musical de Medellín — pensada para campaña, no para registro. Tres paquetes estándar. Términos claros, entrega predecible y licencia amplia para uso del organizador.",
+      srv_intro:        "Fotografía editorial en cuatro áreas — editorial y moda, restaurantes y hostelería, eventos y reportaje, y retratos. Pensada para campaña, no para registro. Elige una categoría abajo para ver sus paquetes. Términos claros, entrega predecible y licencia amplia para tu uso.",
       srv_quote:        "\"Calidad editorial. Tiempos firmes. Términos claros.\"",
 
       srv_s1_h:         "Los paquetes",

@@ -6,6 +6,17 @@
   <title>Servicios y tarifas — W2b · Guillaume Delye</title>
   <meta name="description" content="Paquetes y tarifas de fotografía editorial y de eventos en Medellín — Hero Imagery, Cobertura Editorial, Sesión Pre-Evento.">
   <link rel="stylesheet" href="../css/documents.css">
+  <style>
+    .cat-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 1.75rem; }
+    .cat-tab {
+      font: inherit; font-size: 0.85rem; cursor: pointer; background: transparent;
+      border: 1px solid #E5E0D8; color: #8A8278; padding: 0.5rem 1.1rem; border-radius: 999px;
+      letter-spacing: 0.02em; transition: all 0.18s;
+    }
+    .cat-tab:hover { color: #1C1917; border-color: #C9A84C; }
+    .cat-tab.active { background: #C9A84C; border-color: #C9A84C; color: #fff; }
+    .cat-intro { color: #6B6358; margin: 0 0 1.75rem; max-width: 62ch; line-height: 1.6; }
+  </style>
 </head>
 <body>
 
@@ -50,50 +61,13 @@
     <section class="doc-section">
       <h2><span class="num">01</span><span data-i18n="srv_s1_h">Los paquetes</span></h2>
 
-      <div class="tier-grid">
-        <article class="tier-card">
-          <p class="tier-eyebrow">Hero Imagery</p>
-          <h3 class="tier-name" data-i18n="srv_t1_name">Cobertura curada</h3>
-          <p class="tier-price" data-price="srv_t1_price">$450.000</p>
-          <p class="tier-unit" data-price="srv_t1_unit">COP · 1.5–2 h</p>
-          <ul>
-            <li data-i18n="srv_t1_li1">15–20 fotografías editadas</li>
-            <li data-i18n="srv_t1_li2">Entrega en 72 horas</li>
-            <li data-i18n="srv_t1_li3">Formatos vertical, cuadrado y 3:2</li>
-            <li data-i18n="srv_t1_li4">Ideal para listados y redes</li>
-          </ul>
-        </article>
+      <div class="cat-tabs no-print" id="cat-tabs" role="tablist" aria-label="Categories"></div>
+      <p class="cat-intro" id="cat-intro"></p>
+      <div class="tier-grid" id="cat-tiers"></div>
 
-        <article class="tier-card featured">
-          <p class="tier-eyebrow" data-i18n="srv_t2_eyebrow">Cobertura Editorial</p>
-          <h3 class="tier-name" data-i18n="srv_t2_name">Arco narrativo completo</h3>
-          <p class="tier-price" data-price="srv_t2_price">$1.100.000</p>
-          <p class="tier-unit" data-price="srv_t2_unit">COP · 3–5 h</p>
-          <ul>
-            <li data-i18n="srv_t2_li1">40–60 fotografías editadas</li>
-            <li data-i18n="srv_t2_li2">Entrega en 5 días hábiles</li>
-            <li data-i18n="srv_t2_li3">5–8 imágenes "hero" curadas</li>
-            <li data-i18n="srv_t2_li4">Retratos, atmósfera, público</li>
-          </ul>
-        </article>
-
-        <article class="tier-card">
-          <p class="tier-eyebrow" data-i18n="srv_t3_eyebrow">Sesión Pre-Evento</p>
-          <h3 class="tier-name" data-i18n="srv_t3_name">Retrato de campaña</h3>
-          <p class="tier-price" data-price="srv_t3_price">$650.000</p>
-          <p class="tier-unit" data-price="srv_t3_unit">COP · 1–2 h</p>
-          <ul>
-            <li data-i18n="srv_t3_li1">10–15 retratos editados</li>
-            <li data-i18n="srv_t3_li2">Entrega en 5 días hábiles</li>
-            <li data-i18n="srv_t3_li3">Material campaign-ready</li>
-            <li data-i18n="srv_t3_li4">Sola o combinada con cobertura</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="callout">
+      <div class="callout" id="cat-combo" style="display:none;">
         <p class="callout-label" data-i18n="srv_combo_label">Combo recomendado</p>
-        <p data-i18n="srv_combo_text">Sesión Pre-Evento + Cobertura Editorial con <strong>10% de descuento</strong> sobre la suma. Llega con material listo para publicar antes y durante el evento.</p>
+        <p id="cat-combo-text"></p>
       </div>
     </section>
 
@@ -208,6 +182,224 @@
 
   <script src="../js/lang.js"></script>
   <script src="../js/services-i18n.js"></script>
+
+  <script>
+  /* ════════════════════════════════════════════════════════════════
+     SERVICES — category packages (tabbed)
+     EDIT FREELY: prices are EUR (international) + COP (local market),
+     decoupled like the rest of the pro site. These are DRAFT numbers
+     grounded in the homepage "from" rates — confirm before quoting.
+     ════════════════════════════════════════════════════════════════ */
+  (function () {
+    const CAT_ORDER = ["editorial", "hospitality", "events", "portraits"];
+    const CATEGORIES = {
+      editorial: {
+        label: { en: "Editorial & Fashion", fr: "Éditorial & Mode", es: "Editorial y Moda" },
+        intro: {
+          en: "Day-rate editorial and fashion photography — campaign-grade images for lookbooks, press and brand. Concept and styling coordinated on request.",
+          fr: "Photographie éditoriale et mode à la journée — des images de niveau campagne pour lookbooks, presse et marque. Direction et stylisme coordonnés sur demande.",
+          es: "Fotografía editorial y de moda por jornada — imágenes de nivel campaña para lookbooks, prensa y marca. Dirección y estilismo coordinados a solicitud."
+        },
+        tiers: [
+          { eyebrow: { en: "Half day", fr: "Demi-journée", es: "Media jornada" },
+            name: { en: "Editorial essentials", fr: "Éditorial essentiel", es: "Editorial esencial" },
+            eur: 700, cop: 1100000, time: { en: "4 h", fr: "4 h", es: "4 h" },
+            items: [
+              { en: "20–25 edited images", fr: "20–25 images éditées", es: "20–25 imágenes editadas" },
+              { en: "One look or location", fr: "Un look ou lieu", es: "Un look o locación" },
+              { en: "Delivery in 5 business days", fr: "Livraison sous 5 jours ouvrés", es: "Entrega en 5 días hábiles" },
+              { en: "Web + press license", fr: "Licence web + presse", es: "Licencia web + prensa" }
+            ] },
+          { featured: true, eyebrow: { en: "Full day", fr: "Journée", es: "Jornada" },
+            name: { en: "Full editorial day", fr: "Journée éditoriale", es: "Jornada editorial" },
+            eur: 1200, cop: 1800000, time: { en: "8 h", fr: "8 h", es: "8 h" },
+            items: [
+              { en: "40–50 edited images", fr: "40–50 images éditées", es: "40–50 imágenes editadas" },
+              { en: "Multiple looks / locations", fr: "Plusieurs looks / lieux", es: "Varios looks / locaciones" },
+              { en: "5–8 curated hero selects", fr: "5–8 images hero curatées", es: "5–8 imágenes hero curadas" },
+              { en: "Broad brand license", fr: "Licence marque étendue", es: "Licencia de marca amplia" }
+            ] },
+          { eyebrow: { en: "Campaign", fr: "Campagne", es: "Campaña" },
+            name: { en: "Campaign production", fr: "Production campagne", es: "Producción de campaña" },
+            eur: 2200, cop: 3500000, time: { en: "full day +", fr: "journée +", es: "jornada +" },
+            items: [
+              { en: "Concept + styling coordination", fr: "Concept + coordination stylisme", es: "Concepto + coordinación de estilismo" },
+              { en: "Full day shoot, team as needed", fr: "Journée complète, équipe au besoin", es: "Jornada completa, equipo según necesidad" },
+              { en: "Lookbook + hero edit", fr: "Lookbook + édition hero", es: "Lookbook + edición hero" },
+              { en: "Extended usage (paid media negotiable)", fr: "Usage étendu (média payant négociable)", es: "Uso extendido (medios pagos negociable)" }
+            ] }
+        ]
+      },
+      hospitality: {
+        label: { en: "Restaurants & Hospitality", fr: "Restaurants & Hôtellerie", es: "Restaurantes y Hostelería" },
+        intro: {
+          en: "Photography for restaurants, bars and hotels — menu, interiors and atmosphere, made to sell the place. Packaged, not by the hour.",
+          fr: "Photographie pour restaurants, bars et hôtels — carte, intérieurs et atmosphère, pensée pour vendre le lieu. En forfait, pas à l'heure.",
+          es: "Fotografía para restaurantes, bares y hoteles — carta, interiores y atmósfera, pensada para vender el lugar. Por paquete, no por hora."
+        },
+        tiers: [
+          { eyebrow: { en: "Menu", fr: "Carte", es: "Carta" },
+            name: { en: "Menu essentials", fr: "Carte essentielle", es: "Carta esencial" },
+            eur: 900, cop: 1200000, time: { en: "10–15 dishes", fr: "10–15 plats", es: "10–15 platos" },
+            items: [
+              { en: "10–15 dishes or spaces", fr: "10–15 plats ou espaces", es: "10–15 platos o espacios" },
+              { en: "Consistent editorial light", fr: "Lumière éditoriale homogène", es: "Luz editorial uniforme" },
+              { en: "Delivery in 5 business days", fr: "Livraison sous 5 jours ouvrés", es: "Entrega en 5 días hábiles" },
+              { en: "Web + delivery-app license", fr: "Licence web + apps de livraison", es: "Licencia web + apps de domicilio" }
+            ] },
+          { featured: true, eyebrow: { en: "Venue & menu", fr: "Lieu & carte", es: "Local y carta" },
+            name: { en: "Venue & menu", fr: "Lieu & carte", es: "Local y carta" },
+            eur: 1600, cop: 2000000, time: { en: "~40 images", fr: "~40 images", es: "~40 imágenes" },
+            items: [
+              { en: "Food, interiors and ambiance", fr: "Plats, intérieurs et ambiance", es: "Platos, interiores y ambiente" },
+              { en: "~40 edited images", fr: "~40 images éditées", es: "~40 imágenes editadas" },
+              { en: "Shot around your service hours", fr: "Réalisé autour de votre service", es: "Realizado en torno a tu servicio" },
+              { en: "Web, print and press license", fr: "Licence web, print et presse", es: "Licencia web, impresa y prensa" }
+            ] },
+          { eyebrow: { en: "Brand", fr: "Marque", es: "Marca" },
+            name: { en: "Hospitality brand", fr: "Marque du lieu", es: "Marca del lugar" },
+            eur: 2400, cop: 2500000, time: { en: "full venue story", fr: "histoire complète", es: "historia completa" },
+            items: [
+              { en: "Full venue story", fr: "Histoire complète du lieu", es: "Historia completa del lugar" },
+              { en: "Team and guest portraits", fr: "Portraits équipe et clients", es: "Retratos de equipo y clientes" },
+              { en: "Seasonal re-shoot option", fr: "Option de reprise saisonnière", es: "Opción de repetición por temporada" },
+              { en: "Broad multi-channel license", fr: "Licence multicanal étendue", es: "Licencia multicanal amplia" }
+            ] }
+        ]
+      },
+      events: {
+        label: { en: "Events & Reportage", fr: "Événements & Reportage", es: "Eventos y Reportaje" },
+        intro: {
+          en: "Editorial event coverage for Medellín's cultural and music scene — made for campaign, not just record. Three standard packages.",
+          fr: "Couverture éditoriale d'événements pour la scène culturelle et musicale de Medellín — pensée pour la campagne, pas seulement l'archive. Trois forfaits standard.",
+          es: "Cobertura editorial de eventos para la escena cultural y musical de Medellín — pensada para campaña, no solo registro. Tres paquetes estándar."
+        },
+        tiers: [
+          { eyebrow: { en: "Hero Imagery", fr: "Hero Imagery", es: "Hero Imagery" },
+            name: { en: "Curated coverage", fr: "Couverture curatée", es: "Cobertura curada" },
+            eur: 300, cop: 450000, time: { en: "1.5–2 h", fr: "1,5–2 h", es: "1.5–2 h" },
+            items: [
+              { en: "15–20 edited photographs", fr: "15–20 photographies éditées", es: "15–20 fotografías editadas" },
+              { en: "Delivery in 72 hours", fr: "Livraison en 72 heures", es: "Entrega en 72 horas" },
+              { en: "Vertical, square and 3:2 formats", fr: "Formats vertical, carré et 3:2", es: "Formatos vertical, cuadrado y 3:2" },
+              { en: "Ideal for listings and social", fr: "Idéal pour annonces et réseaux", es: "Ideal para listados y redes" }
+            ] },
+          { featured: true, eyebrow: { en: "Editorial Coverage", fr: "Couverture éditoriale", es: "Cobertura Editorial" },
+            name: { en: "Full narrative arc", fr: "Arc narratif complet", es: "Arco narrativo completo" },
+            eur: 700, cop: 1100000, time: { en: "3–5 h", fr: "3–5 h", es: "3–5 h" },
+            items: [
+              { en: "40–60 edited photographs", fr: "40–60 photographies éditées", es: "40–60 fotografías editadas" },
+              { en: "Delivery in 5 business days", fr: "Livraison sous 5 jours ouvrés", es: "Entrega en 5 días hábiles" },
+              { en: "5–8 curated hero images", fr: "5–8 images hero curatées", es: "5–8 imágenes hero curadas" },
+              { en: "Portraits, atmosphere, crowd", fr: "Portraits, atmosphère, public", es: "Retratos, atmósfera, público" }
+            ] },
+          { eyebrow: { en: "Pre-Event Session", fr: "Séance pré-événement", es: "Sesión Pre-Evento" },
+            name: { en: "Campaign portrait", fr: "Portrait de campagne", es: "Retrato de campaña" },
+            eur: 420, cop: 650000, time: { en: "1–2 h", fr: "1–2 h", es: "1–2 h" },
+            items: [
+              { en: "10–15 edited portraits", fr: "10–15 portraits édités", es: "10–15 retratos editados" },
+              { en: "Delivery in 5 business days", fr: "Livraison sous 5 jours ouvrés", es: "Entrega en 5 días hábiles" },
+              { en: "Campaign-ready material", fr: "Matériel prêt pour campagne", es: "Material campaign-ready" },
+              { en: "Alone or combined with coverage", fr: "Seule ou avec la couverture", es: "Sola o combinada con cobertura" }
+            ] }
+        ],
+        combo: {
+          en: "Pre-Event Session + Editorial Coverage at 10% off the total — arrive with publish-ready material before and during the event.",
+          fr: "Séance pré-événement + Couverture éditoriale avec 10% de remise sur le total — du matériel prêt à publier avant et pendant l'événement.",
+          es: "Sesión Pre-Evento + Cobertura Editorial con 10% de descuento sobre la suma — material listo para publicar antes y durante el evento."
+        }
+      },
+      portraits: {
+        label: { en: "Portraits", fr: "Portraits", es: "Retratos" },
+        intro: {
+          en: "Editorial portraits for artists, founders and brands — a face made for press and campaign, not a headshot mill.",
+          fr: "Portraits éditoriaux pour artistes, fondateurs et marques — un visage pensé pour la presse et la campagne, pas du portrait à la chaîne.",
+          es: "Retratos editoriales para artistas, fundadores y marcas — un rostro pensado para prensa y campaña, no retrato en serie."
+        },
+        tiers: [
+          { eyebrow: { en: "Personal", fr: "Personnel", es: "Personal" },
+            name: { en: "Personal brand", fr: "Marque personnelle", es: "Marca personal" },
+            eur: 350, cop: 550000, time: { en: "1 h · 1 look", fr: "1 h · 1 look", es: "1 h · 1 look" },
+            items: [
+              { en: "10 edited portraits", fr: "10 portraits édités", es: "10 retratos editados" },
+              { en: "One look, one location", fr: "Un look, un lieu", es: "Un look, una locación" },
+              { en: "Delivery in 5 business days", fr: "Livraison sous 5 jours ouvrés", es: "Entrega en 5 días hábiles" },
+              { en: "Web + social license", fr: "Licence web + réseaux", es: "Licencia web + redes" }
+            ] },
+          { featured: true, eyebrow: { en: "Editorial", fr: "Éditorial", es: "Editorial" },
+            name: { en: "Editorial portrait", fr: "Portrait éditorial", es: "Retrato editorial" },
+            eur: 600, cop: 900000, time: { en: "2 h · 2–3 looks", fr: "2 h · 2–3 looks", es: "2 h · 2–3 looks" },
+            items: [
+              { en: "15–20 edited portraits", fr: "15–20 portraits édités", es: "15–20 retratos editados" },
+              { en: "Two to three looks", fr: "Deux à trois looks", es: "Dos o tres looks" },
+              { en: "Light retouch included", fr: "Retouche légère incluse", es: "Retoque ligero incluido" },
+              { en: "Web, print and press license", fr: "Licence web, print et presse", es: "Licencia web, impresa y prensa" }
+            ] },
+          { eyebrow: { en: "Campaign", fr: "Campagne", es: "Campaña" },
+            name: { en: "Campaign portrait", fr: "Portrait de campagne", es: "Retrato de campaña" },
+            eur: 1100, cop: 1600000, time: { en: "half day", fr: "demi-journée", es: "media jornada" },
+            items: [
+              { en: "Multiple subjects or team", fr: "Plusieurs sujets ou équipe", es: "Varios sujetos o equipo" },
+              { en: "Half-day session", fr: "Séance d'une demi-journée", es: "Sesión de media jornada" },
+              { en: "Hero selects + variations", fr: "Sélections hero + variations", es: "Selecciones hero + variaciones" },
+              { en: "Broad brand license", fr: "Licence marque étendue", es: "Licencia de marca amplia" }
+            ] }
+        ]
+      }
+    };
+
+    let current = CAT_ORDER[0];
+    const lang = () => localStorage.getItem('w2b_lang') || document.documentElement.lang || 'es';
+    const cur  = () => localStorage.getItem('w2b_currency') || (lang() === 'es' ? 'COP' : 'EUR');
+    const tr   = (o) => (o && (o[lang()] || o.en)) || '';
+    const price = (t) => cur() === 'COP'
+      ? '$' + t.cop.toLocaleString('es-CO')
+      : '€' + t.eur.toLocaleString('en-US');
+
+    const tabsEl  = document.getElementById('cat-tabs');
+    const introEl = document.getElementById('cat-intro');
+    const tiersEl = document.getElementById('cat-tiers');
+    const comboEl = document.getElementById('cat-combo');
+    const comboTx = document.getElementById('cat-combo-text');
+
+    function buildTabs() {
+      tabsEl.innerHTML = CAT_ORDER.map(k =>
+        '<button class="cat-tab' + (k === current ? ' active' : '') + '" role="tab" data-cat="' + k + '">' +
+        tr(CATEGORIES[k].label) + '</button>'
+      ).join('');
+    }
+
+    function render() {
+      const c = CATEGORIES[current];
+      introEl.textContent = tr(c.intro);
+      tiersEl.innerHTML = c.tiers.map(t =>
+        '<article class="tier-card' + (t.featured ? ' featured' : '') + '">' +
+          '<p class="tier-eyebrow">' + tr(t.eyebrow) + '</p>' +
+          '<h3 class="tier-name">' + tr(t.name) + '</h3>' +
+          '<p class="tier-price">' + price(t) + '</p>' +
+          '<p class="tier-unit">' + cur() + ' · ' + tr(t.time) + '</p>' +
+          '<ul>' + t.items.map(it => '<li>' + tr(it) + '</li>').join('') + '</ul>' +
+        '</article>'
+      ).join('');
+      if (c.combo) { comboEl.style.display = ''; comboTx.textContent = tr(c.combo); }
+      else { comboEl.style.display = 'none'; }
+    }
+
+    function refresh() { buildTabs(); render(); }
+
+    tabsEl.addEventListener('click', e => {
+      const b = e.target.closest('.cat-tab');
+      if (!b) return;
+      current = b.dataset.cat;
+      refresh();
+    });
+    // Re-render dynamic packages when language or currency changes
+    document.querySelectorAll('.lang-btn, .cur-btn').forEach(b =>
+      b.addEventListener('click', () => setTimeout(refresh, 0)));
+
+    refresh();
+  })();
+  </script>
 
 </body>
 </html>
