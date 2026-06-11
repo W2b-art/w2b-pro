@@ -62,6 +62,8 @@ const TRANSLATIONS = {
     rates_hospo_COP:     "Hospitality · package from $1,200,000",
     rates_event_EUR:     "Event &amp; reportage · from €300",
     rates_event_COP:     "Event &amp; reportage · from $450,000",
+    rates_portrait_EUR:  "Portraits · from €350",
+    rates_portrait_COP:  "Portraits · from $550,000",
     rates_note:     "All rates exclude travel, licensing, and post. Detailed quote within 48h of brief.",
     rates_services_link: "Full rates &amp; services →",
 
@@ -169,6 +171,8 @@ const TRANSLATIONS = {
     rates_hospo_COP:     "Hôtellerie-restauration · forfait à partir de $1 200 000",
     rates_event_EUR:     "Événement &amp; reportage · à partir de 300 €",
     rates_event_COP:     "Événement &amp; reportage · à partir de $450 000",
+    rates_portrait_EUR:  "Portraits · à partir de 350 €",
+    rates_portrait_COP:  "Portraits · à partir de $550 000",
     rates_note:     "Hors déplacements, droits, post-prod. Devis détaillé sous 48h après brief.",
     rates_services_link: "Tarifs &amp; services →",
 
@@ -274,6 +278,8 @@ const TRANSLATIONS = {
     rates_hospo_COP:     "Hostelería · paquete desde $1.200.000",
     rates_event_EUR:     "Evento &amp; reportaje · desde 300 €",
     rates_event_COP:     "Evento &amp; reportaje · desde $450.000",
+    rates_portrait_EUR:  "Retratos · desde 350 €",
+    rates_portrait_COP:  "Retratos · desde $550.000",
     rates_note:     "Sin gastos de viaje, derechos ni post. Presupuesto detallado en 48h tras el brief.",
     rates_services_link: "Tarifas y servicios →",
 
