@@ -616,6 +616,8 @@ a:hover { border-color: var(--gold); }
 @media (max-width: 720px) {
   .doc-page { padding: 2rem 1.5rem 4rem; }
   .doc-topbar { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
+  .doc-topbar-actions { flex-wrap: wrap; gap: 0.5rem 0.6rem; }
+  .btn-doc { padding: 0.55rem 0.9rem; font-size: 0.72rem; }
   .doc-title { font-size: 2rem; }
   .doc-section h2 { font-size: 1.3rem; }
   .tier-grid { grid-template-columns: 1fr; }
