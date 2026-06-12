@@ -63,6 +63,35 @@ function renderHomepageGalleries() {
   }).join('');
 }
 
+/* Re-translate gallery titles that come from GALLERY_DATA (not data-i18n):
+   the homepage "Selected work" cards and, on a gallery page, the h1 + desc.
+   Called from applyLang() so they follow the language switch. */
+function refreshGalleryTitles() {
+  const lang = localStorage.getItem('w2b_lang') || 'en';
+  const T = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) || {};
+
+  document.querySelectorAll('#homepage-gallery-grid .gallery-card').forEach(card => {
+    const m = (card.getAttribute('href') || '').match(/gallery-(.+)\.html/);
+    if (!m) return;
+    const d = GALLERY_DATA[m[1]];
+    if (!d) return;
+    const title = d.title[lang] || d.title.en;
+    const tl = card.querySelector('.gallery-card-title'); if (tl) tl.textContent = title;
+    const im = card.querySelector('img');                if (im) im.alt = title;
+    const me = card.querySelector('.gallery-card-meta');
+    if (me && T['gal_' + m[1] + '_meta'] !== undefined) me.textContent = T['gal_' + m[1] + '_meta'];
+  });
+
+  if (window._galleryPageId && GALLERY_DATA[window._galleryPageId]) {
+    const d = GALLERY_DATA[window._galleryPageId];
+    const h  = document.getElementById('gallery-page-title');
+    const ds = document.getElementById('gallery-page-desc');
+    if (h)  h.textContent  = d.title[lang] || d.title.en;
+    if (ds) ds.textContent = d.description[lang] || d.description.en;
+  }
+}
+window.refreshGalleryTitles = refreshGalleryTitles;
+
 /* ── Scroll Reveal ──────────────────────────────────────────── */
 function initRevealOnScroll() {
   const observer = new IntersectionObserver(entries => {
@@ -81,6 +110,7 @@ function initRevealOnScroll() {
 function renderGalleryPage(galleryId) {
   const data = GALLERY_DATA[galleryId];
   if (!data) return;
+  window._galleryPageId = galleryId;
 
   const lang  = localStorage.getItem('w2b_lang') || 'en';
   const grid  = document.getElementById('photo-grid');

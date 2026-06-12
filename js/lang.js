@@ -393,6 +393,10 @@ function applyLang(lang) {
     currentCurrency = (lang === 'es') ? 'COP' : 'EUR';
   }
   applyPrices();
+
+  // Re-translate dynamic gallery titles (homepage cards / gallery page h1+desc)
+  // that come from GALLERY_DATA, not data-i18n.
+  if (typeof window.refreshGalleryTitles === 'function') window.refreshGalleryTitles();
 }
 
 function initLang() {
