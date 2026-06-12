@@ -80,6 +80,14 @@ const GALLERY_DATA = {
           fr: "Portrait de dos d'une mannequin à la longue tresse, haut dos-nu corail devant une eau turquoise, éditorial mode argentique couleur, Saint-Florent, Corse",
           es: "Retrato de espaldas de una modelo con una larga trenza y top halter coral frente al agua turquesa, editorial de moda analógico color, Saint-Florent, Córcega"
         }
+      },
+      {
+        file: "editorial-portrait-woman-cigarette-collar-dark-w2b.jpg",
+        alt: {
+          en: "Editorial portrait of a young woman with a cigarette, white collar over a dark top against a black background, colour film",
+          fr: "Portrait éditorial d'une jeune femme à la cigarette, col blanc sur haut sombre, fond noir, argentique couleur",
+          es: "Retrato editorial de una joven con un cigarrillo, cuello blanco sobre top oscuro, fondo negro, analógico color"
+        }
       }
     ]
   },
@@ -461,6 +469,38 @@ const GALLERY_DATA = {
           en: "Striking close-up portrait of a man with locs and round gold sunglasses biting the chain of his gold Africa pendant, Medellín hillside in hard sunlight behind, colour portraiture",
           fr: "Portrait rapproché saisissant d'un homme aux locks et lunettes rondes dorées mordant la chaîne de son pendentif Afrique doré, colline de Medellín en pleine lumière en arrière-plan, portrait couleur",
           es: "Impactante retrato en primer plano de un hombre con locs y gafas redondas doradas mordiendo la cadena de su colgante de África dorado, ladera de Medellín a plena luz detrás, retrato a color"
+        }
+      },
+      {
+        file: "portrait-group-women-boat-black-white-w2b.jpg",
+        alt: {
+          en: "Group portrait of young women laughing together on a boat, black and white film",
+          fr: "Portrait de groupe de jeunes femmes riant ensemble sur un bateau, argentique noir et blanc",
+          es: "Retrato de grupo de mujeres jóvenes riendo juntas en un barco, analógico en blanco y negro"
+        }
+      },
+      {
+        file: "portrait-woman-leopard-print-boat-coast-w2b.jpg",
+        alt: {
+          en: "Portrait of a woman in a leopard-print dress seated on a boat, coastal mountains behind, colour film",
+          fr: "Portrait d'une femme en robe léopard assise sur un bateau, montagnes côtières en arrière-plan, argentique couleur",
+          es: "Retrato de una mujer con vestido de leopardo sentada en un barco, montañas costeras al fondo, analógico color"
+        }
+      },
+      {
+        file: "portrait-couple-marina-harbour-w2b.jpg",
+        alt: {
+          en: "Portrait of a couple at a harbour marina, sailboats behind, colour film",
+          fr: "Portrait d'un couple à la marina d'un port, voiliers en arrière-plan, argentique couleur",
+          es: "Retrato de una pareja en la marina de un puerto, veleros al fondo, analógico color"
+        }
+      },
+      {
+        file: "portrait-two-women-tender-moment-w2b.jpg",
+        alt: {
+          en: "Tender portrait of a young woman resting against an older woman in warm light, colour film",
+          fr: "Portrait tendre d'une jeune femme reposant contre une femme plus âgée dans une lumière chaude, argentique couleur",
+          es: "Retrato tierno de una joven apoyada en una mujer mayor bajo una luz cálida, analógico color"
         }
       }
     ]
