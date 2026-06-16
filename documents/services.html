@@ -7,7 +7,7 @@
   <link rel="alternate icon" href="/w2b-pro/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/w2b-pro/apple-touch-icon.png">
   <title>Servicios y tarifas — W2b · Guillaume Delye</title>
-  <meta name="description" content="Paquetes y tarifas de fotografía en Medellín — editorial y moda, restaurantes y hostelería, eventos y reportaje, retratos. Precios en EUR y COP.">
+  <meta name="description" content="Paquetes y tarifas de fotografía en Medellín — editorial y moda, restaurantes y hostelería, inmobiliaria y Airbnb, eventos y reportaje, retratos. Precios en EUR y COP.">
   <link rel="stylesheet" href="../css/documents.css">
   <style>
     .cat-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 1.75rem; }
@@ -172,8 +172,9 @@
       </div>
     </section>
 
-    <div class="doc-cta no-print" style="text-align:center;margin:3rem 0 1rem;">
-      <a href="../contact.html" class="btn-doc primary" data-i18n="srv_contact_btn">Contactar →</a>
+    <div class="doc-cta no-print" style="text-align:center;margin:3rem 0 1rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+      <a data-i18n-href="wa_link" data-i18n="wa_book" class="btn-doc primary" target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a href="../contact.html" class="btn-doc ghost" data-i18n="srv_contact_btn">Contactar →</a>
     </div>
 
     <footer class="doc-footer">
@@ -194,7 +195,7 @@
      grounded in the homepage "from" rates — confirm before quoting.
      ════════════════════════════════════════════════════════════════ */
   (function () {
-    const CAT_ORDER = ["editorial", "hospitality", "events", "portraits"];
+    const CAT_ORDER = ["editorial", "hospitality", "realestate", "events", "portraits"];
     const CATEGORIES = {
       editorial: {
         label: { en: "Editorial & Fashion", fr: "Éditorial & Mode", es: "Editorial y Moda" },
@@ -269,6 +270,48 @@
               { en: "Broad multi-channel license", fr: "Licence multicanal étendue", es: "Licencia multicanal amplia" }
             ] }
         ]
+      },
+      realestate: {
+        label: { en: "Real Estate & Airbnb", fr: "Immobilier & Airbnb", es: "Inmobiliaria y Airbnb" },
+        intro: {
+          en: "Photography for properties, short-stays and agencies — interiors, light and flow, made to fill the calendar and close the sale. Packaged per property, not by the hour.",
+          fr: "Photographie pour biens, locations courtes et agences — intérieurs, lumière et circulation, pensée pour remplir le calendrier et conclure la vente. En forfait par bien, pas à l'heure.",
+          es: "Fotografía para propiedades, estadías cortas y agencias — interiores, luz y recorrido, pensada para llenar el calendario y cerrar la venta. Por paquete por inmueble, no por hora."
+        },
+        tiers: [
+          { eyebrow: { en: "Listing", fr: "Annonce", es: "Aviso" },
+            name: { en: "Listing essentials", fr: "Annonce essentielle", es: "Aviso esencial" },
+            eur: 280, cop: 400000, time: { en: "1 property · 1.5 h", fr: "1 bien · 1,5 h", es: "1 inmueble · 1.5 h" },
+            items: [
+              { en: "15–20 edited images", fr: "15–20 images éditées", es: "15–20 imágenes editadas" },
+              { en: "Wide shots and key details", fr: "Plans larges et détails clés", es: "Planos amplios y detalles clave" },
+              { en: "Delivery in 72 hours", fr: "Livraison en 72 heures", es: "Entrega en 72 horas" },
+              { en: "Portals + Airbnb license", fr: "Licence portails + Airbnb", es: "Licencia portales + Airbnb" }
+            ] },
+          { featured: true, eyebrow: { en: "Property", fr: "Bien", es: "Inmueble" },
+            name: { en: "Property feature", fr: "Bien en vedette", es: "Inmueble destacado" },
+            eur: 600, cop: 750000, time: { en: "~35 images", fr: "~35 images", es: "~35 imágenes" },
+            items: [
+              { en: "Full property, interior and exterior", fr: "Bien complet, intérieur et extérieur", es: "Inmueble completo, interior y exterior" },
+              { en: "~35 edited images", fr: "~35 images éditées", es: "~35 imágenes editadas" },
+              { en: "Twilight exterior + vertical clips for social", fr: "Extérieur au crépuscule + clips verticaux pour les réseaux", es: "Exterior al atardecer + clips verticales para redes" },
+              { en: "Web, portals and agency license", fr: "Licence web, portails et agence", es: "Licencia web, portales y agencia" }
+            ] },
+          { eyebrow: { en: "Host kit", fr: "Kit hôte", es: "Kit anfitrión" },
+            name: { en: "Host & brand kit", fr: "Kit hôte & marque", es: "Kit anfitrión y marca" },
+            eur: 1100, cop: 1300000, time: { en: "half day", fr: "demi-journée", es: "media jornada" },
+            items: [
+              { en: "Property, amenities and neighbourhood story", fr: "Bien, services et histoire du quartier", es: "Inmueble, amenidades e historia del barrio" },
+              { en: "Reels verticals + host portrait", fr: "Verticaux pour Reels + portrait de l'hôte", es: "Verticales para Reels + retrato del anfitrión" },
+              { en: "Seasonal re-shoot option", fr: "Option de reprise saisonnière", es: "Opción de repetición por temporada" },
+              { en: "Broad multi-channel license", fr: "Licence multicanal étendue", es: "Licencia multicanal amplia" }
+            ] }
+        ],
+        combo: {
+          en: "Two or more properties shot the same day at 15% off per property — ideal for agencies and multi-unit hosts.",
+          fr: "Deux biens ou plus le même jour avec 15% de remise par bien — idéal pour agences et hôtes multi-logements.",
+          es: "Dos o más inmuebles el mismo día con 15% de descuento por inmueble — ideal para agencias y anfitriones de varias unidades."
+        }
       },
       events: {
         label: { en: "Events & Reportage", fr: "Événements & Reportage", es: "Eventos y Reportaje" },
