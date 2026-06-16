@@ -88,6 +88,8 @@ const TRANSLATIONS = {
     form_submit:    "Send brief →",
     form_success:   "Thanks — your brief is in. You'll hear back within 48 hours.",
     contact_direct: "Or write directly to",
+    wa_book:        "Book on WhatsApp",
+    wa_link:        "https://wa.me/33652986427?text=Hi%20Guillaume%2C%20I%20came%20from%20your%20website.%20I%20would%20like%20to%20book%20a%20photo%20session.%20Type%3A%20___%20.%20Approx%20date%3A%20___%20.",
 
     srv_fashion:      "Fashion / Editorial",
     srv_restaurants:  "Restaurant / Hospitality",
@@ -196,6 +198,8 @@ const TRANSLATIONS = {
     form_submit:    "Envoyer le brief →",
     form_success:   "Merci — votre brief est arrivé. Réponse sous 48 heures.",
     contact_direct: "Ou écrire directement à",
+    wa_book:        "Réserver sur WhatsApp",
+    wa_link:        "https://wa.me/33652986427?text=Bonjour%20Guillaume%2C%20je%20viens%20de%20ton%20site.%20Je%20souhaite%20reserver%20une%20seance%20photo.%20Type%3A%20___%20.%20Date%20approx%3A%20___%20.",
 
     srv_fashion:      "Mode / Éditorial",
     srv_restaurants:  "Restaurant / Hôtellerie",
@@ -303,6 +307,8 @@ const TRANSLATIONS = {
     form_submit:    "Enviar brief →",
     form_success:   "Gracias — tu brief ha llegado. Respuesta en 48 horas.",
     contact_direct: "O escribir directamente a",
+    wa_book:        "Reservar por WhatsApp",
+    wa_link:        "https://wa.me/33652986427?text=Hola%20Guillaume%2C%20vengo%20de%20tu%20web.%20Me%20interesa%20una%20sesion%20de%20fotografia.%20Tipo%3A%20___%20.%20Fecha%20aprox%3A%20___%20.",
 
     srv_fashion:      "Moda / Editorial",
     srv_restaurants:  "Restaurante / Hostelería",
@@ -375,6 +381,11 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  document.querySelectorAll('[data-i18n-href]').forEach(el => {
+    const key = el.getAttribute('data-i18n-href');
+    if (t[key] !== undefined) el.setAttribute('href', t[key]);
   });
 
   document.querySelectorAll('[data-i18n-option]').forEach(el => {
