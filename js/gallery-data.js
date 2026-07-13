@@ -20,9 +20,9 @@ const GALLERY_DATA = {
       es: "Moda & Editorial"
     },
     description: {
-      en: "Editorial fashion shot on the Corsican coast at Saint-Florent — a self-directed series on film.",
-      fr: "Mode éditoriale réalisée sur la côte corse à Saint-Florent — une série auto-produite, argentique.",
-      es: "Moda editorial realizada en la costa corsa de Saint-Florent — una serie autoproducida, analógica."
+      en: "Editorial fashion — self-directed series shot on the Corsican coast at Saint-Florent, and urban night portraits in Medellín.",
+      fr: "Mode éditoriale — série auto-produite réalisée sur la côte corse à Saint-Florent, et portraits urbains de nuit à Medellín.",
+      es: "Moda editorial — serie autoproducida realizada en la costa corsa de Saint-Florent, y retratos urbanos nocturnos en Medellín."
     },
     images: [
       {
@@ -87,6 +87,78 @@ const GALLERY_DATA = {
           en: "Editorial portrait of a young woman with a cigarette, white collar over a dark top against a black background, colour film",
           fr: "Portrait éditorial d'une jeune femme à la cigarette, col blanc sur haut sombre, fond noir, argentique couleur",
           es: "Retrato editorial de una joven con un cigarrillo, cuello blanco sobre top oscuro, fondo negro, analógico color"
+        }
+      },
+      {
+        file: "model-seated-boots-graffiti-wall-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Model seated in boots against a graffiti-covered wall, urban night fashion editorial, Medellín",
+          fr: "Mannequin assise en bottes devant un mur couvert de graffitis, éditorial mode urbain de nuit, Medellín",
+          es: "Modelo sentada con botas contra un muro cubierto de grafitis, editorial de moda urbana nocturna, Medellín"
+        }
+      },
+      {
+        file: "model-lace-top-hand-chin-mural-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Model in a lace top, hand to chin, against a mural backdrop, urban night fashion editorial, Medellín",
+          fr: "Mannequin en haut de dentelle, main au menton, devant une fresque murale, éditorial mode urbain de nuit, Medellín",
+          es: "Modelo con top de encaje, mano en el mentón, frente a un mural, editorial de moda urbana nocturna, Medellín"
+        }
+      },
+      {
+        file: "model-arms-raised-black-dress-mural-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Model in a black dress with arms raised overhead against a mural, urban night fashion editorial, Medellín",
+          fr: "Mannequin en robe noire, bras levés, devant une fresque murale, éditorial mode urbain de nuit, Medellín",
+          es: "Modelo con vestido negro y los brazos en alto frente a un mural, editorial de moda urbana nocturna, Medellín"
+        }
+      },
+      {
+        file: "model-portrait-hoop-earrings-corset-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Portrait of a model in a corset top with hoop earrings against a plain wall, urban fashion editorial, Medellín",
+          fr: "Portrait d'une mannequin en corset et créoles devant un mur nu, éditorial mode urbain, Medellín",
+          es: "Retrato de una modelo con corsé y aretes de aro contra un muro liso, editorial de moda urbana, Medellín"
+        }
+      },
+      {
+        file: "model-arms-raised-corset-teal-light-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Model in a corset with arms raised overhead under cool teal light, urban fashion editorial, Medellín",
+          fr: "Mannequin en corset, bras levés, sous une lumière sarcelle froide, éditorial mode urbain, Medellín",
+          es: "Modelo con corsé y los brazos en alto bajo una luz turquesa fría, editorial de moda urbana, Medellín"
+        }
+      },
+      {
+        file: "model-smoking-portrait-brick-wall-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Editorial portrait of a model smoking against a brick wall in warm light, urban fashion editorial, Medellín",
+          fr: "Portrait éditorial d'une mannequin fumant devant un mur de brique en lumière chaude, éditorial mode urbain, Medellín",
+          es: "Retrato editorial de una modelo fumando contra un muro de ladrillo en luz cálida, editorial de moda urbana, Medellín"
+        }
+      },
+      {
+        file: "model-smoking-close-portrait-black-white-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Close black and white editorial portrait of a model smoking, urban fashion editorial, Medellín",
+          fr: "Portrait éditorial rapproché en noir et blanc d'une mannequin fumant, éditorial mode urbain, Medellín",
+          es: "Retrato editorial cercano en blanco y negro de una modelo fumando, editorial de moda urbana, Medellín"
+        }
+      },
+      {
+        file: "model-smoking-profile-warm-light-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Profile portrait of a model smoking in warm ambient light, urban fashion editorial, Medellín",
+          fr: "Portrait de profil d'une mannequin fumant en lumière ambiante chaude, éditorial mode urbain, Medellín",
+          es: "Retrato de perfil de una modelo fumando en luz ambiente cálida, editorial de moda urbana, Medellín"
+        }
+      },
+      {
+        file: "model-crouched-graffiti-wall-boots-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Model crouched in boots and dark tights against a graffiti wall, urban night fashion editorial, Medellín",
+          fr: "Mannequin accroupie en bottes et collants sombres devant un mur de graffitis, éditorial mode urbain de nuit, Medellín",
+          es: "Modelo agachada con botas y medias oscuras contra un muro de grafitis, editorial de moda urbana nocturna, Medellín"
         }
       }
     ]
@@ -371,6 +443,134 @@ const GALLERY_DATA = {
           en: "Group of women dancing and laughing with drinks in hand on a nightclub floor, candid night-flash nightlife reportage at the Blackout Medellín event",
           fr: "Groupe de femmes dansant et riant un verre à la main sur la piste d'un club, reportage nightlife spontané au flash à l'événement Blackout à Medellín",
           es: "Grupo de mujeres bailando y riendo con copas en mano en la pista de un club, reportaje espontáneo de vida nocturna con flash en el evento Blackout de Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-man-seated-meditative-mountains-golden-hour-w2b.jpg",
+        alt: {
+          en: "A man seated cross-legged on a Medellín rooftop in golden light, mountains behind, Blackout event reportage photography",
+          fr: "Un homme assis en tailleur sur un rooftop de Medellín dans la lumière dorée, montagnes en arrière-plan, reportage de l'événement Blackout",
+          es: "Un hombre sentado con las piernas cruzadas en una azotea de Medellín bajo la luz dorada, montañas al fondo, reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-solar-eclipse-crescent-sky-w2b.jpg",
+        alt: {
+          en: "The sun reduced to a glowing crescent during the solar eclipse over Medellín, Blackout event reportage photography",
+          fr: "Le soleil réduit à un croissant lumineux pendant l'éclipse solaire au-dessus de Medellín, reportage de l'événement Blackout",
+          es: "El sol reducido a un creciente luminoso durante el eclipse solar sobre Medellín, reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-man-railing-comuna-skyline-golden-hour-w2b.jpg",
+        alt: {
+          en: "A man at the rooftop railing looking out over the Medellín comuna hillside at golden hour, Blackout event reportage photography",
+          fr: "Un homme à la rambarde d'un rooftop contemplant les collines de la comuna de Medellín à l'heure dorée, reportage de l'événement Blackout",
+          es: "Un hombre en la baranda de una azotea mirando las laderas de la comuna de Medellín en la hora dorada, reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-woman-beaded-top-golden-hour-portrait-w2b.jpg",
+        alt: {
+          en: "Golden-hour portrait of a woman in a beaded top on the rooftop, Blackout event reportage photography, Medellín",
+          fr: "Portrait à l'heure dorée d'une femme en haut perlé sur le rooftop, reportage de l'événement Blackout, Medellín",
+          es: "Retrato en la hora dorada de una mujer con top de cuentas en la azotea, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-woman-green-top-locs-portrait-w2b.jpg",
+        alt: {
+          en: "Portrait of a woman with locs in a green top glancing back, golden hour, Blackout event reportage, Medellín",
+          fr: "Portrait d'une femme aux locks en haut vert se retournant, heure dorée, reportage de l'événement Blackout, Medellín",
+          es: "Retrato de una mujer con locs y top verde mirando hacia atrás, hora dorada, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-man-afro-portrait-golden-hour-w2b.jpg",
+        alt: {
+          en: "Golden-hour portrait of a man with an afro in an open shirt, Blackout event reportage, Medellín",
+          fr: "Portrait à l'heure dorée d'un homme afro en chemise ouverte, reportage de l'événement Blackout, Medellín",
+          es: "Retrato en la hora dorada de un hombre afro con camisa abierta, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-woman-curly-hair-joyful-golden-hour-w2b.jpg",
+        alt: {
+          en: "A woman with curly hair laughing in golden backlight on the rooftop, Blackout event reportage, Medellín",
+          fr: "Une femme aux cheveux bouclés riant dans un contre-jour doré sur le rooftop, reportage de l'événement Blackout, Medellín",
+          es: "Una mujer de cabello rizado riendo a contraluz dorado en la azotea, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-woman-white-fringe-dress-golden-hour-w2b.jpg",
+        alt: {
+          en: "A woman in a white fringe dress standing in golden-hour light on the rooftop, Blackout event reportage, Medellín",
+          fr: "Une femme en robe blanche à franges debout dans la lumière dorée sur le rooftop, reportage de l'événement Blackout, Medellín",
+          es: "Una mujer con vestido blanco de flecos de pie bajo la luz dorada en la azotea, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-three-women-smiling-golden-hour-w2b.jpg",
+        alt: {
+          en: "Three women smiling together at golden hour on the rooftop, Blackout event reportage photography, Medellín",
+          fr: "Trois femmes souriant ensemble à l'heure dorée sur le rooftop, reportage de l'événement Blackout, Medellín",
+          es: "Tres mujeres sonriendo juntas en la hora dorada en la azotea, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-man-dancing-arms-raised-skyline-golden-hour-w2b.jpg",
+        alt: {
+          en: "A man dancing with arms raised against the Medellín skyline at golden hour, Blackout event reportage photography",
+          fr: "Un homme dansant bras levés devant les toits de Medellín à l'heure dorée, reportage de l'événement Blackout",
+          es: "Un hombre bailando con los brazos en alto frente al horizonte de Medellín en la hora dorada, reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-two-women-dancing-skyline-golden-hour-w2b.jpg",
+        alt: {
+          en: "Two women dancing with the city skyline behind them at golden hour, Blackout event reportage, Medellín",
+          fr: "Deux femmes dansant avec les toits de la ville derrière elles à l'heure dorée, reportage de l'événement Blackout, Medellín",
+          es: "Dos mujeres bailando con el horizonte de la ciudad detrás en la hora dorada, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-men-bar-golden-hour-gathering-w2b.jpg",
+        alt: {
+          en: "Men gathered at the rooftop bar in golden light, Blackout event reportage photography, Medellín",
+          fr: "Des hommes réunis au bar du rooftop dans la lumière dorée, reportage de l'événement Blackout, Medellín",
+          es: "Hombres reunidos en la barra de la azotea bajo la luz dorada, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-man-railing-drink-golden-hour-w2b.jpg",
+        alt: {
+          en: "A man at the rooftop railing with a drink as the light fades, Blackout event reportage, Medellín",
+          fr: "Un homme à la rambarde du rooftop, un verre à la main, alors que la lumière décline, reportage de l'événement Blackout, Medellín",
+          es: "Un hombre en la baranda de la azotea con una bebida mientras cae la luz, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-group-dancing-skyline-golden-hour-w2b.jpg",
+        alt: {
+          en: "A group dancing with hands raised against the skyline at golden hour, Blackout event reportage photography",
+          fr: "Un groupe dansant les mains levées devant les toits à l'heure dorée, reportage de l'événement Blackout",
+          es: "Un grupo bailando con las manos en alto frente al horizonte en la hora dorada, reportaje del evento Blackout"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-couple-candid-golden-hour-w2b.jpg",
+        alt: {
+          en: "A candid moment between two people in golden light on the rooftop, Blackout event reportage, Medellín",
+          fr: "Un moment spontané entre deux personnes dans la lumière dorée sur le rooftop, reportage de l'événement Blackout, Medellín",
+          es: "Un momento espontáneo entre dos personas bajo la luz dorada en la azotea, reportaje del evento Blackout, Medellín"
+        }
+      },
+      {
+        file: "blackout-medellin-rooftop-woman-seated-smiling-golden-hour-w2b.jpg",
+        alt: {
+          en: "A woman seated and smiling in warm golden-hour light, Blackout event reportage photography, Medellín",
+          fr: "Une femme assise et souriante dans la chaude lumière dorée, reportage de l'événement Blackout, Medellín",
+          es: "Una mujer sentada y sonriendo bajo la cálida luz dorada, reportaje del evento Blackout, Medellín"
         }
       }
     ]
