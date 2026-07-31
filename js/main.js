@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealOnScroll();
   initLightbox();
   initContactForm();
+  initSignatureReveal();
 });
 
 /* ── Navigation ─────────────────────────────────────────────── */
@@ -104,6 +105,27 @@ function initRevealOnScroll() {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/* ── Signature reveal (About page) ───────────────────────────────
+   Wipes the real ink signature in left-to-right on scroll. Pure CSS
+   mask transition toggled by a class — no animation library. Default
+   (no JS / reduced-motion) shows it fully. */
+function initSignatureReveal() {
+  const sig = document.querySelector('.signature');
+  const ink = document.querySelector('.sig-ink');
+  if (!sig || !ink) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  sig.classList.add('sig-animate');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      sig.classList.add('drawn');
+    });
+  }, { threshold: 0.5 });
+  observer.observe(sig);
 }
 
 /* ── Gallery Page ───────────────────────────────────────────── */
