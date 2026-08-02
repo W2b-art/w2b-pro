@@ -160,6 +160,30 @@ const GALLERY_DATA = {
           fr: "Mannequin accroupie en bottes et collants sombres devant un mur de graffitis, éditorial mode urbain de nuit, Medellín",
           es: "Modelo agachada con botas y medias oscuras contra un muro de grafitis, editorial de moda urbana nocturna, Medellín"
         }
+      },
+      {
+        file: "urban-night-editorial-tattooed-model-hand-to-face-graffiti-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Urban night-flash fashion editorial of a heavily tattooed model in a pink camisole with a hand raised to her face against a graffiti wall, Medellín",
+          fr: "Éditorial mode au flash nocturne d'une mannequin très tatouée en caraco rose, une main levée vers le visage devant un mur de graffitis, Medellín",
+          es: "Editorial de moda con flash nocturno de una modelo muy tatuada con camisola rosa y una mano en el rostro contra un muro de grafitis, Medellín"
+        }
+      },
+      {
+        file: "urban-night-editorial-tattooed-model-finger-to-lips-graffiti-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Urban night-flash fashion editorial of a tattooed model with a finger to her lips and a direct gaze against a graffiti wall, Medellín",
+          fr: "Éditorial mode au flash nocturne d'une mannequin tatouée, un doigt sur les lèvres et le regard direct devant un mur de graffitis, Medellín",
+          es: "Editorial de moda con flash nocturno de una modelo tatuada con un dedo en los labios y mirada directa contra un muro de grafitis, Medellín"
+        }
+      },
+      {
+        file: "urban-night-editorial-tattooed-model-red-light-graffiti-medellin-fashion-w2b.jpg",
+        alt: {
+          en: "Urban night-flash fashion editorial of a tattooed model in warm red light against a graffiti wall, Medellín",
+          fr: "Éditorial mode au flash nocturne d'une mannequin tatouée sous une lumière rouge chaude devant un mur de graffitis, Medellín",
+          es: "Editorial de moda con flash nocturno de una modelo tatuada bajo cálida luz roja contra un muro de grafitis, Medellín"
+        }
       }
     ]
   },
@@ -288,9 +312,9 @@ const GALLERY_DATA = {
       es: "Eventos & Reportaje"
     },
     description: {
-      en: "Concert reportage, festivals, cultural events and literary readings — from the Feniks Festival and Medellín rooftop gatherings to bookshop spectacles.",
-      fr: "Reportage concert, festivals, événements culturels et lectures littéraires — du Feniks Festival et des rooftops de Medellín aux spectacles en librairie.",
-      es: "Reportaje de conciertos, festivales, eventos culturales y lecturas literarias — desde el Feniks Festival y encuentros en azoteas de Medellín hasta espectáculos en librerías."
+      en: "Concert reportage, festivals, cultural events and literary readings, from a Deglorian live band show and the Feniks Festival to Medellín rooftop gatherings and bookshop spectacles.",
+      fr: "Reportage concert, festivals, événements culturels et lectures littéraires, d'un concert live du groupe Deglorian et du Feniks Festival aux rooftops de Medellín et spectacles en librairie.",
+      es: "Reportaje de conciertos, festivales, eventos culturales y lecturas literarias, desde un concierto en directo de la banda Deglorian y el Feniks Festival hasta encuentros en azoteas de Medellín y espectáculos en librerías."
     },
     images: [
       {
@@ -572,6 +596,110 @@ const GALLERY_DATA = {
           fr: "Une femme assise et souriante dans la chaude lumière dorée, reportage de l'événement Blackout, Medellín",
           es: "Una mujer sentada y sonriendo bajo la cálida luz dorada, reportaje del evento Blackout, Medellín"
         }
+      },
+      {
+        file: "deglorian-live-band-full-stage-concert-medellin-w2b.jpg",
+        alt: {
+          en: "The full Deglorian band performing together on a small stage under warm light, live concert reportage photography, Medellín",
+          fr: "Le groupe Deglorian au complet jouant ensemble sur une petite scène sous une lumière chaude, photographie de reportage de concert live, Medellín",
+          es: "La banda Deglorian completa tocando junta en un escenario pequeño bajo luz cálida, fotografía de reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-drummer-sticks-raised-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Deglorian drummer holding his sticks raised behind the kit in low stage light, live concert reportage photography, Medellín",
+          fr: "Le batteur de Deglorian tenant ses baguettes levées derrière sa batterie dans une lumière de scène tamisée, photographie de reportage de concert live, Medellín",
+          es: "El baterista de Deglorian con las baquetas en alto detrás de la batería bajo luz de escenario tenue, fotografía de reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-guitarist-singer-stage-light-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Guitarist of Deglorian playing a white electric guitar in focused concentration under stage light, live concert reportage, Medellín",
+          fr: "La guitariste de Deglorian jouant une guitare électrique blanche, concentrée, sous la lumière de scène, reportage de concert live, Medellín",
+          es: "La guitarrista de Deglorian tocando una guitarra eléctrica blanca con concentración bajo la luz del escenario, reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-bassist-teal-bass-striped-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Deglorian bassist in a striped shirt playing a teal bass guitar under red stage light, live concert reportage photography, Medellín",
+          fr: "Le bassiste de Deglorian en chemise rayée jouant une basse turquoise sous une lumière de scène rouge, photographie de reportage de concert live, Medellín",
+          es: "El bajista de Deglorian con camisa de rayas tocando un bajo turquesa bajo luz roja de escenario, fotografía de reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-keytar-player-white-shirt-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Member of Deglorian in a white shirt playing a keytar on stage, live concert reportage photography, Medellín",
+          fr: "Un membre de Deglorian en chemise blanche jouant un keytar sur scène, photographie de reportage de concert live, Medellín",
+          es: "Un integrante de Deglorian con camisa blanca tocando un keytar en el escenario, fotografía de reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-guitarist-red-light-profile-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Profile of a curly-haired Deglorian guitarist singing into the microphone bathed in red light, live concert reportage, Medellín",
+          fr: "Profil d'un guitariste de Deglorian aux cheveux bouclés chantant au micro baigné de lumière rouge, reportage de concert live, Medellín",
+          es: "Perfil de un guitarrista de Deglorian de cabello rizado cantando al micrófono bañado en luz roja, reportaje de concierto en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-vocalist-hair-motion-orange-light-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Deglorian singer swinging her hair in warm orange light, motion-filled live concert reportage photography, Medellín",
+          fr: "La chanteuse de Deglorian faisant tournoyer ses cheveux dans une lumière orange chaude, photographie de reportage de concert live pleine de mouvement, Medellín",
+          es: "La cantante de Deglorian moviendo su cabello bajo cálida luz naranja, fotografía de reportaje de concierto en directo llena de movimiento, Medellín"
+        }
+      },
+      {
+        file: "deglorian-keyboard-hands-detail-warm-light-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Close detail of a musician's hand on the keys of a synthesizer in warm light during a Deglorian concert, live music reportage, Medellín",
+          fr: "Détail rapproché de la main d'un musicien sur les touches d'un synthétiseur en lumière chaude pendant un concert de Deglorian, reportage de musique live, Medellín",
+          es: "Detalle cercano de la mano de un músico sobre las teclas de un sintetizador bajo luz cálida durante un concierto de Deglorian, reportaje de música en directo, Medellín"
+        }
+      },
+      {
+        file: "deglorian-vocalist-projector-light-purple-live-concert-medellin-w2b.jpg",
+        alt: {
+          en: "Deglorian singer lit by projected light lines against a deep purple stage, atmospheric live concert reportage photography, Medellín",
+          fr: "La chanteuse de Deglorian éclairée par des lignes de lumière projetées devant une scène violet profond, photographie de reportage de concert live atmosphérique, Medellín",
+          es: "La cantante de Deglorian iluminada por líneas de luz proyectadas frente a un escenario violeta profundo, fotografía de reportaje de concierto en directo atmosférica, Medellín"
+        }
+      },
+      {
+        file: "deglorian-band-portrait-rooftop-sky-medellin-w2b.jpg",
+        alt: {
+          en: "Group portrait of the Deglorian band seated together on a rooftop against a bright blue sky, one member raising an arm, band photography, Medellín",
+          fr: "Portrait de groupe du groupe Deglorian assis ensemble sur un toit devant un ciel bleu vif, un membre levant le bras, photographie de groupe, Medellín",
+          es: "Retrato de grupo de la banda Deglorian sentados juntos en una azotea contra un cielo azul brillante, un integrante levantando el brazo, fotografía de banda, Medellín"
+        }
+      },
+      {
+        file: "deglorian-band-portrait-city-skyline-golden-hour-medellin-w2b.jpg",
+        alt: {
+          en: "The Deglorian band posing together with the Medellín city skyline and buildings behind them at golden hour, band portrait photography",
+          fr: "Le groupe Deglorian posant ensemble avec les toits et immeubles de Medellín en arrière-plan à l'heure dorée, photographie de portrait de groupe",
+          es: "La banda Deglorian posando junta con el horizonte y los edificios de Medellín detrás al atardecer dorado, fotografía de retrato de banda"
+        }
+      },
+      {
+        file: "deglorian-band-portrait-architectural-editorial-medellin-w2b.jpg",
+        alt: {
+          en: "Editorial group portrait of the Deglorian band clustered closely together in warm architectural light, band photography, Medellín",
+          fr: "Portrait de groupe éditorial du groupe Deglorian serrés les uns contre les autres dans une lumière architecturale chaude, photographie de groupe, Medellín",
+          es: "Retrato de grupo editorial de la banda Deglorian agrupados juntos bajo cálida luz arquitectónica, fotografía de banda, Medellín"
+        }
+      },
+      {
+        file: "deglorian-band-portrait-rooftop-playful-medellin-w2b.jpg",
+        alt: {
+          en: "Playful group portrait of the Deglorian band on a rooftop, members joking and throwing peace signs, band photography, Medellín",
+          fr: "Portrait de groupe enjoué du groupe Deglorian sur un toit, les membres plaisantant et faisant des signes de paix, photographie de groupe, Medellín",
+          es: "Retrato de grupo divertido de la banda Deglorian en una azotea, los integrantes bromeando y haciendo el signo de la paz, fotografía de banda, Medellín"
+        }
       }
     ]
   },
@@ -579,48 +707,120 @@ const GALLERY_DATA = {
   "portraits": {
     id: "portraits",
     folder: "images/portraits/",
-    coverIndex: 4, // medellin-rooftop-portrait-woman-amber-sunglasses (colour hero)
+    coverIndex: 0, // cypher-collective-crew-group (studio collective hero, source-labelled cover)
     title: {
       en: "Portraits",
       fr: "Portraits",
       es: "Retratos"
     },
     description: {
-      en: "Portraiture across two registers — black and white film family sessions and colour environmental portraits shot on Medellín rooftops.",
-      fr: "Le portrait sous deux registres — séances de famille argentiques en noir et blanc et portraits environnementaux en couleur réalisés sur les rooftops de Medellín.",
-      es: "Retrato en dos registros — sesiones de familia analógicas en blanco y negro y retratos ambientales en color realizados en azoteas de Medellín."
+      en: "Portraiture across several registers, a studio series with a Medellín streetwear collective, colour environmental portraits on Medellín rooftops, and coastal film sessions.",
+      fr: "Le portrait sous plusieurs registres, une série studio avec un collectif streetwear de Medellín, des portraits environnementaux couleur sur les rooftops de Medellín, et des séances argentiques en bord de mer.",
+      es: "Retrato en varios registros, una serie de estudio con un colectivo de streetwear de Medellín, retratos ambientales a color en azoteas de Medellín, y sesiones analógicas en la costa."
     },
     images: [
       {
-        file: "multigenerational-family-hug-grandmother-grandson-black-white-portrait-w2b.jpg",
+        file: "cypher-collective-crew-group-studio-portrait-medellin-w2b.jpg",
         alt: {
-          en: "Multigenerational family embrace — grandmother held by son and grandson, joyful black and white portrait photography",
-          fr: "Étreinte familiale multigénérationnelle — grand-mère enlacée par son fils et son petit-fils, portrait noir et blanc joyeux",
-          es: "Abrazo familiar multigeneracional — abuela abrazada por su hijo y nieto, retrato alegre en blanco y negro"
+          en: "Studio group portrait of a Medellín streetwear and hip-hop collective posing together against a painterly backdrop, cypher series",
+          fr: "Portrait de groupe en studio d'un collectif streetwear et hip-hop de Medellín posant ensemble devant une toile de fond picturale, série cypher",
+          es: "Retrato de grupo en estudio de un colectivo de streetwear y hip-hop de Medellín posando juntos ante un fondo pictórico, serie cypher"
         }
       },
       {
-        file: "intimate-family-trio-grandmother-father-grandson-black-white-portrait-w2b.jpg",
+        file: "cypher-studio-portrait-man-red-chain-black-tee-medellin-w2b.jpg",
         alt: {
-          en: "Tight black and white portrait of three family members — bearded father, grandmother and laughing grandson in a garden",
-          fr: "Portrait noir et blanc serré de trois membres d'une famille — père barbu, grand-mère et petit-fils riant dans un jardin",
-          es: "Retrato cerrado en blanco y negro de tres miembros de una familia — padre con barba, abuela y nieto riendo en un jardín"
+          en: "Studio portrait of a young man in a black tee and red chain making a peace sign near his eye, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune homme en t-shirt noir et chaîne rouge faisant un signe de paix près de l'œil, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con camiseta negra y cadena roja haciendo el signo de la paz junto al ojo, serie cypher de streetwear de Medellín"
         }
       },
       {
-        file: "four-generation-family-group-garden-black-white-portrait-w2b.jpg",
+        file: "cypher-studio-portrait-duo-red-beanie-medellin-w2b.jpg",
         alt: {
-          en: "Black and white group portrait of four family members posing closely together in a garden, film portraiture",
-          fr: "Portrait de groupe noir et blanc de quatre membres d'une famille posant serrés ensemble dans un jardin, portrait argentique",
-          es: "Retrato de grupo en blanco y negro de cuatro miembros de una familia posando juntos en un jardín, retrato analógico"
+          en: "Studio portrait of two friends from the collective, one in a red beanie, against a painterly backdrop, Medellín streetwear cypher series",
+          fr: "Portrait studio de deux amis du collectif, l'un en bonnet rouge, devant une toile de fond picturale, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de dos amigos del colectivo, uno con gorro rojo, ante un fondo pictórico, serie cypher de streetwear de Medellín"
         }
       },
       {
-        file: "three-men-garden-chairs-summer-portrait-black-white-w2b.jpg",
+        file: "cypher-studio-portrait-woman-close-up-curly-hair-medellin-w2b.jpg",
         alt: {
-          en: "Black and white summer portrait of three men of different ages seated in white garden chairs against a hedge, film photography",
-          fr: "Portrait estival noir et blanc de trois hommes d'âges différents assis sur des chaises de jardin blanches devant une haie, photographie argentique",
-          es: "Retrato veraniego en blanco y negro de tres hombres de distintas edades sentados en sillas de jardín blancas frente a un seto, fotografía analógica"
+          en: "Striking studio close-up of a young woman with curly hair resting her head, direct intense gaze, Medellín streetwear cypher series",
+          fr: "Gros plan studio saisissant d'une jeune femme aux cheveux bouclés, tête posée, regard intense et direct, série cypher streetwear de Medellín",
+          es: "Primer plano de estudio impactante de una joven de cabello rizado con la cabeza apoyada, mirada intensa y directa, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-man-la-cap-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young man in a black LA cap and dark sweater with a calm direct gaze, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune homme en casquette LA noire et pull sombre au regard calme et direct, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con gorra LA negra y suéter oscuro con mirada tranquila y directa, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-woman-visor-hands-face-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young woman in a visor framing her face with both hands, Medellín streetwear cypher series",
+          fr: "Portrait studio d'une jeune femme en visière encadrant son visage des deux mains, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de una joven con visera enmarcando su rostro con ambas manos, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-person-cap-pointing-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young person in a baseball cap pointing toward the camera, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune en casquette pointant vers l'objectif, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con gorra apuntando hacia la cámara, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-man-bucket-hat-camo-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young man in a black bucket hat and camo jacket, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune homme en bob noir et veste camouflage, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con sombrero de pescador negro y chaqueta de camuflaje, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-man-leather-jacket-seated-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young man in a leather jacket seated against a painterly backdrop with a film-strip border, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune homme en veste de cuir assis devant une toile de fond picturale avec une bordure pellicule, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con chaqueta de cuero sentado ante un fondo pictórico con borde de película, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-two-friends-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of two members of the collective posing together against a painterly backdrop, Medellín streetwear cypher series",
+          fr: "Portrait studio de deux membres du collectif posant ensemble devant une toile de fond picturale, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de dos integrantes del colectivo posando juntos ante un fondo pictórico, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-two-women-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of two young women side by side against a painterly backdrop, Medellín streetwear cypher series",
+          fr: "Portrait studio de deux jeunes femmes côte à côte devant une toile de fond picturale, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de dos jóvenes lado a lado ante un fondo pictórico, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-man-backwards-cap-burgundy-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of a young man in a backwards cap and burgundy jacket with a hand to his chest, Medellín streetwear cypher series",
+          fr: "Portrait studio d'un jeune homme en casquette à l'envers et veste bordeaux, main sur la poitrine, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de un joven con gorra al revés y chaqueta bordó, mano en el pecho, serie cypher de streetwear de Medellín"
+        }
+      },
+      {
+        file: "cypher-studio-portrait-duo-red-top-medellin-w2b.jpg",
+        alt: {
+          en: "Studio portrait of two members of the collective, a woman in a red top with a friend, Medellín streetwear cypher series",
+          fr: "Portrait studio de deux membres du collectif, une femme en haut rouge avec un ami, série cypher streetwear de Medellín",
+          es: "Retrato de estudio de dos integrantes del colectivo, una mujer con top rojo y un amigo, serie cypher de streetwear de Medellín"
         }
       },
       {
