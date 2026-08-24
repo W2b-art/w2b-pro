@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reservar — Guillaume Delye</title>
+<meta name="description" content="Reserva tu sesión de fotografía con Guillaume Delye, paso a paso. Empresa o particular, propuesta clara y entrega lista para publicar.">
+<link rel="canonical" href="https://w2bphotography.com/w2b-pro/booking.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.b-lede{max-width:52ch;color:var(--bone-dim);margin-top:1.1rem}
+.gate-q{margin:clamp(2rem,5vw,3rem) 0 1rem}
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.7rem,2vw,1.1rem)}
+@media(max-width:600px){.aud{grid-template-columns:1fr}}
+.aud-card{position:relative;overflow:hidden;border-radius:.9rem;border:1px solid var(--line);min-height:clamp(8rem,18vw,10rem);cursor:pointer;background:var(--ground-2);color:var(--bone);text-align:left;isolation:isolate;transition:transform .18s}
+.aud-card:active{transform:scale(.985)}
+.aud-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;opacity:.55;transition:opacity .4s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.aud-card:hover .bg{opacity:.7;transform:scale(1.05)}
+.aud-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,13,10,.25),rgba(16,13,10,.8))}
+.aud-card .lab{position:absolute;left:1.1rem;bottom:1rem;right:1.1rem}
+.aud-card .lab b{font-family:"Fraunces",serif;font-weight:400;font-size:1.5rem;display:block}
+.aud-card .lab span{color:var(--bone-dim);font-size:.92rem}
+.aud-card[aria-pressed="true"]{box-shadow:0 0 0 2px var(--amber)}
+.aud-card[aria-pressed="true"] .bg{opacity:.75}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.2rem}
+.chip{font-family:"Instrument Sans",sans-serif;font-weight:500;font-size:.95rem;padding:.5rem 1.05rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--bone);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip[aria-pressed="true"]{background:var(--amber);color:#140f08;border-color:var(--amber)}
+.chip .soon{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-left:.4rem}
+.steps{margin-top:clamp(2.5rem,6vw,4rem);display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.2rem,4vw,3rem);padding:clamp(1.6rem,4vw,2.6rem) 0;border-top:1px solid var(--line);align-items:start}
+.step .sn{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(2.4rem,1.6rem+3vw,4.2rem);line-height:.9;color:var(--amber);font-variant-numeric:tabular-nums}
+.step h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.4rem,1.1rem+1.4vw,2rem);letter-spacing:-.01em}
+.step p{margin-top:.7rem;color:var(--bone-dim);max-width:52ch}
+.step .det{margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.sc-note{margin-top:1.2rem;font-style:italic;font-family:"Fraunces",serif;color:var(--bone-dim)}
+</style>
+</head><body class="page" data-page="booking">
+<header class="rail" id="rail">
+  <a class="wm fr" href="index.html">Guillaume<br>Delye<span class="dot"></span></a>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <nav>
+    <a href="work.html" data-i18n="nav_work">Trabajo</a>
+    <a href="studio.html" data-i18n="nav_studio">Estudio</a>
+    <a href="services.html" data-i18n="nav_services">Servicios</a>
+    <a href="booking.html" data-i18n="nav_book" aria-current="page">Reservar</a>
+    <a href="contact.html" data-i18n="nav_contact">Contacto</a>
+  </nav>
+  <div class="bottom"><div class="switch" role="group" aria-label="Language">
+    <button data-lang="es">ES</button><span class="sep">·</span><button data-lang="en">EN</button><span class="sep">·</span><button data-lang="fr">FR</button>
+  </div></div>
+</header>
+
+<main class="wrap">
+  <div class="phead">
+    <span class="k meta" data-i18n="b_k" style="color:var(--amber)">Reservar</span>
+    <h1 data-i18n="b_h">Reservar tu sesión, paso a paso.</h1>
+    <p class="b-lede" data-i18n="b_lede">No necesitas experiencia. Elige tu tipo de sesión y te muestro cómo trabajamos juntos, de principio a fin.</p>
+  </div>
+
+  <div class="gate-q meta" data-i18n="gate_q">¿Para quién es la sesión?</div>
+  <div class="aud" id="aud"></div>
+  <div class="chips" id="chips"></div>
+
+  <div class="steps" id="steps"></div>
+
+  <section style="padding:clamp(2.5rem,6vw,4.5rem) 0 1rem">
+    <div class="series-head"><span class="n meta">—</span><h2 data-i18n="sc_h">Un vistazo a este trabajo</h2><span class="ln"></span></div>
+    <div class="masonry m3" id="sc"></div>
+    <p class="sc-note" id="sc-note" hidden></p>
+  </section>
+
+  <footer><div class="foot">
+    <p class="copy">© 2026 Guillaume Delye · W2b</p>
+    <div style="display:flex;gap:1.4rem"><a href="contact.html" data-i18n="nav_contact">Contacto</a><a href="work.html" data-i18n="nav_work">Trabajo</a></div>
+  </div></footer>
+</main>
+
+<div class="lb" id="lb"></div>
+
+<script src="js/booking-data.js"></script>
+<script>
+const AUD={entreprise:{es:["Empresa","Restaurantes, marcas, eventos"],en:["Business","Restaurants, brands, events"],fr:["Entreprise","Restaurants, marques, événements"]},
+  particular:{es:["Particular","Retratos, parejas"],en:["Personal","Portraits, couples"],fr:["Particulier","Portraits, couples"]}};
+const CATS={entreprise:[["gastronomia",{es:"Gastronomía",en:"Food & drink",fr:"Gastronomie"}],["eventos",{es:"Eventos",en:"Events",fr:"Événements"}],["moda",{es:"Moda",en:"Fashion",fr:"Mode"}]],
+  particular:[["retrato",{es:"Retrato",en:"Portrait",fr:"Portrait"}],["boda",{es:"Boda",en:"Wedding",fr:"Mariage",soon:true}]]};
+const SOON={es:"El portafolio de bodas está en preparación. Escríbeme y hablamos de tu día.",en:"The wedding portfolio is in the works — write to me and let's talk about your day.",fr:"Le portfolio mariage est en préparation — écris-moi et parlons de ton jour."};
+const AUDCOVER={entreprise:'gastronomia',particular:'retrato'};
+const T={
+ es:{nav_work:"Trabajo",nav_studio:"Estudio",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",
+  b_k:"Reservar",b_h:"Reservar tu sesión, paso a paso.",b_lede:"No necesitas experiencia. Elige tu tipo de sesión y te muestro cómo trabajamos juntos, de principio a fin.",
+  gate_q:"¿Para quién es la sesión?",sc_h:"Un vistazo a este trabajo",draft:"Maqueta",
+  steps:[["Me escribes","Me cuentas tu idea en un mensaje corto: qué quieres fotografiar y para qué. Sin compromiso, respondo rápido.","Respuesta en menos de 24 h"],
+   ["Hablamos 20 minutos","Una llamada corta para entender tu proyecto y a quién quieres llegar. Aquí resolvemos todas tus dudas.","Por WhatsApp o videollamada"],
+   ["Recibes una propuesta clara","Te envío un presupuesto sencillo y un moodboard con la dirección visual. Sabes exactamente qué vas a recibir.","Precio cerrado, sin sorpresas"],
+   ["Preparamos la sesión","Fijamos la fecha y afinamos los detalles: la lista de tomas, los tiempos, el estilo. Llegas tranquilo.","Un plan claro antes del día"],
+   ["El día de la sesión","Llego con mi equipo y te guío en todo momento. Es relajado y natural, no tienes que posar como un profesional.","Yo te dirijo, tú te relajas"],
+   ["Recibes tus fotos","Te entrego una galería editada y lista para usar. Fotos que hacen que tu proyecto se vea como merece.","Galería lista en 7 días"]]},
+ en:{nav_work:"Work",nav_studio:"Studio",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",
+  b_k:"Book",b_h:"Booking your session, step by step.",b_lede:"You do not need any experience. Pick your type of session and I show you how we work together, start to finish.",
+  gate_q:"Who is the session for?",sc_h:"A look at this work",draft:"Mockup",
+  steps:[["You reach out","Tell me your idea in a short message: what you want to photograph and what for. No commitment, I reply fast.","Reply within 24 h"],
+   ["We talk for 20 minutes","A short call to understand your project and who you want to reach. This is where we clear up every doubt.","On WhatsApp or video call"],
+   ["You get a clear proposal","I send you a simple quote and a moodboard with the visual direction. You know exactly what you will get.","Fixed price, no surprises"],
+   ["We prepare the session","We lock the date and fine-tune the details: shot list, timing, styling. You arrive relaxed.","A clear plan before the day"],
+   ["Shoot day","I arrive with my gear and guide you the whole way. It is relaxed and natural, you do not have to pose like a pro.","I direct, you relax"],
+   ["You receive your photos","I deliver an edited gallery, ready to use. Photos that make your project look the way it deserves.","Gallery ready in 7 days"]]},
+ fr:{nav_work:"Travail",nav_studio:"Studio",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",
+  b_k:"Réserver",b_h:"Réserver ta séance, étape par étape.",b_lede:"Pas besoin d'expérience. Choisis ton type de séance et je te montre comment on travaille ensemble, du début à la fin.",
+  gate_q:"Pour qui est la séance ?",sc_h:"Un aperçu de ce travail",draft:"Maquette",
+  steps:[["Tu m'écris","Tu me racontes ton idée en un court message : ce que tu veux photographier et pourquoi. Sans engagement, je réponds vite.","Réponse en moins de 24 h"],
+   ["On se parle 20 minutes","Un court appel pour comprendre ton projet et qui tu veux toucher. C'est ici qu'on lève tous les doutes.","Sur WhatsApp ou en visio"],
+   ["Tu reçois une proposition claire","Je t'envoie un devis simple et un moodboard avec la direction visuelle. Tu sais exactement ce que tu vas recevoir.","Prix ferme, sans surprise"],
+   ["On prépare la séance","On fixe la date et on affine les détails : prises, timing, style. Tu arrives tranquille.","Un plan clair avant le jour J"],
+   ["Le jour de la séance","J'arrive avec mon matériel et je te guide à chaque instant. C'est détendu et naturel, tu n'as pas à poser comme un pro.","Je dirige, tu te détends"],
+   ["Tu reçois tes photos","Je te livre une galerie retouchée, prête à l'emploi. Des photos qui font que ton projet se voie comme il le mérite.","Galerie prête sous 7 jours"]]}
+};
+let lang=localStorage.getItem('w2b_lang')||'es'; if(!T[lang])lang='es';
+let audience='entreprise',cat='gastronomia';
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const REDUCE=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const savedTheme=localStorage.getItem('w2b_theme');if(savedTheme)document.documentElement.setAttribute('data-theme',savedTheme);
+
+function firstPhoto(c){const a=window.BOOKING[c];return a&&a.length?a[0].s:''}
+function renderAud(){
+  $('#aud').innerHTML=Object.entries(AUD).map(([k,v])=>`<button class="aud-card" data-aud="${k}" aria-pressed="${k===audience}">
+    <span class="bg" style="background-image:url('${firstPhoto(AUDCOVER[k])}')"></span>
+    <span class="lab"><b>${v[lang][0]}</b><span>${v[lang][1]}</span></span></button>`).join('');
+  $$('#aud .aud-card').forEach(b=>b.addEventListener('click',()=>{audience=b.dataset.aud;cat=CATS[audience][0][0];renderAll()}));
+}
+function renderChips(){
+  $('#chips').innerHTML=CATS[audience].map(([id,l])=>`<button class="chip" data-cat="${id}" aria-pressed="${id===cat}">${l[lang]}${l.soon?`<span class="soon">${{es:'pronto',en:'soon',fr:'bientôt'}[lang]}</span>`:''}</button>`).join('');
+  $$('#chips .chip').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;renderAll()}));
+}
+function renderSteps(){
+  $('#steps').innerHTML=T[lang].steps.map((s,i)=>`<div class="step"><div class="sn">${String(i+1).padStart(2,'0')}</div>
+    <div><h3>${s[0]}</h3><p>${s[1]}</p><div class="det">✓ ${s[2]}</div></div></div>`).join('');
+}
+let FLAT=[];
+function renderShowcase(){
+  const items=window.BOOKING[cat]||[];FLAT=items;
+  $('#sc').innerHTML=items.map((it,i)=>`<button class="mitem" data-i="${i}" aria-label="${it.a}"><img src="${it.s}" alt="${it.a}" loading="lazy"></button>`).join('');
+  $$('#sc .mitem').forEach(b=>b.addEventListener('click',()=>openLB(+b.dataset.i)));
+  const soon=(CATS[audience].find(c=>c[0]===cat)||[])[1];
+  const sn=$('#sc-note');if(soon&&soon.soon){sn.hidden=false;sn.textContent=SOON[lang];}else sn.hidden=true;
+}
+let lbi=0;
+function openLB(i){const lb=$('#lb');lbi=i;
+  lb.innerHTML=`<button class="x">✕ Esc</button><button class="nav prev">‹</button><img src="${FLAT[i].s}" alt="${FLAT[i].a}"><button class="nav next">›</button><div class="cap">${FLAT[i].a}</div>`;
+  lb.classList.add('open');document.body.style.overflow='hidden';
+  lb.querySelector('.x').onclick=closeLB;lb.onclick=e=>{if(e.target===lb)closeLB()};
+  lb.querySelector('.prev').onclick=()=>show(lbi-1);lb.querySelector('.next').onclick=()=>show(lbi+1);
+}
+function show(i){lbi=(i+FLAT.length)%FLAT.length;const lb=$('#lb');lb.querySelector('img').src=FLAT[lbi].s;lb.querySelector('.cap').textContent=FLAT[lbi].a;}
+function closeLB(){$('#lb').classList.remove('open');document.body.style.overflow=''}
+addEventListener('keydown',e=>{if(!$('#lb').classList.contains('open'))return;if(e.key==='Escape')closeLB();else if(e.key==='ArrowRight')show(lbi+1);else if(e.key==='ArrowLeft')show(lbi-1)});
+
+function applyI18n(){document.documentElement.lang=lang;const d=T[lang];$$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!=null)el.textContent=d[k];});$$('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));}
+function renderAll(){applyI18n();renderAud();renderChips();renderSteps();renderShowcase();}
+$$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('w2b_lang',lang);renderAll()}));
+$('.menu-btn').addEventListener('click',e=>{const o=$('#rail').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)});
+addEventListener('scroll',()=>$('#rail').classList.toggle('solid',scrollY>60),{passive:true});
+renderAll();
+</script>
+</body></html>

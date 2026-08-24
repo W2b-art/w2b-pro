@@ -1,268 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="/w2b-pro/favicon.svg">
-  <link rel="alternate icon" href="/w2b-pro/favicon-32.png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/w2b-pro/apple-touch-icon.png">
-  <title>Guillaume Delye — Editorial &amp; commercial photographer · Medellín</title>
-  <meta name="description" content="French editorial and commercial photographer based in Medellín. Fashion covers, hospitality campaigns, festival reportage. Brief → shoot → deliver in 10–14 days. Replies within 48h.">
-  <meta name="keywords" content="Guillaume Delye, editorial photographer Medellín, fashion photographer, hospitality photography, restaurant photographer Corsica, festival reportage">
-  <meta property="og:title"       content="Guillaume Delye — Editorial &amp; Commercial Photographer">
-  <meta property="og:description" content="Editorial covers, hospitality and reportage. Based in Medellín, working internationally.">
-  <meta property="og:type"        content="website">
-  <meta property="og:image"       content="images/fashion/model-red-bikini-stone-wall-sea-portrait-saint-florent-corsica-fashion-w2b.jpg">
-  <link rel="alternate" hreflang="en" href="index.html">
-  <link rel="alternate" hreflang="fr" href="index.html">
-  <link rel="alternate" hreflang="es" href="index.html">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="canonical" href="https://w2bphotography.com/w2b-pro/">
-</head>
-<body class="home">
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guillaume Delye — Fotógrafo editorial y comercial · Medellín</title>
+<meta name="description" content="Fotógrafo editorial y comercial en Medellín. Moda, gastronomía, eventos y retrato. Del brief a la entrega en 10 a 14 días.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head><body class="page" data-page="home">
 
-  <!-- ═══════════════════════════════════════════════════════
-       NAVIGATION
-  ════════════════════════════════════════════════════════ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+<header class="hero">
+  <div class="slides" id="slides"></div>
+  <div class="hero-foot"><div class="wrap">
+    <div class="hero-lead"><p class="tag fr"><span data-i18n="hero_t1">Imágenes que</span> <em data-i18n="hero_t2">se ganan la portada.</em></p></div>
+    <div class="hero-sb"><span class="meta hero-cap" id="hcap"></span><div class="dots" id="dots"></div></div>
+  </div></div>
+  <span class="scrollcue" data-i18n="scroll">Baja</span>
+</header>
 
-    <!-- GD wordmark -->
-    <a class="nav-logo" href="index.html" aria-label="Guillaume Delye · Home">
-      <svg viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- GD monogram, refined high-contrast serif -->
-        <text x="150" y="108" text-anchor="middle" font-family="'Playfair Display', Georgia, serif"
-              font-size="118" font-weight="600" fill="#1C1917" letter-spacing="0">GD</text>
-        <!-- Champagne dot at upper-right of the D -->
-        <circle cx="240" cy="22" r="8" fill="#C9A84C"/>
-        <!-- Gold baseline rule -->
-        <line x1="44" y1="126" x2="256" y2="126" stroke="#C9A84C" stroke-width="1.4" opacity="0.9"/>
-        <!-- Full name -->
-        <text x="150" y="146" text-anchor="middle" font-family="'Lato', sans-serif" font-size="16"
-              font-weight="300" fill="#8A8278" letter-spacing="7">GUILLAUME DELYE</text>
-      </svg>
-    </a>
+<section class="clients"><div class="wrap">
+  <span class="cl-label meta" data-i18n="clients_label">Confían en mí</span>
+  <ul class="cl-list">
+    <li>N.Y. Excelsior</li><li>A Stretta</li><li>La Gaffe</li><li>Feniks Festival</li><li>Blackout Colombia</li><li>Deglorian</li>
+  </ul>
+</div></section>
 
-    <!-- Links -->
-    <ul class="nav-links" role="list">
-      <li><a href="index.html"         data-i18n="nav_home">Home</a></li>
-      <li><a href="#work"              data-i18n="nav_galleries">Work</a></li>
-      <li><a href="about.html"         data-i18n="nav_about">About</a></li>
-      <li><a href="contact.html"       data-i18n="nav_contact">Contact</a></li>
-    </ul>
-    <span class="nav-status" data-i18n="nav_status">Booking 2026 · Replies ≤ 48h</span>
+<main>
+  <section id="work"><div class="wrap">
+    <div class="sec-lab"><span class="n meta">01</span><h2 data-i18n="sec_work">Trabajo seleccionado</h2><span class="ln"></span></div>
+    <div class="plates" id="plates"></div>
+  </div></section>
 
-    <!-- Language + mobile toggle -->
-    <div style="display:flex;align-items:center;gap:1.5rem;">
-      <div class="lang-switcher" role="group" aria-label="Language">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="fr">FR</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="es">ES</button>
-      </div>
-      <div class="cur-switcher" role="group" aria-label="Currency">
-        <button class="cur-btn" data-cur="EUR">€&nbsp;EUR</button>
-        <span class="lang-sep">|</span>
-        <button class="cur-btn" data-cur="COP">$&nbsp;COP</button>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <section class="statement reveal"><div class="wrap">
+    <div class="rule"></div>
+    <p><span data-i18n="stmt1">No hago fotos bonitas.</span> <em data-i18n="stmt2">Hago imágenes que venden, que se publican y que se recuerdan.</em></p>
+    <p class="meta by" data-i18n="stmt_by">Guillaume Delye · Fotógrafo · Medellín</p>
+  </div></section>
 
-  </nav>
-
-  <!-- ═══════════════════════════════════════════════════════
-       HERO
-  ════════════════════════════════════════════════════════ -->
-  <section class="hero" aria-label="Hero">
-
-    <img class="hero-bg" src="images/ui/hero.jpg" alt="Guillaume Delye — La Gaffe marina terrace, Corsica">
-
-    <div class="hero-content">
-      <div class="hero-rule" aria-hidden="true">
-        <span class="hero-rule-line"></span>
-        <span class="hero-rule-label">MEDELLÍN · CORSE · LATAM</span>
-      </div>
-      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Editorial &amp; commercial photographer</p>
-      <h1 class="hero-title">
-        <span data-i18n="hero_title_1">A visual representation</span><br>
-        <em data-i18n="hero_title_2">of your values and project.</em>
-      </h1>
-      <p class="hero-tagline" data-i18n="hero_tagline">
-        Fashion covers, hospitality campaigns, festival reportage. Based in Medellín, working France, the Mediterranean, and Latin America.
-      </p>
-      <div class="hero-cta-row">
-        <a class="hero-cta hero-cta-primary" href="contact.html">
-          <span data-i18n="hero_cta2">Send a brief →</span>
-        </a>
-        <a class="hero-cta hero-cta-ghost" href="#work">
-          <span data-i18n="hero_cta">See selected work</span>
-          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-          </svg>
-        </a>
+  <section id="studio"><div class="wrap">
+    <div class="sec-lab"><span class="n meta">02</span><h2 data-i18n="sec_studio">Estudio</h2><span class="ln"></span></div>
+    <div class="studio">
+      <div class="studio-img reveal"><img id="portrait" alt="Guillaume Delye, fotógrafo en Medellín"></div>
+      <div class="reveal">
+        <h3 data-i18n="studio_h">Fotógrafo francés, con base en Medellín.</h3>
+        <p data-i18n="studio_p1">Trabajo entre Colombia, Francia y el Mediterráneo. Editorial, gastronomía, eventos y retrato. Cada sesión llega lista para publicar: con color, retoque y una dirección clara.</p>
+        <p data-i18n="studio_p2">Del brief a la entrega en 10 a 14 días. Respondo en menos de 48 horas.</p>
+        <div class="facts"><span data-i18n="fact1">Editorial</span><span data-i18n="fact2">Gastronomía</span><span data-i18n="fact3">Eventos</span><span data-i18n="fact4">Retrato</span></div>
       </div>
     </div>
+  </div></section>
 
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       CLIENTS & SELECTED WORK — two families
-  ════════════════════════════════════════════════════════ -->
-  <div class="featured-strip" aria-label="Clients and selected work">
-    <div class="featured-inner">
-      <div class="featured-group">
-        <span class="featured-label" data-i18n="sec_clients_commissioned">Commissioned</span>
-        <ul class="featured-list" role="list">
-          <li class="featured-item">A&nbsp;Stretta</li>
-          <li class="featured-item">Feniks Festival</li>
-          <li class="featured-item">Blackout Colombia</li>
-        </ul>
+  <section class="services" id="services"><div class="wrap">
+    <div class="svc-top">
+      <div class="sec-lab" style="padding:0"><span class="n meta">03</span><h2 data-i18n="sec_services">Servicios</h2></div>
+      <div class="svc-steps"><b data-i18n="st1">Brief</b><span>·</span><b data-i18n="st2">Sesión</b><span>·</span><b data-i18n="st3">Edición</b><span>·</span><b data-i18n="st4">Entrega</b></div>
+    </div>
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="rl"><span class="meta" data-i18n="rates_label">Tarifa día desde</span>
+          <span class="switch" role="group" aria-label="Currency" style="margin-left:auto"><button data-cur="EUR">€</button><span class="sep">·</span><button data-cur="COP">$</button></span></div>
+        <div id="rates"></div>
+        <p class="svc-note" data-i18n="rates_note">Tarifas indicativas, excluyen viajes, licencias y postproducción. Presupuesto detallado en 48 h.</p>
       </div>
-      <div class="featured-group">
-        <span class="featured-label" data-i18n="sec_clients_personal">Personal &amp; concept work</span>
-        <ul class="featured-list" role="list">
-          <li class="featured-item" data-i18n="clients_lagaffe">La Gaffe hospitality series</li>
-          <li class="featured-item" data-i18n="clients_concepts">Editorial concepts</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════
-       WORK — selected categories
-  ════════════════════════════════════════════════════════ -->
-  <section class="section" id="work" aria-label="Selected work">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <h2 class="section-title" data-i18n="sec_work">Selected Work</h2>
-      <div class="section-line" aria-hidden="true"></div>
-    </div>
-
-    <div class="gallery-grid" id="homepage-gallery-grid" role="list">
-      <!-- Populated by main.js — 4 categories -->
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       PROCESS — how a commission runs
-  ════════════════════════════════════════════════════════ -->
-  <section class="section" id="process" aria-label="Process">
-    <div class="section-header">
-      <span class="section-number">02</span>
-      <h2 class="section-title" data-i18n="sec_process">How it works</h2>
-      <div class="section-line" aria-hidden="true"></div>
-    </div>
-
-    <ol class="process-grid" role="list">
-      <li class="process-step reveal">
-        <span class="process-num">01</span>
-        <h3 data-i18n="proc_1_title">Brief</h3>
-        <p data-i18n="proc_1_text">We agree on the look, scope, dates, and deliverables. Quote within 48h.</p>
-      </li>
-      <li class="process-step reveal">
-        <span class="process-num">02</span>
-        <h3 data-i18n="proc_2_title">Shoot</h3>
-        <p data-i18n="proc_2_text">On location with light, art direction, and a working selection on set.</p>
-      </li>
-      <li class="process-step reveal">
-        <span class="process-num">03</span>
-        <h3 data-i18n="proc_3_title">Edit</h3>
-        <p data-i18n="proc_3_text">Hand-graded selects, full retouching, file delivery in your specs.</p>
-      </li>
-      <li class="process-step reveal">
-        <span class="process-num">04</span>
-        <h3 data-i18n="proc_4_title">Deliver</h3>
-        <p data-i18n="proc_4_text">Final files in 10–14 days. Rush turnarounds available.</p>
-      </li>
-    </ol>
-
-    <aside class="rates-card reveal" aria-label="Indicative rates">
-      <span class="rates-label" data-i18n="rates_label">Day rate from</span>
-      <ul class="rates-list" role="list">
-        <li data-price="rates_editorial">Editorial · from €1,200 / day</li>
-        <li data-price="rates_hospo">Hospitality · package from €2,400</li>
-        <li data-price="rates_event">Event &amp; reportage · from €300</li>
-        <li data-price="rates_portrait">Portraits · from €350</li>
-      </ul>
-      <a href="documents/services.html" class="btn rates-cta" data-i18n="rates_services_link">Full rates &amp; services →</a>
-      <p class="rates-note" data-i18n="rates_note">All rates exclude travel, licensing, and post. Detailed quote within 48h of brief.</p>
-    </aside>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       STUDIO — about snippet
-  ════════════════════════════════════════════════════════ -->
-  <section class="section" id="about-snippet" aria-label="About">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <h2 class="section-title" data-i18n="sec_about">About</h2>
-      <div class="section-line" aria-hidden="true"></div>
-    </div>
-
-    <div class="about-strip">
-      <div class="about-img-wrap reveal">
-        <img src="images/ui/portrait.jpg"
-             alt="Guillaume Delye — photographer, Medellín"
-             style="width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--bg-2);">
-      </div>
-
-      <div class="about-text reveal">
-        <h2>
-          <span data-i18n="about_h2_1">Editorial-grade images,</span><br>
-          <em data-i18n="about_h2_2">delivered on brief.</em>
-        </h2>
-        <p data-i18n="about_p1">
-          I'm Guillaume Delye, a French photographer based in Medellín. I make pictures that earn their place on a cover, a menu, or a press release. Every shoot ships ready-to-publish: colour-graded, retouched, and captioned.
-        </p>
-        <p data-i18n="about_p2">
-          Recent work: commissioned shoots for A Stretta and the Feniks Festival, and event reportage for Blackout Colombia, alongside self-directed projects like the La Gaffe hospitality series in Corsica and spec editorial concepts. Brief → shoot → edit → deliver, typically inside 10–14 days.
-        </p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
-          <a class="btn btn-gold" href="contact.html" data-i18n="hero_cta2">Send a brief →</a>
-          <a class="btn" href="about.html" data-i18n="about_read">Read more</a>
+      <div class="book reveal">
+        <h3><span data-i18n="book1">¿Tienes un proyecto?</span> <em data-i18n="book2">Cuéntamelo.</em></h3>
+        <div class="btnrow">
+          <a class="btn btn-amber" href="contact.html"><span data-i18n="book_cta">Enviar un brief</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="services.html" data-i18n="book_book">Reservar sesión</a>
         </div>
       </div>
     </div>
-  </section>
+  </div></section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       BRIDGE TO ART SITE — quiet, single line
-  ════════════════════════════════════════════════════════ -->
-  <div class="art-bridge reveal" aria-label="Art portfolio">
-    <p class="art-bridge-text" data-i18n="bridge_text">A separate practice in fine art photography.</p>
-    <a class="art-bridge-link" href="https://w2bphotography.com/">
-      <span data-i18n="bridge_link">Visit the art portfolio ↗</span>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-      </svg>
-    </a>
-  </div>
+  <footer class="wrap"><div class="foot">
+    <p class="copy">© 2026 Guillaume Delye · W2b</p>
+    <div style="display:flex;gap:1.4rem"><a href="https://www.instagram.com/guillaumedelye" target="_blank" rel="noopener">Instagram ↗</a><a href="https://w2bphotography.com/" data-i18n="foot_art">Portafolio de autor ↗</a></div>
+  </div></footer>
+</main>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <nav class="footer-social" aria-label="Social media">
-      <a href="https://www.instagram.com/guillaumedelye" target="_blank" rel="noopener">Instagram</a>
-      <a href="mailto:w2bphoto+pro@gmail.com">Email</a>
-      <a href="documents/index.html" data-i18n="footer_docs">Services &amp; terms</a>
-    </nav>
-    <p class="footer-copy" data-i18n="footer_copy">© Guillaume Delye. All rights reserved</p>
-  </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <button id="lightbox-close" class="lightbox-close">✕ Close</button>
-    <button id="lightbox-prev"  class="lightbox-nav lightbox-prev">‹</button>
-    <img    id="lightbox-img"   class="lightbox-img" src="" alt="">
-    <button id="lightbox-next"  class="lightbox-nav lightbox-next">›</button>
-    <div    id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-
-  <script src="js/gallery-data.js"></script>
-  <script src="js/lang.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+<script src="js/gallery-data.js"></script><script src="js/site.js"></script>
+</body></html>
