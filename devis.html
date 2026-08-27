@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pré-presupuesto — Guillaume Delye</title>
+<meta name="description" content="Estima el presupuesto de tu sesión de fotografía en 2 minutos y recibe un rango orientativo. Empresa o particular.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://w2bphotography.com/w2b-pro/devis.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.d-lede{max-width:54ch;color:var(--bone-dim);margin-top:1.1rem}
+.d-step{margin:clamp(1.8rem,4vw,2.6rem) 0 0}
+.d-lab{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.d-lab .sn{color:var(--bone-faint)}
+.opts{display:flex;flex-wrap:wrap;gap:.55rem}
+.opt{font-family:"Instrument Sans",sans-serif;font-weight:500;font-size:.98rem;padding:.62rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--bone);cursor:pointer;transition:background .2s,color .2s,border-color .2s;text-align:left}
+.opt:hover{border-color:var(--bone-dim)}
+.opt[aria-pressed="true"]{background:var(--amber);color:#140f08;border-color:var(--amber)}
+.d-hint{color:var(--bone-faint);font-size:.85rem;margin-top:.6rem}
+#qwrap .d-lab{margin-top:1.7rem}
+#qwrap .opts+.d-lab{margin-top:1.7rem}
+.est{margin-top:clamp(2.2rem,5vw,3.2rem);border:1px solid var(--line);border-radius:1rem;background:var(--ground-2);padding:clamp(1.3rem,3.5vw,2rem)}
+.est-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.est-k{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
+.est-val{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.9rem,1.3rem+2.4vw,2.8rem);color:var(--bone);font-variant-numeric:tabular-nums;line-height:1}
+.est-val em{font-style:normal;color:var(--amber-bright)}
+.est-note{color:var(--bone-faint);font-size:.82rem;margin-top:.9rem;line-height:1.5;max-width:60ch}
+.est-cta{margin-top:1.3rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.est .cur{margin-left:auto}
+.btn.btn-wa{background:#25623f;border-color:#25623f;color:#eafff2}
+.btn.btn-wa:hover{background:#2c7a4d;border-color:#2c7a4d}
+.d-sum{margin-top:1rem;font-size:.9rem;color:var(--bone-dim);line-height:1.6;white-space:pre-line;border-top:1px solid var(--line-soft);padding-top:1rem}
+</style>
+</head><body class="page" data-page="devis">
+<main class="wrap">
+  <div class="phead">
+    <span class="k meta" id="d_k" style="color:var(--amber)">Pré-presupuesto</span>
+    <h1 id="d_h">Una idea de tu presupuesto, en 2 minutos.</h1>
+    <p class="d-lede" id="d_lede"></p>
+  </div>
+
+  <div class="d-step"><div class="d-lab"><span class="sn">01</span><span id="l_aud"></span></div>
+    <div class="opts" id="aud"></div></div>
+  <div class="d-step"><div class="d-lab"><span class="sn">02</span><span id="l_svc"></span></div>
+    <div class="opts" id="svc"></div></div>
+  <div class="d-step" id="qwrap"></div>
+
+  <div class="est">
+    <div class="est-row">
+      <span class="est-k" id="est_k"></span>
+      <span class="switch cur" role="group" aria-label="Currency"><button data-cur="EUR">€</button><span class="sep">·</span><button data-cur="COP">$</button></span>
+    </div>
+    <div class="est-val" id="est_val"></div>
+    <p class="est-note" id="est_note"></p>
+    <div class="est-cta">
+      <a class="btn btn-wa" id="cta_wa" target="_blank" rel="noopener"><span id="cta_wa_t"></span></a>
+      <a class="btn btn-line" id="cta_mail"><span id="cta_mail_t"></span></a>
+    </div>
+    <div class="d-sum" id="d_sum"></div>
+  </div>
+
+  <footer style="margin-top:2.4rem"><div class="foot">
+    <p class="copy">© 2026 Guillaume Delye · W2b</p>
+    <div style="display:flex;gap:1.2rem 1.4rem;flex-wrap:wrap"><a href="services.html" data-i18n="nav_services">Servicios</a><a href="booking.html" data-i18n="nav_book">Reservar</a><a href="contact.html" data-i18n="nav_contact">Contacto</a></div>
+  </div></footer>
+</main>
+
+<script src="js/site.js"></script>
+<script>
+(function(){
+  const WA="33652986427", MAIL="w2bphoto+pro@gmail.com";
+  const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+  let lang=localStorage.getItem('w2b_lang')||'es'; if(!['es','en','fr'].includes(lang))lang='es';
+  let cur=localStorage.getItem('w2b_currency')||(lang==='es'?'COP':'EUR'); if(cur!=='EUR'&&cur!=='COP')cur='COP';
+
+  const UI={
+   es:{d_k:"Pré-presupuesto",d_h:"Una idea de tu presupuesto, en 2 minutos.",
+    d_lede:"Elige el tipo de proyecto y algunas opciones. Verás un rango orientativo y podrás enviarme tu solicitud ya detallada. El precio final se cierra en un devis a 48 h.",
+    l_aud:"¿Para quién es?",l_svc:"¿Qué tipo de proyecto?",est_k:"Rango orientativo",
+    est_note:"Rango orientativo, IVA aparte. No incluye desplazamientos fuera del área metropolitana, licencias de publicidad pagada ni sublicencias. Recibirás un presupuesto cerrado en menos de 48 h.",
+    cta_wa:"Enviar por WhatsApp",cta_mail:"Enviar por correo",
+    sum_intro:"Hola Guillaume, aquí está mi pré-presupuesto:",sum_type:"Tipo",sum_svc:"Proyecto",sum_est:"Estimación orientativa",sum_more:"Mi proyecto (a completar): ",
+    from:"desde",aud:{entreprise:"Empresa",particular:"Particular"}},
+   en:{d_k:"Pre-quote",d_h:"A sense of your budget, in 2 minutes.",
+    d_lede:"Pick the type of project and a few options. You will see an indicative range and can send me a request that is already detailed. The final price is set in a quote within 48h.",
+    l_aud:"Who is it for?",l_svc:"What kind of project?",est_k:"Indicative range",
+    est_note:"Indicative range, tax not included. Excludes travel outside the metropolitan area, paid-advertising licences and sublicensing. You will receive a fixed quote within 48h.",
+    cta_wa:"Send on WhatsApp",cta_mail:"Send by email",
+    sum_intro:"Hi Guillaume, here is my pre-quote:",sum_type:"Type",sum_svc:"Project",sum_est:"Indicative estimate",sum_more:"My project (to complete): ",
+    from:"from",aud:{entreprise:"Business",particular:"Personal"}},
+   fr:{d_k:"Pré-devis",d_h:"Une idée de ton budget, en 2 minutes.",
+    d_lede:"Choisis le type de projet et quelques options. Tu verras une fourchette indicative et tu pourras m'envoyer une demande déjà détaillée. Le prix final est arrêté dans un devis sous 48 h.",
+    l_aud:"Pour qui ?",l_svc:"Quel type de projet ?",est_k:"Fourchette indicative",
+    est_note:"Fourchette indicative, taxes en sus. Hors déplacements hors aire métropolitaine, licences de publicité payante et sous-licences. Tu recevras un devis ferme sous 48 h.",
+    cta_wa:"Envoyer sur WhatsApp",cta_mail:"Envoyer par email",
+    sum_intro:"Bonjour Guillaume, voici mon pré-devis :",sum_type:"Type",sum_svc:"Projet",sum_est:"Estimation indicative",sum_more:"Mon projet (à compléter) : ",
+    from:"dès",aud:{entreprise:"Entreprise",particular:"Particulier"}}
+  };
+
+  // t(label) helper for trilingual {es,en,fr} objects
+  const t=o=>o[lang]||o.es;
+
+  // service catalog per audience. each service: name{}, base[min,max] EUR, q:[questions]
+  // question: {id, label{}, multi?:true, opts:[{l{}, d:[min,max]}]}
+  const SVC={
+   entreprise:[
+    {id:'gastronomia',name:{es:"Gastronomía",en:"Food & hospitality",fr:"Gastronomie"},base:[700,1200],q:[
+      {id:'scope',label:{es:"Alcance",en:"Scope",fr:"Ampleur"},opts:[
+        {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[0,0]},
+        {l:{es:"Jornada completa",en:"Full day",fr:"Journée complète"},d:[500,900]}]},
+      {id:'vol',label:{es:"Platos y bebidas",en:"Dishes & drinks",fr:"Plats & boissons"},opts:[
+        {l:{es:"Hasta 10",en:"Up to 10",fr:"Jusqu'à 10"},d:[0,0]},
+        {l:{es:"10 a 25",en:"10 to 25",fr:"10 à 25"},d:[150,300]},
+        {l:{es:"25 o más",en:"25+",fr:"25 et +"},d:[350,600]}]},
+      {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
+        {l:{es:"Retratos del equipo",en:"Team portraits",fr:"Portraits de l'équipe"},d:[150,300]},
+        {l:{es:"Reel corto para redes",en:"Short social reel",fr:"Reel court réseaux"},d:[200,400]}]}]},
+    {id:'eventos',name:{es:"Eventos",en:"Events",fr:"Événements"},base:[300,300],q:[
+      {id:'dur',label:{es:"Duración",en:"Duration",fr:"Durée"},opts:[
+        {l:{es:"2 horas",en:"2 hours",fr:"2 heures"},d:[0,0]},
+        {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[300,500]},
+        {l:{es:"Jornada completa",en:"Full day",fr:"Journée complète"},d:[700,1100]}]},
+      {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
+        {l:{es:"Segundo fotógrafo",en:"Second shooter",fr:"Second photographe"},d:[250,450]},
+        {l:{es:"Teaser el mismo día",en:"Same-day teaser",fr:"Teaser le jour même"},d:[150,300]}]}]},
+    {id:'moda',name:{es:"Moda y editorial",en:"Fashion & editorial",fr:"Mode & éditorial"},base:[700,1000],q:[
+      {id:'days',label:{es:"Duración",en:"Duration",fr:"Durée"},opts:[
+        {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[0,0]},
+        {l:{es:"Jornada completa",en:"Full day",fr:"Journée complète"},d:[500,800]},
+        {l:{es:"Dos días",en:"Two days",fr:"Deux jours"},d:[1400,2000]}]},
+      {id:'looks',label:{es:"Looks",en:"Looks",fr:"Looks"},opts:[
+        {l:{es:"1 a 2",en:"1 to 2",fr:"1 à 2"},d:[0,0]},
+        {l:{es:"3 a 4",en:"3 to 4",fr:"3 à 4"},d:[200,400]},
+        {l:{es:"5 o más",en:"5+",fr:"5 et +"},d:[450,800]}]},
+      {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
+        {l:{es:"Licencia comercial amplia",en:"Broad commercial licence",fr:"Licence commerciale large"},d:[300,700]},
+        {l:{es:"Casting de modelos",en:"Model casting",fr:"Casting modèles"},d:[200,500]}]}]},
+    {id:'retrato-corp',name:{es:"Retrato corporativo",en:"Business portrait",fr:"Portrait corporate"},base:[350,500],q:[
+      {id:'people',label:{es:"Personas",en:"People",fr:"Personnes"},opts:[
+        {l:{es:"1",en:"1",fr:"1"},d:[0,0]},
+        {l:{es:"2 a 5",en:"2 to 5",fr:"2 à 5"},d:[150,350]},
+        {l:{es:"Equipo 6+",en:"Team 6+",fr:"Équipe 6+"},d:[400,900]}]},
+      {id:'place',label:{es:"Lugar",en:"Location",fr:"Lieu"},opts:[
+        {l:{es:"En sus oficinas",en:"On location",fr:"Sur site"},d:[0,0]},
+        {l:{es:"Set de estudio",en:"Studio setup",fr:"Set studio"},d:[150,300]}]}]}
+   ],
+   particular:[
+    {id:'retrato',name:{es:"Retrato",en:"Portrait",fr:"Portrait"},base:[350,450],q:[
+      {id:'looks',label:{es:"Cambios de look",en:"Looks",fr:"Tenues"},opts:[
+        {l:{es:"1",en:"1",fr:"1"},d:[0,0]},
+        {l:{es:"2",en:"2",fr:"2"},d:[80,150]},
+        {l:{es:"3 o más",en:"3+",fr:"3 et +"},d:[180,320]}]},
+      {id:'place',label:{es:"Lugar",en:"Location",fr:"Lieu"},opts:[
+        {l:{es:"Exterior",en:"Outdoors",fr:"Extérieur"},d:[0,0]},
+        {l:{es:"Estudio",en:"Studio",fr:"Studio"},d:[120,250]}]},
+      {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
+        {l:{es:"Entrega exprés 72 h",en:"Express 72h delivery",fr:"Livraison express 72 h"},d:[60,120]},
+        {l:{es:"Persona adicional",en:"Extra person",fr:"Personne en plus"},d:[80,150]}]}]},
+    {id:'pareja',name:{es:"Pareja",en:"Couple",fr:"Couple"},base:[400,550],q:[
+      {id:'looks',label:{es:"Cambios de look",en:"Looks",fr:"Tenues"},opts:[
+        {l:{es:"1",en:"1",fr:"1"},d:[0,0]},
+        {l:{es:"2",en:"2",fr:"2"},d:[100,180]}]},
+      {id:'place',label:{es:"Lugar",en:"Location",fr:"Lieu"},opts:[
+        {l:{es:"Un lugar",en:"One location",fr:"Un lieu"},d:[0,0]},
+        {l:{es:"Dos lugares",en:"Two locations",fr:"Deux lieux"},d:[150,300]}]},
+      {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
+        {l:{es:"Álbum o copias",en:"Album or prints",fr:"Album ou tirages"},d:[120,250]}]}]}
+   ]
+  };
+
+  let aud='entreprise', svcId=null, sel={};
+
+  function fmt(n){
+    if(cur==='COP'){const v=Math.round(n*4000/50000)*50000;return '$'+v.toLocaleString('es-CO');}
+    const v=Math.round(n/10)*10;
+    if(lang==='en')return '€'+v.toLocaleString('en-US');
+    if(lang==='fr')return v.toLocaleString('fr-FR')+' €';
+    return v.toLocaleString('es-ES')+' €';
+  }
+  function svcList(){return SVC[aud];}
+  function curSvc(){return svcList().find(s=>s.id===svcId)||svcList()[0];}
+
+  function calc(){
+    const s=curSvc();let mn=s.base[0],mx=s.base[1];
+    s.q.forEach(q=>{const v=sel[q.id];
+      if(q.multi){(v||[]).forEach(i=>{mn+=q.opts[i].d[0];mx+=q.opts[i].d[1];});}
+      else if(v!=null){mn+=q.opts[v].d[0];mx+=q.opts[v].d[1];}
+    });
+    return [mn,mx];
+  }
+
+  function renderAud(){
+    $('#aud').innerHTML=['entreprise','particular'].map(a=>
+      `<button class="opt" data-a="${a}" aria-pressed="${a===aud}">${UI[lang].aud[a]}</button>`).join('');
+    $$('#aud .opt').forEach(b=>b.onclick=()=>{aud=b.dataset.a;svcId=svcList()[0].id;sel={};renderAll();});
+  }
+  function renderSvc(){
+    $('#svc').innerHTML=svcList().map(s=>
+      `<button class="opt" data-s="${s.id}" aria-pressed="${s.id===svcId}">${t(s.name)}</button>`).join('');
+    $$('#svc .opt').forEach(b=>b.onclick=()=>{svcId=b.dataset.s;sel={};renderAll();});
+  }
+  function renderQ(){
+    const s=curSvc();
+    $('#qwrap').innerHTML=s.q.map((q,qi)=>
+      `<div class="d-lab"><span class="sn">${String(qi+3).padStart(2,'0')}</span><span>${t(q.label)}${q.multi?' <em style="color:var(--bone-faint);text-transform:none;letter-spacing:0;font-style:normal">('+({es:'opcional',en:'optional',fr:'optionnel'}[lang])+')</em>':''}</span></div>
+       <div class="opts" data-q="${q.id}" data-multi="${!!q.multi}">${q.opts.map((o,oi)=>{
+         const on=q.multi?((sel[q.id]||[]).includes(oi)):(sel[q.id]===oi);
+         return `<button class="opt" data-oi="${oi}" aria-pressed="${on}">${t(o.l)}</button>`;}).join('')}</div>`
+    ).join('');
+    $$('#qwrap .opts').forEach(grp=>{
+      const qid=grp.dataset.q, multi=grp.dataset.multi==='true';
+      grp.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+        const oi=+b.dataset.oi;
+        if(multi){const arr=sel[qid]||[];const k=arr.indexOf(oi);if(k>=0)arr.splice(k,1);else arr.push(oi);sel[qid]=arr;}
+        else sel[qid]=oi;
+        renderQ();renderEst();
+      });
+    });
+  }
+  function summary(){
+    const s=curSvc(),[mn,mx]=calc(),U=UI[lang];
+    const lines=[];
+    lines.push(`- ${U.sum_type}: ${U.aud[aud]}`);
+    lines.push(`- ${U.sum_svc}: ${t(s.name)}`);
+    s.q.forEach(q=>{const v=sel[q.id];
+      if(q.multi){if((v||[]).length)lines.push(`- ${t(q.label)}: ${v.map(i=>t(q.opts[i].l)).join(', ')}`);}
+      else if(v!=null&&v!==0)lines.push(`- ${t(q.label)}: ${t(q.opts[v].l)}`);
+      else if(v!=null)lines.push(`- ${t(q.label)}: ${t(q.opts[v].l)}`);
+    });
+    const est=(mn===mx)?fmt(mn):`${fmt(mn)} – ${fmt(mx)}`;
+    lines.push(`- ${U.sum_est}: ${est}`);
+    return `${U.sum_intro}\n${lines.join('\n')}\n\n${U.sum_more}`;
+  }
+  function renderEst(){
+    const [mn,mx]=calc(),U=UI[lang];
+    $('#est_k').textContent=U.est_k;
+    $('#est_val').innerHTML=(mn===mx)?`<em>${fmt(mn)}</em>`:`<em>${fmt(mn)}</em> – <em>${fmt(mx)}</em>`;
+    const msg=summary();
+    $('#d_sum').textContent=msg;
+    $('#cta_wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+    const subj=(lang==='fr'?'Pré-devis':lang==='en'?'Pre-quote':'Pré-presupuesto')+' — '+t(curSvc().name);
+    $('#cta_mail').href=`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
+  }
+  function applyStatic(){
+    const U=UI[lang];
+    $('#d_k').textContent=U.d_k;$('#d_h').textContent=U.d_h;$('#d_lede').textContent=U.d_lede;
+    $('#l_aud').textContent=U.l_aud;$('#l_svc').textContent=U.l_svc;
+    $('#est_note').textContent=U.est_note;
+    $('#cta_wa_t').textContent=U.cta_wa;$('#cta_mail_t').textContent=U.cta_mail;
+    document.documentElement.lang=lang;
+    $$('.cur [data-cur]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===cur));
+  }
+  function renderAll(){applyStatic();renderAud();renderSvc();renderQ();renderEst();}
+
+  // wire to the rail's language + currency switches (built by site.js)
+  function wire(){
+    document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{
+      lang=b.dataset.lang;if(!UI[lang])lang='es';renderAll();}));
+    document.querySelectorAll('[data-cur]').forEach(b=>b.addEventListener('click',()=>{
+      cur=b.dataset.cur;localStorage.setItem('w2b_currency',cur);renderAll();}));
+  }
+  if(!svcId)svcId=svcList()[0].id;
+  // let site.js build the rail first
+  setTimeout(function(){wire();renderAll();},0);
+})();
+</script>
+</body></html>

@@ -23,8 +23,9 @@ const T={
   studio_p1:"Trabajo entre Colombia, Francia y el Mediterráneo. Editorial, gastronomía, eventos y retrato. Cada sesión llega lista para publicar: con color, retoque y una dirección clara.",
   studio_p2:"Del brief a la entrega en 10 a 14 días. Respondo en menos de 48 horas.",
   fact1:"Editorial",fact2:"Gastronomía",fact3:"Eventos",fact4:"Retrato",
-  sec_services:"Servicios",st1:"Brief",st2:"Sesión",st3:"Edición",st4:"Entrega",rates_label:"Tarifa día desde",
-  rates_note:"Tarifas indicativas, excluyen viajes, licencias y postproducción. Presupuesto detallado en 48 h.",
+  sec_services:"Servicios",st1:"Brief",st2:"Sesión",st3:"Edición",st4:"Entrega",rates_label:"Precio a la medida de tu proyecto",
+  rates_note:"Cada proyecto es único. Haz un pre-presupuesto en 2 minutos y recibe un rango, o escríbeme para una cotización detallada en 48 h.",
+  nav_art:"Portafolio de autor",svc_estimate:"Estimar mi presupuesto",
   book1:"¿Tienes un proyecto?",book2:"Cuéntamelo.",book_cta:"Enviar un brief",book_book:"Reservar sesión",
   foot_art:"Portafolio de autor ↗",foot_terms:"Términos",foot_privacy:"Privacidad",draft:"Maqueta",
   work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Cuatro series. Moda y editorial, gastronomía, eventos y retrato. Toca una imagen para verla en grande.",
@@ -42,8 +43,9 @@ const T={
   studio_p1:"I work between Colombia, France and the Mediterranean. Editorial, hospitality, events and portrait. Every shoot ships ready to publish: colour-graded, retouched, with a clear direction.",
   studio_p2:"Brief to delivery in 10 to 14 days. I reply within 48 hours.",
   fact1:"Editorial",fact2:"Hospitality",fact3:"Events",fact4:"Portrait",
-  sec_services:"Services",st1:"Brief",st2:"Shoot",st3:"Edit",st4:"Deliver",rates_label:"Day rate from",
-  rates_note:"Indicative rates, excluding travel, licensing and post. Detailed quote within 48h.",
+  sec_services:"Services",st1:"Brief",st2:"Shoot",st3:"Edit",st4:"Deliver",rates_label:"Pricing built around your project",
+  rates_note:"Every project is different. Get a ballpark in two minutes with the pre-quote, or write to me for a detailed quote within 48h.",
+  nav_art:"Fine-art portfolio",svc_estimate:"Estimate my budget",
   book1:"Got a project?",book2:"Tell me about it.",book_cta:"Send a brief",book_book:"Book a session",
   foot_art:"Fine-art portfolio ↗",foot_terms:"Terms",foot_privacy:"Privacy",draft:"Mockup",
   work_k:"Portfolio",work_h:"Selected Work",work_p:"Four series. Fashion and editorial, hospitality, events and portrait. Tap an image to view it large.",
@@ -61,8 +63,9 @@ const T={
   studio_p1:"Je travaille entre la Colombie, la France et la Méditerranée. Éditorial, gastronomie, événements et portrait. Chaque séance est livrée prête à publier : étalonnée, retouchée, avec une direction claire.",
   studio_p2:"Du brief à la livraison en 10 à 14 jours. Je réponds sous 48 heures.",
   fact1:"Éditorial",fact2:"Gastronomie",fact3:"Événements",fact4:"Portrait",
-  sec_services:"Services",st1:"Brief",st2:"Séance",st3:"Édition",st4:"Livraison",rates_label:"Tarif jour dès",
-  rates_note:"Tarifs indicatifs, hors déplacements, licences et post-production. Devis détaillé sous 48 h.",
+  sec_services:"Services",st1:"Brief",st2:"Séance",st3:"Édition",st4:"Livraison",rates_label:"Prix sur mesure, selon vos besoins",
+  rates_note:"Chaque projet est unique. Obtenez une fourchette en deux minutes avec le pré-devis, ou écrivez-moi pour un devis détaillé sous 48 h.",
+  nav_art:"Portfolio d'auteur",svc_estimate:"Estimer mon budget",
   book1:"Un projet ?",book2:"Raconte-le-moi.",book_cta:"Envoyer un brief",book_book:"Réserver une séance",
   foot_art:"Portfolio d'auteur ↗",foot_terms:"Conditions",foot_privacy:"Confidentialité",draft:"Maquette",
   work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Quatre séries. Mode et éditorial, gastronomie, événements et portrait. Touche une image pour la voir en grand.",
@@ -86,10 +89,11 @@ const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 function buildRail(){
   const rail=document.createElement('header');rail.className='rail';rail.id='rail';
   rail.innerHTML=`
-    <a class="wm fr" href="index.html">Guillaume<br>Delye<span class="dot"></span></a>
+    <a class="wm fr" href="index.html"><img class="wm-mark" src="images/ui/gd-mark-light.svg" alt=""><span class="wm-name">Guillaume<br>Delye</span><span class="dot"></span></a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <nav>${MENU.map(([id,href,k])=>`<a href="${href}" data-i18n="${k}" ${page===id?'aria-current="page"':''}>${T[lang][k]}</a>`).join('')}</nav>
+    <nav>${MENU.map(([id,href,k])=>`<a href="${href}" data-i18n="${k}" ${page===id?'aria-current="page"':''}>${T[lang][k]}</a>`).join('')}
+      <a class="xart" href="https://w2bphotography.com/" aria-label="${T[lang].nav_art}"><img src="images/ui/w2b-logo.png" alt=""><span data-i18n="nav_art">${T[lang].nav_art}</span></a></nav>
     <div class="bottom">
       <div class="switch" role="group" aria-label="Language">
         <button data-lang="es">ES</button><span class="sep">·</span><button data-lang="en">EN</button><span class="sep">·</span><button data-lang="fr">FR</button>
@@ -181,8 +185,28 @@ function show(i){lbi=(i+FLAT.length)%FLAT.length;const it=FLAT[lbi],lb=$('#lb');
 function closeLB(){const lb=$('#lb');if(lb)lb.classList.remove('open');document.body.style.overflow=''}
 addEventListener('keydown',e=>{if(!$('#lb')||!$('#lb').classList.contains('open'))return;if(e.key==='Escape')closeLB();else if(e.key==='ArrowRight')show(lbi+1);else if(e.key==='ArrowLeft')show(lbi-1)});
 
-/* ---- rates ---- */
-window.renderRates=function(){const el=$('#rates');if(!el)return;el.innerHTML=RATES[lang][cur].map(([a,b])=>`<div class="rate-row"><span>${a}</span><b>${b}</b></div>`).join('')}
+/* ---- services: vision per domain (replaces the public price grid) ---- */
+const SVISION=[
+  {k:'editorial',label:{es:"Editorial y moda",en:"Editorial & fashion",fr:"Éditorial & mode"},
+    text:{es:"Moda y editorial pensados como un relato, no un catálogo. Una dirección clara, una estética que se sostiene y planos hechos para ganar la portada.",
+      en:"Fashion and editorial built like a story, not a catalogue. A clear direction, a look that holds together, and frames made to earn the cover.",
+      fr:"Mode et éditorial pensés comme un récit, pas un catalogue. Une direction claire, un parti pris qui tient, et des images faites pour gagner la couverture."}},
+  {k:'hospitality',label:{es:"Gastronomía y hostelería",en:"Hospitality",fr:"Gastronomie & hôtellerie"},
+    text:{es:"Restaurantes, bares y hostelería fotografiados para dar hambre. Los platos, la sala y el oficio en su luz real, listos para la carta, el kit de prensa y las redes.",
+      en:"Restaurants, bars and hospitality shot to make people hungry. The dishes, the room and the craft in their real light, ready for the menu, the press kit and the feed.",
+      fr:"Restaurants, bars et hôtellerie photographiés pour donner faim. Les plats, la salle et le geste dans leur vraie lumière, prêts pour la carte, le dossier de presse et les réseaux."}},
+  {k:'events',label:{es:"Eventos y reportaje",en:"Events & reportage",fr:"Événements & reportage"},
+    text:{es:"Eventos y reportaje cubiertos al ritmo del momento. Los instantes clave, los rostros y la atmósfera, entregados rápido y listos para publicar.",
+      en:"Events and reportage covered as they unfold. The key moments, the faces and the atmosphere, delivered fast and ready to publish.",
+      fr:"Événements et reportage couverts au fil de l'instant. Les moments clés, les visages et l'ambiance, livrés vite et prêts à publier."}},
+  {k:'portrait',label:{es:"Retrato",en:"Portrait",fr:"Portrait"},
+    text:{es:"Retratos con presencia, para una marca, un equipo o una página de prensa. Dirigidos para sentirse naturales, iluminados para mostrar a cada quien en su mejor versión.",
+      en:"Portraits with presence, for a brand, a team or a press page. Directed to feel natural, lit to show each person at their best.",
+      fr:"Des portraits qui ont de la présence, pour une marque, une équipe ou une page de presse. Dirigés pour rester naturels, éclairés pour montrer chacun sous son meilleur jour."}}
+];
+window.renderRates=function(){const el=$('#rates');if(!el)return;
+  el.innerHTML=SVISION.map(d=>`<details class="sv-item"><summary>${d.label[lang]}<span class="sv-ico" aria-hidden="true"></span></summary><p>${d.text[lang]}</p></details>`).join('');
+}
 
 /* ---- init ---- */
 buildRail();
