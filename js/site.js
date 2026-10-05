@@ -4,7 +4,8 @@ const CAT={
   fashion:{label:{es:"Moda",en:"Fashion",fr:"Mode"},place:"Medellín · Corse"},
   hospitality:{label:{es:"Gastronomía",en:"Hospitality",fr:"Gastronomie"},place:"Excelsior · A Stretta · La Gaffe"},
   events:{label:{es:"Eventos",en:"Events",fr:"Événements"},place:"Feniks · Blackout · Deglorian"},
-  portraits:{label:{es:"Retrato",en:"Portraits",fr:"Portrait"},place:"Medellín"}
+  portraits:{label:{es:"Retrato",en:"Portraits",fr:"Portrait"},place:"Medellín"},
+  products:{label:{es:"Producto",en:"Product",fr:"Produit"},place:"Marca · a medida"}
 };
 const RATES={
   es:{EUR:[["Editorial","desde €1.200/día"],["Hospitalidad","paquete desde €2.400"],["Evento y reportaje","desde €300"],["Retratos","desde €350"]],
@@ -28,7 +29,7 @@ const T={
   nav_art:"Portafolio de autor",svc_estimate:"Estimar mi presupuesto",
   book1:"¿Tienes un proyecto?",book2:"Cuéntamelo.",book_cta:"Enviar un brief",book_book:"Reservar sesión",
   foot_art:"Portafolio de autor ↗",foot_terms:"Términos",foot_privacy:"Privacidad",draft:"Maqueta",
-  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Tres series. Moda y editorial, eventos y retrato. Toca una imagen para verla en grande.",
+  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Cuatro series. Moda y editorial, eventos, retrato y producto. Toca una imagen para verla en grande.",
   studio_k:"Estudio",studio_h1:"Hago imágenes que trabajan para ti.",
   studio_lp:"Soy Guillaume Delye, fotógrafo francés con base en Medellín. Hago imágenes que se ganan su lugar en una portada, una carta o un dossier de prensa. Trabajo entre Colombia, Francia y el Mediterráneo, y cada sesión se entrega lista para publicar.",
   studio_lp2:"Del brief a la entrega, normalmente en 10 a 14 días. Editorial, gastronomía, eventos y retrato.",
@@ -48,7 +49,7 @@ const T={
   nav_art:"Fine-art portfolio",svc_estimate:"Estimate my budget",
   book1:"Got a project?",book2:"Tell me about it.",book_cta:"Send a brief",book_book:"Book a session",
   foot_art:"Fine-art portfolio ↗",foot_terms:"Terms",foot_privacy:"Privacy",draft:"Mockup",
-  work_k:"Portfolio",work_h:"Selected Work",work_p:"Three series. Fashion and editorial, events and portraits. Tap an image to view it large.",
+  work_k:"Portfolio",work_h:"Selected Work",work_p:"Four series. Fashion and editorial, events, portraits and product. Tap an image to view it large.",
   studio_k:"Studio",studio_h1:"I make images that work for you.",
   studio_lp:"I'm Guillaume Delye, a French photographer based in Medellín. I make pictures that earn their place on a cover, a menu or a press release. I work between Colombia, France and the Mediterranean, and every shoot ships ready to publish.",
   studio_lp2:"Brief to delivery, usually in 10 to 14 days. Editorial, hospitality, events and portrait.",
@@ -68,7 +69,7 @@ const T={
   nav_art:"Portfolio d'auteur",svc_estimate:"Estimer mon budget",
   book1:"Un projet ?",book2:"Raconte-le-moi.",book_cta:"Envoyer un brief",book_book:"Réserver une séance",
   foot_art:"Portfolio d'auteur ↗",foot_terms:"Conditions",foot_privacy:"Confidentialité",draft:"Maquette",
-  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Trois séries. Mode et éditorial, événements et portrait. Touche une image pour la voir en grand.",
+  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Quatre séries. Mode et éditorial, événements, portrait et produit. Touchez une image pour la voir en grand.",
   studio_k:"Studio",studio_h1:"Je fais des images qui travaillent pour toi.",
   studio_lp:"Je suis Guillaume Delye, photographe français basé à Medellín. Je fais des images qui gagnent leur place sur une couverture, une carte ou un dossier de presse. Je travaille entre la Colombie, la France et la Méditerranée, et chaque séance est livrée prête à publier.",
   studio_lp2:"Du brief à la livraison, en général sous 10 à 14 jours. Éditorial, gastronomie, événements et portrait.",
@@ -149,12 +150,12 @@ window.renderWork=function(){
 
 /* ---- galleries (work page) + lightbox ---- */
 let FLAT=[];
-const GCFG={fashion:{f:'wide',cols:3},hospitality:{f:'wide',cols:2},events:{f:'full',cols:2},portraits:{f:'wide',cols:2}};
+const GCFG={fashion:{f:'wide',cols:3},hospitality:{f:'wide',cols:2},events:{f:'full',cols:2},portraits:{f:'wide',cols:2},products:{f:'wide',cols:3}};
 window.renderGalleries=function(){
   const host=$('#series-host');if(!host||!window.GALLERY)return;
   FLAT=[];let html='';let n=0;
   const only=document.body.dataset.only,skip=document.body.dataset.skip;
-  for(const cat of ['fashion','hospitality','events','portraits']){
+  for(const cat of ['fashion','hospitality','events','portraits','products']){
     if((only&&cat!==only)||cat===skip)continue;
     const c=CAT[cat],items=window.GALLERY[cat]||[],cfg=GCFG[cat]||{f:'wide',cols:2};n++;
     if(!items.length)continue;
