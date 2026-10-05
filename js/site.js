@@ -142,7 +142,7 @@ function initHero(){
 window.renderWork=function(){
   const el=$('#plates');if(!el||!window.WORKCOV)return;
   el.innerHTML=window.WORKCOV.map((w,i)=>{const c=CAT[w.cat];
-    return `<a class="plate reveal" href="work.html#${w.cat}"><img src="${w.cover}" alt="${c.label[lang]}">
+    return `<a class="plate reveal" href="${w.cat==='hospitality'?'restaurants.html':'work.html#'+w.cat}"><img src="${w.cover}" alt="${c.label[lang]}">
       <div class="cap"><div><b>${c.label[lang]}</b><span class="sub meta">0${i+1} · ${c.place}</span></div>
       <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>`;}).join('');
 }
@@ -153,7 +153,9 @@ const GCFG={fashion:{f:'wide',cols:3},hospitality:{f:'wide',cols:2},events:{f:'f
 window.renderGalleries=function(){
   const host=$('#series-host');if(!host||!window.GALLERY)return;
   FLAT=[];let html='';let n=0;
+  const only=document.body.dataset.only,skip=document.body.dataset.skip;
   for(const cat of ['fashion','hospitality','events','portraits']){
+    if((only&&cat!==only)||cat===skip)continue;
     const c=CAT[cat],items=window.GALLERY[cat]||[],cfg=GCFG[cat]||{f:'wide',cols:2};n++;
     if(!items.length)continue;
     const featIdx=FLAT.length;FLAT.push(items[0]);
