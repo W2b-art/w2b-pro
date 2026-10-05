@@ -185,6 +185,9 @@ a{color:inherit;text-decoration:none}
 .series-head .ln{flex:1;height:1px;background:var(--line)}
 .series-head .splace{color:var(--bone-dim);white-space:nowrap}
 @media(max-width:600px){.series-head .splace{display:none}}
+.series-link{margin:0 0 clamp(1rem,3vw,2rem);font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.series-link a{color:var(--bone);border-bottom:1px solid var(--line);padding-bottom:.25rem;transition:color .2s,border-color .2s}
+.series-link a:hover{color:var(--amber);border-color:var(--amber)}
 /* feature = the strong lead image, big, WHOLE (never cropped) */
 .feature{display:block;width:100%;border:0;padding:0;background:none;cursor:pointer;text-align:center;overflow:hidden;margin-bottom:clamp(.6rem,1.6vw,1.1rem)}
 .feature img{max-width:100%;width:auto;height:auto;margin:0 auto;display:block;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
