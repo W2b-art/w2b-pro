@@ -27,6 +27,12 @@ const TRANSLATIONS = {
     view_gallery:   "View",
 
     gal_fashion_title:      "Fashion & Editorial",
+
+    restaurants_k: "Hospitality",
+
+    restaurants_h: "Restaurants & Hospitality",
+
+    restaurants_p: "Food and hospitality in Medellín and Corsica. Tap an image to view it large.",
     gal_fashion_meta:       "Editorial · Lookbooks · Covers",
     gal_restaurants_title:  "Restaurants & Hospitality",
     gal_restaurants_meta:   "Atmospheres · Plating · Editorial",
@@ -145,6 +151,12 @@ const TRANSLATIONS = {
     view_gallery:   "Voir",
 
     gal_fashion_title:      "Mode & Éditorial",
+
+    restaurants_k: "Gastronomie",
+
+    restaurants_h: "Restaurants & hospitalité",
+
+    restaurants_p: "Gastronomie et hospitalité à Medellín et en Corse. Touchez une image pour la voir en grand.",
     gal_fashion_meta:       "Éditorial · Lookbooks · Couvertures",
     gal_restaurants_title:  "Restaurants & Hôtellerie",
     gal_restaurants_meta:   "Ambiances · Dressage · Éditorial",
@@ -258,6 +270,12 @@ const TRANSLATIONS = {
     view_gallery:   "Ver",
 
     gal_fashion_title:      "Moda & Editorial",
+
+    restaurants_k: "Gastronomía",
+
+    restaurants_h: "Restaurantes y hospitalidad",
+
+    restaurants_p: "Gastronomía en Medellín y Córcega. Toca una imagen para verla en grande.",
     gal_fashion_meta:       "Editorial · Lookbooks · Portadas",
     gal_restaurants_title:  "Restaurantes & Hostelería",
     gal_restaurants_meta:   "Ambientes · Emplatado · Editorial",
