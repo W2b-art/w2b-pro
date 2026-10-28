@@ -68,7 +68,7 @@
 <script src="js/site.js"></script>
 <script>
 (function(){
-  const WA="33652986427", MAIL="w2bphoto+pro@gmail.com";
+  const WA="33652986427", MAIL="w2bphoto+pro@gmail.com", BCC="w2bphoto@gmail.com";
   const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
   let lang=localStorage.getItem('w2b_lang')||'es'; if(!['es','en','fr'].includes(lang))lang='es';
   let cur=localStorage.getItem('w2b_currency')||(lang==='es'?'COP':'EUR'); if(cur!=='EUR'&&cur!=='COP')cur='COP';
@@ -239,7 +239,7 @@
     $('#d_sum').textContent=msg;
     $('#cta_wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
     const subj=(lang==='fr'?'Pré-devis':lang==='en'?'Pre-quote':'Pré-presupuesto')+' — '+t(curSvc().name);
-    $('#cta_mail').href=`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
+    $('#cta_mail').href=`mailto:${MAIL}?bcc=${encodeURIComponent(BCC)}&subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
   }
   function applyStatic(){
     const U=UI[lang];
