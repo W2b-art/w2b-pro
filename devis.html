@@ -104,7 +104,7 @@
   // question: {id, label{}, multi?:true, opts:[{l{}, d:[min,max]}]}
   const SVC={
    entreprise:[
-    {id:'gastronomia',name:{es:"Gastronomía",en:"Food & hospitality",fr:"Gastronomie"},base:[700,1200],q:[
+    {id:'gastronomia',name:{es:"Gastronomía",en:"Food & hospitality",fr:"Gastronomie"},base:[1050,1550],copRatio:1428.57,q:[
       {id:'scope',label:{es:"Alcance",en:"Scope",fr:"Ampleur"},opts:[
         {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[0,0]},
         {l:{es:"Jornada completa",en:"Full day",fr:"Journée complète"},d:[500,900]}]},
@@ -115,7 +115,7 @@
       {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
         {l:{es:"Retratos del equipo",en:"Team portraits",fr:"Portraits de l'équipe"},d:[150,300]},
         {l:{es:"Reel corto para redes",en:"Short social reel",fr:"Reel court réseaux"},d:[200,400]}]}]},
-    {id:'eventos',name:{es:"Eventos",en:"Events",fr:"Événements"},base:[300,300],q:[
+    {id:'eventos',name:{es:"Eventos",en:"Events",fr:"Événements"},base:[450,450],copRatio:1444.44,q:[
       {id:'dur',label:{es:"Duración",en:"Duration",fr:"Durée"},opts:[
         {l:{es:"2 horas",en:"2 hours",fr:"2 heures"},d:[0,0]},
         {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[300,500]},
@@ -123,7 +123,7 @@
       {id:'extra',label:{es:"Extras",en:"Extras",fr:"Extras"},multi:true,opts:[
         {l:{es:"Segundo fotógrafo",en:"Second shooter",fr:"Second photographe"},d:[250,450]},
         {l:{es:"Teaser el mismo día",en:"Same-day teaser",fr:"Teaser le jour même"},d:[150,300]}]}]},
-    {id:'moda',name:{es:"Moda y editorial",en:"Fashion & editorial",fr:"Mode & éditorial"},base:[700,1000],q:[
+    {id:'moda',name:{es:"Moda y editorial",en:"Fashion & editorial",fr:"Mode & éditorial"},base:[980,1280],copRatio:1428.57,q:[
       {id:'days',label:{es:"Duración",en:"Duration",fr:"Durée"},opts:[
         {l:{es:"Media jornada",en:"Half day",fr:"Demi-journée"},d:[0,0]},
         {l:{es:"Jornada completa",en:"Full day",fr:"Journée complète"},d:[500,800]},
@@ -145,7 +145,7 @@
         {l:{es:"Set de estudio",en:"Studio setup",fr:"Set studio"},d:[150,300]}]}]}
    ],
    particular:[
-    {id:'retrato',name:{es:"Retrato",en:"Portrait",fr:"Portrait"},base:[350,450],q:[
+    {id:'retrato',name:{es:"Retrato",en:"Portrait",fr:"Portrait"},base:[450,550],copRatio:1444.44,q:[
       {id:'looks',label:{es:"Cambios de look",en:"Looks",fr:"Tenues"},opts:[
         {l:{es:"1",en:"1",fr:"1"},d:[0,0]},
         {l:{es:"2",en:"2",fr:"2"},d:[80,150]},
@@ -170,8 +170,8 @@
 
   let aud='entreprise', svcId=null, sel={};
 
-  function fmt(n){
-    if(cur==='COP'){const v=Math.round(n*4000/50000)*50000;return '$'+v.toLocaleString('es-CO');}
+  function fmt(n,ratio){
+    if(cur==='COP'){const v=Math.round(n*(ratio||4000)/50000)*50000;return '$'+v.toLocaleString('es-CO');}
     const v=Math.round(n/10)*10;
     if(lang==='en')return '€'+v.toLocaleString('en-US');
     if(lang==='fr')return v.toLocaleString('fr-FR')+' €';
@@ -227,14 +227,14 @@
       else if(v!=null&&v!==0)lines.push(`- ${t(q.label)}: ${t(q.opts[v].l)}`);
       else if(v!=null)lines.push(`- ${t(q.label)}: ${t(q.opts[v].l)}`);
     });
-    const est=(mn===mx)?fmt(mn):`${fmt(mn)} – ${fmt(mx)}`;
+    const est=(mn===mx)?fmt(mn,s.copRatio):`${fmt(mn,s.copRatio)} – ${fmt(mx,s.copRatio)}`;
     lines.push(`- ${U.sum_est}: ${est}`);
     return `${U.sum_intro}\n${lines.join('\n')}\n\n${U.sum_more}`;
   }
   function renderEst(){
-    const [mn,mx]=calc(),U=UI[lang];
+    const [mn,mx]=calc(),U=UI[lang],ratio=curSvc().copRatio;
     $('#est_k').textContent=U.est_k;
-    $('#est_val').innerHTML=(mn===mx)?`<em>${fmt(mn)}</em>`:`<em>${fmt(mn)}</em> – <em>${fmt(mx)}</em>`;
+    $('#est_val').innerHTML=(mn===mx)?`<em>${fmt(mn,ratio)}</em>`:`<em>${fmt(mn,ratio)}</em> – <em>${fmt(mx,ratio)}</em>`;
     const msg=summary();
     $('#d_sum').textContent=msg;
     $('#cta_wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
