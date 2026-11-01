@@ -50,9 +50,9 @@
       '.w2b-consent p{margin:0;flex:1 1 240px}'+
       '.w2b-consent .btns{display:flex;gap:8px}'+
       '.w2b-consent button{font:inherit;font-size:12px;letter-spacing:.06em;cursor:pointer;padding:8px 14px;border-radius:3px}'+
-      '.w2b-consent .ok{background:#C6924E;border:1px solid #C6924E;color:#141010}'+
+      '.w2b-consent .ok{background:#D4A044;border:1px solid #D4A044;color:#141010}'+
       '.w2b-consent .no{background:none;border:1px solid rgba(237,230,218,.28);color:#EDE6DA}'+
-      '.w2b-consent button:focus-visible{outline:2px solid #C6924E;outline-offset:2px}'+
+      '.w2b-consent button:focus-visible{outline:2px solid #D4A044;outline-offset:2px}'+
       '</style>'+
       '<div class="w2b-consent"><p>'+t.msg+'</p><div class="btns">'+
       '<button type="button" class="no">'+t.no+'</button>'+

@@ -1,12 +1,19 @@
 <!DOCTYPE html><html lang="es"><head>
+<script>(function(){try{var h=new Date().getHours();document.documentElement.setAttribute('data-theme',(h>=6&&h<18)?'light':'dark');}catch(e){}})();</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pré-presupuesto — Guillaume Delye</title>
+<title>Pre-presupuesto — Guillaume Delye</title>
 <meta name="description" content="Estima el presupuesto de tu sesión de fotografía en 2 minutos y recibe un rango orientativo. Empresa o particular.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://w2bphotography.com/w2b-pro/devis.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<meta property="og:title" content="Pre-presupuesto — Guillaume Delye">
+<meta property="og:description" content="Estima el presupuesto de tu sesión de fotografía en 2 minutos y recibe un rango orientativo. Empresa o particular.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://w2bphotography.com/w2b-pro/devis.html">
+<meta property="og:image" content="https://w2bphotography.com/w2b-pro/images/work/hospitality.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120F0D'/><circle cx='16' cy='16' r='6' fill='%23D4A044'/></svg>">
 <link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=8">
 <style>
 .d-lede{max-width:54ch;color:var(--bone-dim);margin-top:1.1rem}
 .d-step{margin:clamp(1.8rem,4vw,2.6rem) 0 0}
@@ -15,11 +22,16 @@
 .opts{display:flex;flex-wrap:wrap;gap:.55rem}
 .opt{font-family:"Instrument Sans",sans-serif;font-weight:500;font-size:.98rem;padding:.62rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--bone);cursor:pointer;transition:background .2s,color .2s,border-color .2s;text-align:left}
 .opt:hover{border-color:var(--bone-dim)}
-.opt[aria-pressed="true"]{background:var(--amber);color:#140f08;border-color:var(--amber)}
+/* outlined, not a solid warm-fill pill — pulling back from the
+   terracotta-pill-on-cream look */
+.opt[aria-pressed="true"]{background:rgba(212,160,68,.14);color:var(--bone);border-color:var(--amber)}
 .d-hint{color:var(--bone-faint);font-size:.85rem;margin-top:.6rem}
 #qwrap .d-lab{margin-top:1.7rem}
 #qwrap .opts+.d-lab{margin-top:1.7rem}
-.est{margin-top:clamp(2.2rem,5vw,3.2rem);border:1px solid var(--line);border-radius:1rem;background:var(--ground-2);padding:clamp(1.3rem,3.5vw,2rem)}
+/* kept close to the page's own ground rather than a visibly lighter
+   "raised cream card" — paired with the outlined pills above, this pulls
+   the estimator back from the warm-cream-and-terracotta look */
+.est{margin-top:clamp(2.2rem,5vw,3.2rem);border:1px solid var(--line);border-radius:1rem;background:var(--ground);padding:clamp(1.3rem,3.5vw,2rem)}
 .est-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .est-k{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
 .est-val{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.9rem,1.3rem+2.4vw,2.8rem);color:var(--bone);font-variant-numeric:tabular-nums;line-height:1}
@@ -30,11 +42,15 @@
 .btn.btn-wa{background:#25623f;border-color:#25623f;color:#eafff2}
 .btn.btn-wa:hover{background:#2c7a4d;border-color:#2c7a4d}
 .d-sum{margin-top:1rem;font-size:.9rem;color:var(--bone-dim);line-height:1.6;white-space:pre-line;border-top:1px solid var(--line-soft);padding-top:1rem}
+.field label{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:.5rem}
+.field input{width:100%;max-width:26rem;background:var(--ground);border:1px solid var(--line);border-radius:.6rem;color:var(--bone);font:inherit;font-size:.95rem;padding:.75rem .9rem}
+.field input:focus-visible{outline:1px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+#lead_sent{color:var(--amber-bright)}
 </style>
 </head><body class="page" data-page="devis">
 <main class="wrap">
   <div class="phead">
-    <span class="k meta" id="d_k" style="color:var(--amber)">Pré-presupuesto</span>
+    <span class="k meta" id="d_k" style="color:var(--amber)">Pre-presupuesto</span>
     <h1 id="d_h">Una idea de tu presupuesto, en 2 minutos.</h1>
     <p class="d-lede" id="d_lede"></p>
   </div>
@@ -52,10 +68,12 @@
     </div>
     <div class="est-val" id="est_val"></div>
     <p class="est-note" id="est_note"></p>
+    <div class="field" style="margin-top:1.4rem"><label for="lead_email" id="lead_email_l"></label><input id="lead_email" type="email" autocomplete="email"></div>
     <div class="est-cta">
       <a class="btn btn-wa" id="cta_wa" target="_blank" rel="noopener"><span id="cta_wa_t"></span></a>
       <a class="btn btn-line" id="cta_mail"><span id="cta_mail_t"></span></a>
     </div>
+    <p class="d-hint" id="lead_sent" hidden></p>
     <div class="d-sum" id="d_sum"></div>
   </div>
 
@@ -65,7 +83,7 @@
   </div></footer>
 </main>
 
-<script src="js/site.js"></script>
+<script src="js/site.js?v=2"></script>
 <script>
 (function(){
   const WA="33652986427", MAIL="w2bphoto+pro@gmail.com", BCC="w2bphoto@gmail.com";
@@ -74,25 +92,28 @@
   let cur=localStorage.getItem('w2b_currency')||(lang==='es'?'COP':'EUR'); if(cur!=='EUR'&&cur!=='COP')cur='COP';
 
   const UI={
-   es:{d_k:"Pré-presupuesto",d_h:"Una idea de tu presupuesto, en 2 minutos.",
-    d_lede:"Elige el tipo de proyecto y algunas opciones. Verás un rango orientativo y podrás enviarme tu solicitud ya detallada. El precio final se cierra en un devis a 48 h.",
+   es:{d_k:"Pre-presupuesto",d_h:"Una idea de tu presupuesto, en 2 minutos.",
+    d_lede:"Elige el tipo de proyecto y algunas opciones. Verás un rango orientativo y podrás enviarme tu solicitud ya detallada. El precio final se cierra en un presupuesto a 48 h.",
     l_aud:"¿Para quién es?",l_svc:"¿Qué tipo de proyecto?",est_k:"Rango orientativo",
-    est_note:"Rango orientativo, IVA aparte. No incluye desplazamientos fuera del área metropolitana, licencias de publicidad pagada ni sublicencias. Recibirás un presupuesto cerrado en menos de 48 h.",
+    est_note:"Rango orientativo. No incluye desplazamientos fuera del área metropolitana, licencias de publicidad pagada ni sublicencias. Recibirás un presupuesto cerrado en menos de 48 h.",
     cta_wa:"Enviar por WhatsApp",cta_mail:"Enviar por correo",
-    sum_intro:"Hola Guillaume, aquí está mi pré-presupuesto:",sum_type:"Tipo",sum_svc:"Proyecto",sum_est:"Estimación orientativa",sum_more:"Mi proyecto (a completar): ",
+    lead_email_l:"Tu email (opcional, para que te pueda contactar si no veo tu WhatsApp)",lead_sent:"Guardado. También puedes seguir por WhatsApp o correo.",
+    sum_intro:"Hola Guillaume, aquí está mi pre-presupuesto:",sum_type:"Tipo",sum_svc:"Proyecto",sum_est:"Estimación orientativa",sum_more:"Mi proyecto (a completar): ",
     from:"desde",aud:{entreprise:"Empresa",particular:"Particular"}},
    en:{d_k:"Pre-quote",d_h:"A sense of your budget, in 2 minutes.",
     d_lede:"Pick the type of project and a few options. You will see an indicative range and can send me a request that is already detailed. The final price is set in a quote within 48h.",
     l_aud:"Who is it for?",l_svc:"What kind of project?",est_k:"Indicative range",
-    est_note:"Indicative range, tax not included. Excludes travel outside the metropolitan area, paid-advertising licences and sublicensing. You will receive a fixed quote within 48h.",
+    est_note:"Indicative range. Excludes travel outside the metropolitan area, paid-advertising licences and sublicensing. You will receive a fixed quote within 48h.",
     cta_wa:"Send on WhatsApp",cta_mail:"Send by email",
+    lead_email_l:"Your email (optional, so I can reach you if I miss your WhatsApp)",lead_sent:"Saved. You can still send it on WhatsApp or email too.",
     sum_intro:"Hi Guillaume, here is my pre-quote:",sum_type:"Type",sum_svc:"Project",sum_est:"Indicative estimate",sum_more:"My project (to complete): ",
     from:"from",aud:{entreprise:"Business",particular:"Personal"}},
    fr:{d_k:"Pré-devis",d_h:"Une idée de ton budget, en 2 minutes.",
-    d_lede:"Choisis le type de projet et quelques options. Tu verras une fourchette indicative et tu pourras m'envoyer une demande déjà détaillée. Le prix final est arrêté dans un devis sous 48 h.",
+    d_lede:"Choisis le type de projet et quelques options. Tu verras une fourchette indicative et tu pourras m'envoyer une demande déjà détaillée. Le prix final est arrêté dans un devis sous 48 h.",
     l_aud:"Pour qui ?",l_svc:"Quel type de projet ?",est_k:"Fourchette indicative",
-    est_note:"Fourchette indicative, taxes en sus. Hors déplacements hors aire métropolitaine, licences de publicité payante et sous-licences. Tu recevras un devis ferme sous 48 h.",
+    est_note:"Fourchette indicative. Hors déplacements hors aire métropolitaine, licences de publicité payante et sous-licences. Tu recevras un devis ferme sous 48 h.",
     cta_wa:"Envoyer sur WhatsApp",cta_mail:"Envoyer par email",
+    lead_email_l:"Ton email (optionnel, pour te recontacter si je rate ton WhatsApp)",lead_sent:"Enregistré. Tu peux aussi envoyer par WhatsApp ou email.",
     sum_intro:"Bonjour Guillaume, voici mon pré-devis :",sum_type:"Type",sum_svc:"Projet",sum_est:"Estimation indicative",sum_more:"Mon projet (à compléter) : ",
     from:"dès",aud:{entreprise:"Entreprise",particular:"Particulier"}}
   };
@@ -238,7 +259,7 @@
     const msg=summary();
     $('#d_sum').textContent=msg;
     $('#cta_wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-    const subj=(lang==='fr'?'Pré-devis':lang==='en'?'Pre-quote':'Pré-presupuesto')+' — '+t(curSvc().name);
+    const subj=(lang==='fr'?'Pré-devis':lang==='en'?'Pre-quote':'Pre-presupuesto')+' — '+t(curSvc().name);
     $('#cta_mail').href=`mailto:${MAIL}?bcc=${encodeURIComponent(BCC)}&subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
   }
   function applyStatic(){
@@ -247,10 +268,31 @@
     $('#l_aud').textContent=U.l_aud;$('#l_svc').textContent=U.l_svc;
     $('#est_note').textContent=U.est_note;
     $('#cta_wa_t').textContent=U.cta_wa;$('#cta_mail_t').textContent=U.cta_mail;
+    $('#lead_email_l').textContent=U.lead_email_l;
     document.documentElement.lang=lang;
     $$('.cur [data-cur]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===cur));
   }
   function renderAll(){applyStatic();renderAud();renderSvc();renderQ();renderEst();}
+
+  /* ---- Formspree capture: fires alongside the WhatsApp/email handoff so
+     every pre-quote leaves a durable, searchable record, without blocking
+     either fallback channel. Reuses the same Formspree endpoint already
+     wired up on the art site (collaborate.html / shop.html). ---- */
+  const FORMSPREE="https://formspree.io/f/mjgjdvlz";
+  function sendLead(channel){
+    const fd=new FormData();
+    fd.append('_subject','Pre-presupuesto (pro) — '+t(curSvc().name));
+    fd.append('email',$('#lead_email').value||'(no email given)');
+    fd.append('channel',channel);
+    fd.append('lang',lang);fd.append('currency',cur);
+    fd.append('audience',UI[lang].aud[aud]);
+    fd.append('service',t(curSvc().name));
+    fd.append('summary',summary());
+    fetch(FORMSPREE,{method:'POST',headers:{Accept:'application/json'},body:fd}).catch(function(){/* non-blocking: WA/email fallback still works */});
+    const sent=$('#lead_sent');sent.hidden=false;sent.textContent=UI[lang].lead_sent;
+  }
+  $('#cta_wa').addEventListener('click',()=>sendLead('whatsapp'));
+  $('#cta_mail').addEventListener('click',()=>sendLead('email'));
 
   // wire to the rail's language + currency switches (built by site.js)
   function wire(){

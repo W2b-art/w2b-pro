@@ -1,24 +1,70 @@
 <!DOCTYPE html><html lang="es"><head>
+<script>(function(){try{var h=new Date().getHours();document.documentElement.setAttribute('data-theme',(h>=6&&h<18)?'light':'dark');}catch(e){}})();</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Restaurantes y hospitalidad — Guillaume Delye</title>
 <meta name="description" content="Gastronomía y hospitalidad de Guillaume Delye: restaurantes en Medellín y Córcega.">
 <link rel="canonical" href="https://w2bphotography.com/w2b-pro/restaurants.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<meta property="og:title" content="Restaurantes y hospitalidad — Guillaume Delye">
+<meta property="og:description" content="Gastronomía y hospitalidad de Guillaume Delye: restaurantes en Medellín y Córcega.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://w2bphotography.com/w2b-pro/restaurants.html">
+<meta property="og:image" content="https://w2bphotography.com/w2b-pro/images/work/hospitality.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120F0D'/><circle cx='16' cy='16' r='6' fill='%23D4A044'/></svg>">
 <link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/site.css">
-</head><body class="page" data-page="work" data-only="hospitality">
-<main class="wrap">
-  <div class="phead">
-    <span class="k meta" data-i18n="restaurants_k">Gastronomía</span>
-    <h1 data-i18n="restaurants_h">Restaurantes y hospitalidad</h1>
-    <p data-i18n="restaurants_p">Gastronomía en Medellín y Córcega. Toca una imagen para verla en grande.</p>
+<link rel="stylesheet" href="css/site.css?v=8">
+<style>
+/* case-band: a 2-up card row (distinct from eventos.html's stacked list)
+   — this is what makes this page read as its own case study instead of
+   the restaurants/eventos template repeated with a different gallery
+   pasted under it. Stays on the page's own dark register: the "daylight"
+   colour-flip version of this was dropped (it only ever covered one band,
+   not the whole page, and its stone-light tone didn't match the
+   candlelit-cellar content it was framing — an honest dark treatment
+   throughout beats a half-committed light one). */
+.case-band{border-top:1px solid var(--line);margin-top:var(--space-20)}
+.case-band .wrap{padding-top:var(--space-20);padding-bottom:var(--space-20)}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-20);max-width:40rem}
+@media(max-width:600px){.case-grid{grid-template-columns:1fr;gap:var(--space-12)}}
+.case-grid .case{border-top:1px solid var(--line-soft);padding-top:var(--space-12)}
+.case-grid .case b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:1.15rem;color:var(--bone)}
+.case-grid .case span{display:block;margin-top:.35rem;font-size:.86rem;color:var(--bone-dim)}
+</style>
+</head><body class="page" data-page="hospitality" data-only="hospitality">
+<main>
+  <div class="wrap">
+    <div class="phead">
+      <span class="k meta" id="rs_k" style="color:var(--amber)">Gastronomía</span>
+      <h1 id="rs_h">Restaurantes y hospitalidad</h1>
+      <p id="rs_p">Gastronomía en Medellín y Córcega. Toca una imagen para verla en grande.</p>
+    </div>
   </div>
-  <p class="series-link"><a href="work.html">← Trabajo seleccionado</a></p>
-  <div id="series-host"></div>
-  <footer><div class="foot">
+  <section class="case-band"><div class="wrap">
+    <div class="case-grid">
+      <div class="case"><b>A Stretta</b><span id="cs2">Bar de bodega · cocina mediterránea</span></div>
+      <div class="case"><b>La Gaffe</b><span id="cs3">Sala y carta · pescado y mar</span></div>
+    </div>
+  </div></section>
+  <div class="wrap">
+    <p class="series-link" style="margin-top:var(--space-20)"><a href="work.html">← Trabajo seleccionado</a></p>
+    <div id="series-host"></div>
+  </div>
+  <footer class="wrap"><div class="foot">
     <p class="copy">© 2026 Guillaume Delye · W2b · Medellín, Colombia</p>
     <div style="display:flex;gap:1.2rem 1.4rem;flex-wrap:wrap"><a href="mailto:w2bphoto+pro@gmail.com">w2bphoto+pro@gmail.com</a><a href="https://www.instagram.com/guillaumedelye" target="_blank" rel="noopener">Instagram ↗</a><a href="documents/terms.html" data-i18n="foot_terms">Términos</a><a href="documents/privacy.html" data-i18n="foot_privacy">Privacidad</a><a href="documents/cookies.html" data-i18n="foot_cookies">Cookies</a><a href="https://w2bphotography.com/" data-i18n="foot_art">Portafolio de autor ↗</a></div>
   </div></footer>
 </main>
-<script src="js/gallery-data.js?v=1"></script><script src="js/site.js"></script>
+<script src="js/gallery-data.js?v=3"></script><script src="js/site.js?v=2"></script>
+<script>
+(function(){
+  var RS={es:{k:"Gastronomía",h:"Restaurantes y hospitalidad",p:"Gastronomía en Medellín y Córcega. Toca una imagen para verla en grande.",cs2:"Bar de bodega · cocina mediterránea",cs3:"Sala y carta · pescado y mar"},
+    en:{k:"Hospitality",h:"Restaurants & hospitality",p:"Hospitality in Medellín and Corsica. Tap an image to view it large.",cs2:"Cellar bar · Mediterranean kitchen",cs3:"Dining room & menu · seafood"},
+    fr:{k:"Gastronomie",h:"Restaurants & hôtellerie",p:"Gastronomie à Medellín et en Corse. Touchez une image pour la voir en grand.",cs2:"Bar de cave · cuisine méditerranéenne",cs3:"Salle et carte · poissons"}};
+  function apply(){var l=localStorage.getItem('w2b_lang')||'es';if(!RS[l])l='es';var d=RS[l];
+    document.getElementById('rs_k').textContent=d.k;document.getElementById('rs_h').textContent=d.h;document.getElementById('rs_p').textContent=d.p;
+    document.getElementById('cs2').textContent=d.cs2;document.getElementById('cs3').textContent=d.cs3;}
+  apply();
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',apply)});
+})();
+</script>
 </body></html>

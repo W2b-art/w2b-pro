@@ -1,11 +1,18 @@
 <!DOCTYPE html><html lang="es"><head>
+<script>(function(){try{var h=new Date().getHours();document.documentElement.setAttribute('data-theme',(h>=6&&h<18)?'light':'dark');}catch(e){}})();</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Reservar — Guillaume Delye</title>
 <meta name="description" content="Reserva tu sesión de fotografía con Guillaume Delye, paso a paso. Empresa o particular, propuesta clara y entrega lista para publicar.">
 <link rel="canonical" href="https://w2bphotography.com/w2b-pro/booking.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23100D0A'/><circle cx='16' cy='16' r='6' fill='%23C6924E'/></svg>">
+<meta property="og:title" content="Reservar — Guillaume Delye">
+<meta property="og:description" content="Reserva tu sesión de fotografía con Guillaume Delye, paso a paso. Empresa o particular, propuesta clara y entrega lista para publicar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://w2bphotography.com/w2b-pro/booking.html">
+<meta property="og:image" content="https://w2bphotography.com/w2b-pro/images/work/hospitality.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120F0D'/><circle cx='16' cy='16' r='6' fill='%23D4A044'/></svg>">
 <link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=8">
 <style>
 .b-lede{max-width:52ch;color:var(--bone-dim);margin-top:1.1rem}
 .gate-q{margin:clamp(2rem,5vw,3rem) 0 1rem}
@@ -15,7 +22,7 @@
 .aud-card:active{transform:scale(.985)}
 .aud-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;opacity:.55;transition:opacity .4s,transform .6s cubic-bezier(.2,.7,.2,1)}
 .aud-card:hover .bg{opacity:.7;transform:scale(1.05)}
-.aud-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,13,10,.25),rgba(16,13,10,.8))}
+.aud-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,15,13,.25),rgba(18,15,13,.8))}
 .aud-card .lab{position:absolute;left:1.1rem;bottom:1rem;right:1.1rem}
 .aud-card .lab b{font-family:"Fraunces",serif;font-weight:400;font-size:1.5rem;display:block}
 .aud-card .lab span{color:var(--bone-dim);font-size:.92rem}
@@ -32,23 +39,38 @@
 .step p{margin-top:.7rem;color:var(--bone-dim);max-width:52ch}
 .step .det{margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
 .sc-note{margin-top:1.2rem;font-style:italic;font-family:"Fraunces",serif;color:var(--bone-dim)}
+.field label{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:.5rem}
+.field input{width:100%;max-width:28rem;background:var(--ground);border:1px solid var(--line);border-radius:.6rem;color:var(--bone);font:inherit;font-size:.95rem;padding:.75rem .9rem}
+.field input:focus-visible,#bf_msg:focus-visible{outline:1px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
 </style>
 </head><body class="page" data-page="booking">
 <header class="rail" id="rail">
   <a class="wm fr" href="index.html"><img class="wm-mark" src="images/ui/gd-mark-light.svg" alt=""><span class="wm-name">Guillaume<br>Delye</span><span class="dot"></span></a>
-  <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+    <span class="menu-txt">Menú</span>
+    <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="13" y2="12"/><line x1="4" y1="17" x2="17" y2="17"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="display:none"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
   <nav>
-    <a href="work.html" data-i18n="nav_work">Trabajo</a>
+    <a href="restaurants.html" data-i18n="nav_gastro">Gastronomía</a>
+    <a href="eventos.html" data-i18n="nav_eventos">Eventos</a>
+    <a href="work.html#fashion" class="sec" data-i18n="nav_moda">Moda</a>
+    <a href="work.html#portraits" class="sec" data-i18n="nav_retrato">Retrato</a>
+    <span class="rail-div" aria-hidden="true"></span>
     <a href="studio.html" data-i18n="nav_studio">Estudio</a>
     <a href="services.html" data-i18n="nav_services">Servicios</a>
     <a href="booking.html" data-i18n="nav_book" aria-current="page">Reservar</a>
     <a href="contact.html" data-i18n="nav_contact">Contacto</a>
     <a class="xart" href="https://w2bphotography.com/" aria-label="Portfolio"><img src="images/ui/w2b-logo.png" alt=""><span data-i18n="nav_art">Portafolio de autor</span></a>
+    <div class="bottom nav-switches"><div class="switch" role="group" aria-label="Language">
+      <button data-lang="es">ES</button><span class="sep">·</span><button data-lang="en">EN</button><span class="sep">·</span><button data-lang="fr">FR</button>
+    </div></div>
   </nav>
-  <div class="bottom"><div class="switch" role="group" aria-label="Language">
+  <div class="bottom top-switches"><div class="switch" role="group" aria-label="Language">
     <button data-lang="es">ES</button><span class="sep">·</span><button data-lang="en">EN</button><span class="sep">·</span><button data-lang="fr">FR</button>
   </div></div>
 </header>
+<div class="rail-scrim" id="railScrim"></div>
 
 <main class="wrap">
   <div class="phead">
@@ -67,6 +89,27 @@
     <div class="series-head"><span class="n meta">—</span><h2 data-i18n="sc_h">Un vistazo a este trabajo</h2><span class="ln"></span></div>
     <div class="masonry m3" id="sc"></div>
     <p class="sc-note" id="sc-note" hidden></p>
+  </section>
+
+  <section class="room room--interrupt" style="border-top:1px solid var(--line);border-bottom:0">
+    <div class="wrap" style="max-width:40rem">
+      <div class="room-head"><span class="n meta">—</span><h3 data-i18n="bf_h">Cuéntame tu proyecto</h3><span class="ln"></span></div>
+      <p class="room-text" data-i18n="bf_p" style="max-width:none">Escribe un par de líneas. Te confirmo por WhatsApp o correo en menos de 48 h.</p>
+      <form id="bform" style="margin-top:var(--space-20)">
+        <input type="hidden" name="_subject" id="bf_subject" value="Reserva — Guillaume Delye">
+        <div class="field"><label for="bf_name" data-i18n="bf_name">Nombre</label><input id="bf_name" name="name" type="text" required></div>
+        <div class="field" style="margin-top:.9rem"><label for="bf_email" data-i18n="f_email">Email</label><input id="bf_email" name="email" type="email" required></div>
+        <div class="field" style="margin-top:.9rem"><label for="bf_msg" data-i18n="bf_msg">Tu proyecto</label><textarea id="bf_msg" name="message" rows="4" style="width:100%;max-width:none;background:var(--ground);border:1px solid var(--line);border-radius:.6rem;color:var(--bone);font:inherit;font-size:.95rem;padding:.75rem .9rem"></textarea></div>
+        <label style="display:flex;align-items:flex-start;gap:.6rem;margin-top:.9rem;font-size:.85rem;color:var(--bone-dim)">
+          <input type="checkbox" id="bf_consent" required style="margin-top:.2rem">
+          <span data-i18n="bf_consent">Acepto que mis datos se traten para responder a mi solicitud.</span>
+        </label>
+        <div class="est-cta" style="margin-top:1.2rem">
+          <button class="btn btn-amber" type="submit"><span data-i18n="bf_submit">Enviar solicitud</span></button>
+        </div>
+        <p class="d-hint" id="bf_sent" hidden style="color:var(--amber-bright)"></p>
+      </form>
+    </div>
   </section>
 
   <footer><div class="foot">
@@ -89,55 +132,66 @@ const T={
  es:{nav_work:"Trabajo",nav_studio:"Estudio",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",nav_art:"Portafolio de autor",
   b_k:"Reservar",b_h:"Reservar tu sesión, paso a paso.",b_lede:"No necesitas experiencia. Elige tu tipo de sesión y te muestro cómo trabajamos juntos, de principio a fin.",
   gate_q:"¿Para quién es la sesión?",sc_h:"Un vistazo a este trabajo",draft:"Maqueta",foot_terms:"Términos",foot_privacy:"Privacidad",
-  steps:{particular:[["Me escribes","Me cuentas tu idea en un mensaje corto: qué quieres fotografiar y para qué. Sin compromiso, respondo rápido.","Respuesta en menos de 24 h"],
+  menu:"Menú",menu_close:"Cerrar",
+  bf_h:"Cuéntame tu proyecto",bf_p:"Escribe un par de líneas. Te confirmo por WhatsApp o correo en menos de 48 h.",
+  bf_name:"Nombre",f_email:"Email",bf_msg:"Tu proyecto",bf_consent:"Acepto que mis datos se traten para responder a mi solicitud.",bf_submit:"Enviar solicitud",
+  bf_sent:"Recibido. Te escribo en menos de 48 h. También puedes seguir por WhatsApp o correo.",bf_subject:"Reserva",
+  steps:{particular:[["Me escribes","Me cuentas tu idea en un mensaje corto: qué quieres fotografiar y para qué. Sin compromiso, respondo rápido.","Respuesta en menos de 48 h"],
    ["Hablamos 20 minutos","Una llamada corta para entender tu proyecto y a quién quieres llegar. Aquí resolvemos todas tus dudas.","Por WhatsApp o videollamada"],
    ["Recibes una propuesta clara","Te envío un presupuesto sencillo y un moodboard con la dirección visual. Sabes exactamente qué vas a recibir.","Precio cerrado, sin sorpresas"],
    ["Preparamos la sesión","Fijamos la fecha y afinamos los detalles: la lista de tomas, los tiempos, el estilo. Llegas tranquilo.","Un plan claro antes del día"],
-   ["El día de la sesión","Llego con mi equipo y te guío en todo momento. Es relajado y natural, no tienes que posar como un profesional.","Yo te dirijo, tú te relajas"],
-   ["Recibes tus fotos","Te entrego una galería editada y lista para usar. Fotos que hacen que tu proyecto se vea como merece.","Galería lista en 7 días"]],
-   entreprise:[["Usted me contacta","Descríbame el proyecto en unas líneas: qué quiere fotografiar, para qué uso y para cuándo. Sin compromiso.","Respuesta en menos de 24 h"],
+   ["El día de la sesión","Llego con mi equipo técnico y te guío en todo momento. Es relajado y natural, no tienes que posar como un profesional.","Yo te dirijo, tú te relajas"],
+   ["Recibes tus fotos","Te entrego una galería editada y lista para usar. Fotos que hacen que tu proyecto se vea como merece.","Galería lista en 10 a 14 días"]],
+   entreprise:[["Me contactas","Descríbeme el proyecto en unas líneas: qué quieres fotografiar, para qué uso y para cuándo. Sin compromiso.","Respuesta en menos de 48 h"],
    ["Una llamada de 20 minutos","Una llamada corta para enmarcar los objetivos, el público y los entregables. Alineamos el mensaje antes de fotografiar.","Por WhatsApp o videollamada"],
-   ["Una propuesta clara","Recibe una cotización cerrada y un moodboard con la dirección visual. Alcance, formatos y licencia de uso por escrito.","Precio cerrado, sin sorpresas"],
-   ["Preparamos la sesión","Fijamos la fecha, la lista de tomas, la locación y la logística. Sabe exactamente qué se va a producir.","Un plan claro antes del día"],
-   ["El día de la sesión","Llego con mi equipo y dirijo la sesión de principio a fin. Eficiente, discreto, respetuoso con sus equipos y sus clientes.","Yo dirijo, usted se concentra"],
-   ["Recibe sus imágenes","Entrego una galería editada, lista para publicar, en todos los formatos útiles y con licencia para su comunicación.","Galería lista en 7 días"]]}},
+   ["Una propuesta clara","Recibes una cotización cerrada y un moodboard con la dirección visual. Alcance, formatos y licencia de uso por escrito.","Precio cerrado, sin sorpresas"],
+   ["Preparamos la sesión","Fijamos la fecha, la lista de tomas, la locación y la logística. Sabes exactamente qué se va a producir.","Un plan claro antes del día"],
+   ["El día de la sesión","Llego con mi equipo técnico y dirijo la sesión de principio a fin. Eficiente, discreto, respetuoso con tu equipo y tus clientes.","Yo dirijo, tú te concentras"],
+   ["Recibes tus imágenes","Te entrego una galería editada, lista para publicar, en todos los formatos útiles y con licencia para tu comunicación.","Galería lista en 10 a 14 días"]]}},
  en:{nav_work:"Work",nav_studio:"Studio",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",nav_art:"Fine-art portfolio",
   b_k:"Book",b_h:"Booking your session, step by step.",b_lede:"You do not need any experience. Pick your type of session and I show you how we work together, start to finish.",
   gate_q:"Who is the session for?",sc_h:"A look at this work",draft:"Mockup",foot_terms:"Terms",foot_privacy:"Privacy",
-  steps:{particular:[["You reach out","Tell me your idea in a short message: what you want to photograph and what for. No commitment, I reply fast.","Reply within 24 h"],
+  menu:"Menu",menu_close:"Close",
+  bf_h:"Tell me about your project",bf_p:"A couple of lines is enough. I confirm by WhatsApp or email within 48h.",
+  bf_name:"Name",f_email:"Email",bf_msg:"Your project",bf_consent:"I agree my data may be processed to answer my request.",bf_submit:"Send request",
+  bf_sent:"Received. I'll write back within 48h. You can still send it on WhatsApp or email too.",bf_subject:"Booking",
+  steps:{particular:[["You reach out","Tell me your idea in a short message: what you want to photograph and what for. No commitment, I reply fast.","Reply within 48h"],
    ["We talk for 20 minutes","A short call to understand your project and who you want to reach. This is where we clear up every doubt.","On WhatsApp or video call"],
    ["You get a clear proposal","I send you a simple quote and a moodboard with the visual direction. You know exactly what you will get.","Fixed price, no surprises"],
    ["We prepare the session","We lock the date and fine-tune the details: shot list, timing, styling. You arrive relaxed.","A clear plan before the day"],
    ["Shoot day","I arrive with my gear and guide you the whole way. It is relaxed and natural, you do not have to pose like a pro.","I direct, you relax"],
-   ["You receive your photos","I deliver an edited gallery, ready to use. Photos that make your project look the way it deserves.","Gallery ready in 7 days"]],
-   entreprise:[["You reach out","Describe the project in a few lines: what you want to photograph, for which use and for when. No commitment.","Reply within 24 h"],
+   ["You receive your photos","I deliver an edited gallery, ready to use. Photos that make your project look the way it deserves.","Gallery ready in 10 to 14 days"]],
+   entreprise:[["You reach out","Describe the project in a few lines: what you want to photograph, for which use and for when. No commitment.","Reply within 48h"],
    ["A 20-minute call","A short call to frame the goals, the audience and the deliverables. We align the message before we shoot.","On WhatsApp or video call"],
    ["A clear proposal","You get a fixed quote and a moodboard with the visual direction. Scope, formats and usage licence set out in writing.","Fixed price, no surprises"],
    ["We prepare the shoot","We lock the date, the shot list, the location and the logistics. You know exactly what will be produced.","A clear plan before the day"],
    ["Shoot day","I arrive with my gear and run the session end to end. Efficient, discreet, respectful of your teams and your guests.","I direct, you stay focused"],
-   ["You receive your images","I deliver an edited, publish-ready gallery in every useful format, licensed for your communications.","Gallery ready in 7 days"]]}},
+   ["You receive your images","I deliver an edited, publish-ready gallery in every useful format, licensed for your communications.","Gallery ready in 10 to 14 days"]]}},
  fr:{nav_work:"Travail",nav_studio:"Studio",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",nav_art:"Portfolio d'auteur",
   b_k:"Réserver",b_h:"Réserver ta séance, étape par étape.",b_lede:"Pas besoin d'expérience. Choisis ton type de séance et je te montre comment on travaille ensemble, du début à la fin.",
   gate_q:"Pour qui est la séance ?",sc_h:"Un aperçu de ce travail",draft:"Maquette",foot_terms:"Conditions",foot_privacy:"Confidentialité",
-  steps:{particular:[["Tu m'écris","Tu me racontes ton idée en un court message : ce que tu veux photographier et pourquoi. Sans engagement, je réponds vite.","Réponse en moins de 24 h"],
+  menu:"Menu",menu_close:"Fermer",
+  bf_h:"Raconte-moi ton projet",bf_p:"Quelques lignes suffisent. Je confirme par WhatsApp ou email sous 48 h.",
+  bf_name:"Nom",f_email:"Email",bf_msg:"Ton projet",bf_consent:"J'accepte que mes données soient traitées pour répondre à ma demande.",bf_submit:"Envoyer la demande",
+  bf_sent:"Reçu. Je réponds sous 48 h. Tu peux aussi envoyer par WhatsApp ou email.",bf_subject:"Réservation",
+  steps:{particular:[["Tu m'écris","Tu me racontes ton idée en un court message : ce que tu veux photographier et pourquoi. Sans engagement, je réponds vite.","Réponse en moins de 48 h"],
    ["On se parle 20 minutes","Un court appel pour comprendre ton projet et qui tu veux toucher. C'est ici qu'on lève tous les doutes.","Sur WhatsApp ou en visio"],
    ["Tu reçois une proposition claire","Je t'envoie un devis simple et un moodboard avec la direction visuelle. Tu sais exactement ce que tu vas recevoir.","Prix ferme, sans surprise"],
    ["On prépare la séance","On fixe la date et on affine les détails : prises, timing, style. Tu arrives tranquille.","Un plan clair avant le jour J"],
    ["Le jour de la séance","J'arrive avec mon matériel et je te guide à chaque instant. C'est détendu et naturel, tu n'as pas à poser comme un pro.","Je dirige, tu te détends"],
-   ["Tu reçois tes photos","Je te livre une galerie retouchée, prête à l'emploi. Des photos qui font que ton projet se voie comme il le mérite.","Galerie prête sous 7 jours"]],
-   entreprise:[["Vous me contactez","Vous me décrivez le projet en quelques lignes : ce que vous voulez photographier, pour quel usage et pour quelle échéance. Sans engagement.","Réponse sous 24 h"],
+   ["Tu reçois tes photos","Je te livre une galerie retouchée, prête à l'emploi. Des photos qui font que ton projet se voie comme il le mérite.","Galerie prête sous 10 à 14 jours"]],
+   entreprise:[["Vous me contactez","Vous me décrivez le projet en quelques lignes : ce que vous voulez photographier, pour quel usage et pour quelle échéance. Sans engagement.","Réponse sous 48 h"],
    ["Un échange de 20 minutes","Un appel court pour cadrer les objectifs, la cible et les livrables attendus. On aligne le message avant de photographier.","Sur WhatsApp ou en visio"],
    ["Une proposition claire","Vous recevez un devis ferme et un moodboard avec la direction visuelle. Périmètre, formats et licence d'usage définis noir sur blanc.","Prix ferme, sans surprise"],
    ["On prépare la séance","On verrouille la date, la liste de plans, le lieu et la logistique. Vous savez exactement ce qui sera produit.","Un plan clair avant le jour J"],
    ["Le jour de la séance","J'arrive avec mon matériel et je dirige la séance de bout en bout. Efficace, discret, respectueux de vos équipes et de vos clients.","Je dirige, vous restez concentré"],
-   ["Vous recevez vos images","Je livre une galerie retouchée, prête à publier, dans tous les formats utiles et sous licence pour votre communication.","Galerie prête sous 7 jours"]]}
+   ["Vous recevez vos images","Je livre une galerie retouchée, prête à publier, dans tous les formats utiles et sous licence pour votre communication.","Galerie prête sous 10 à 14 jours"]]}
  }
 };
 let lang=localStorage.getItem('w2b_lang')||'es'; if(!T[lang])lang='es';
 let audience='entreprise',cat='gastronomia';
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const REDUCE=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const savedTheme=localStorage.getItem('w2b_theme');if(savedTheme)document.documentElement.setAttribute('data-theme',savedTheme);
 
 function firstPhoto(c){const a=window.BOOKING[c];return a&&a.length?a[0].s:''}
 function renderAud(){
@@ -174,11 +228,49 @@ function show(i){lbi=(i+FLAT.length)%FLAT.length;const lb=$('#lb');lb.querySelec
 function closeLB(){$('#lb').classList.remove('open');document.body.style.overflow=''}
 addEventListener('keydown',e=>{if(!$('#lb').classList.contains('open'))return;if(e.key==='Escape')closeLB();else if(e.key==='ArrowRight')show(lbi+1);else if(e.key==='ArrowLeft')show(lbi-1)});
 
-function applyI18n(){document.documentElement.lang=lang;const d=T[lang];$$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!=null)el.textContent=d[k];});$$('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));}
+function applyI18n(){document.documentElement.lang=lang;const d=T[lang];$$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!=null)el.textContent=d[k];});$$('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
+  const mt=$('.menu-txt');if(mt){const railOpen=$('#rail')&&$('#rail').classList.contains('open');mt.textContent=railOpen?d.menu_close:d.menu;}}
 function renderAll(){applyI18n();renderAud();renderChips();renderSteps();renderShowcase();}
 $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('w2b_lang',lang);renderAll()}));
-$('.menu-btn').addEventListener('click',e=>{const o=$('#rail').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)});
+function toggleMenu(open){
+  const rail=$('#rail'),scrim=$('#railScrim'),btn=$('.menu-btn');
+  rail.classList.toggle('open',open);scrim.classList.toggle('show',open);
+  btn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';
+  btn.querySelector('.ic-menu').style.display=open?'none':'';
+  btn.querySelector('.ic-close').style.display=open?'':'none';
+  btn.querySelector('.menu-txt').textContent=open?(T[lang].menu_close||'Cerrar'):(T[lang].menu||'Menú');
+}
+$('.menu-btn').addEventListener('click',()=>toggleMenu(!$('#rail').classList.contains('open')));
+$('#railScrim').addEventListener('click',()=>toggleMenu(false));
+$$('#rail nav a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
 addEventListener('scroll',()=>$('#rail').classList.toggle('solid',scrollY>60),{passive:true});
 renderAll();
+
+/* ---- booking request: Formspree capture first/alongside, then the
+   WhatsApp + email handoff Guillaume already uses. Same Formspree endpoint
+   as the pre-quote estimator and the art site's contact forms. ---- */
+(function(){
+  const WA="33652986427",MAIL="w2bphoto+pro@gmail.com",BCC="w2bphoto@gmail.com";
+  const FORMSPREE="https://formspree.io/f/mjgjdvlz";
+  const form=$('#bform');if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const name=$('#bf_name').value.trim(),email=$('#bf_email').value.trim(),msg=$('#bf_msg').value.trim();
+    const audLabel=(AUD[audience]&&AUD[audience][lang]&&AUD[audience][lang][0])||audience;
+    const catLabel=((CATS[audience]||[]).find(c=>c[0]===cat)||[])[1];
+    const catText=(catLabel&&catLabel[lang])||cat;
+    $('#bf_subject').value=(T[lang].bf_subject||'Reserva')+' — '+catText;
+    const summary=`${name} <${email}>\n${T[lang].bf_subject||'Reserva'}: ${audLabel} · ${catText}\n\n${msg}`;
+    const fd=new FormData(form);
+    fd.set('_subject',$('#bf_subject').value);
+    fd.append('audience',audLabel);fd.append('category',catText);fd.append('lang',lang);
+    fetch(FORMSPREE,{method:'POST',headers:{Accept:'application/json'},body:fd}).catch(function(){/* non-blocking */});
+    const waUrl=`https://wa.me/${WA}?text=${encodeURIComponent(summary)}`;
+    window.open(waUrl,'_blank','noopener');
+    const sent=$('#bf_sent');sent.hidden=false;sent.textContent=T[lang].bf_sent;
+    sent.innerHTML+=` <a href="mailto:${MAIL}?bcc=${encodeURIComponent(BCC)}&subject=${encodeURIComponent($('#bf_subject').value)}&body=${encodeURIComponent(summary)}" style="color:var(--amber);text-decoration:underline">${lang==='fr'?'Ou par email':lang==='en'?'Or by email':'O por correo'}</a>`;
+    form.reset();
+  });
+})();
 </script>
 </body></html>

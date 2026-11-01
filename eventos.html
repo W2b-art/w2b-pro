@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="es"><head>
+<script>(function(){try{var h=new Date().getHours();document.documentElement.setAttribute('data-theme',(h>=6&&h<18)?'light':'dark');}catch(e){}})();</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eventos — Guillaume Delye</title>
+<meta name="description" content="Eventos y reportaje de Guillaume Delye: festivales, fiestas y conciertos en Medellín.">
+<link rel="canonical" href="https://w2bphotography.com/w2b-pro/eventos.html">
+<meta property="og:title" content="Eventos — Guillaume Delye">
+<meta property="og:description" content="Eventos y reportaje de Guillaume Delye: festivales, fiestas y conciertos en Medellín.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://w2bphotography.com/w2b-pro/eventos.html">
+<meta property="og:image" content="https://w2bphotography.com/w2b-pro/images/work/events.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120F0D'/><circle cx='16' cy='16' r='6' fill='%23D4A044'/></svg>">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css?v=8">
+<style>
+/* case-list: dark-register (events are shot at night — this stays on the
+   page's own ground, unlike restaurants.html's daylight case-band), a
+   stacked list rather than a card grid, so the two "primary proof" pages
+   read as genuinely different templates, not one layout with new photos. */
+.case-list{margin:var(--space-20) 0 0;border-top:1px solid var(--line)}
+.case-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem 1rem;padding:var(--space-12) 0;border-bottom:1px solid var(--line-soft)}
+.case-row b{font-family:"Fraunces",serif;font-weight:400;font-size:1.1rem;color:var(--bone)}
+.case-row span{color:var(--bone-dim);font-size:.9rem}
+</style>
+</head><body class="page" data-page="events" data-only="events">
+<main class="wrap">
+  <div class="phead">
+    <span class="k meta" id="ev_k" style="color:var(--amber)">Eventos</span>
+    <h1 id="ev_h">Eventos y reportaje</h1>
+    <p id="ev_p">Festivales, fiestas y conciertos en Medellín. Toca una imagen para verla en grande.</p>
+  </div>
+  <div class="case-list">
+    <div class="case-row"><b>Feniks Festival</b><span id="cs1">Festival electrónico · cobertura de escenario</span></div>
+    <div class="case-row"><b>Blackout Colombia</b><span id="cs2">Fiesta nocturna · pista y rooftop</span></div>
+    <div class="case-row"><b>Deglorian</b><span id="cs3">Concierto en vivo · banda en escena</span></div>
+  </div>
+  <p class="series-link" style="margin-top:var(--space-20)"><a href="work.html">← Trabajo seleccionado</a></p>
+  <div id="series-host"></div>
+  <footer><div class="foot">
+    <p class="copy">© 2026 Guillaume Delye · W2b · Medellín, Colombia</p>
+    <div style="display:flex;gap:1.2rem 1.4rem;flex-wrap:wrap"><a href="mailto:w2bphoto+pro@gmail.com">w2bphoto+pro@gmail.com</a><a href="https://www.instagram.com/guillaumedelye" target="_blank" rel="noopener">Instagram ↗</a><a href="documents/terms.html" data-i18n="foot_terms">Términos</a><a href="documents/privacy.html" data-i18n="foot_privacy">Privacidad</a><a href="documents/cookies.html" data-i18n="foot_cookies">Cookies</a><a href="https://w2bphotography.com/" data-i18n="foot_art">Portafolio de autor ↗</a></div>
+  </div></footer>
+</main>
+<script src="js/gallery-data.js?v=3"></script><script src="js/site.js?v=2"></script>
+<script>
+(function(){
+  var EV={es:{k:"Eventos",h:"Eventos y reportaje",p:"Festivales, fiestas y conciertos en Medellín. Toca una imagen para verla en grande.",cs1:"Festival electrónico · cobertura de escenario",cs2:"Fiesta nocturna · pista y rooftop",cs3:"Concierto en vivo · banda en escena"},
+    en:{k:"Events",h:"Events & reportage",p:"Festivals, parties and concerts in Medellín. Tap an image to view it large.",cs1:"Electronic festival · stage coverage",cs2:"Night party · dance floor and rooftop",cs3:"Live concert · the band on stage"},
+    fr:{k:"Événements",h:"Événements & reportage",p:"Festivals, soirées et concerts à Medellín. Touchez une image pour la voir en grand.",cs1:"Festival électronique · couverture de scène",cs2:"Soirée · piste et rooftop",cs3:"Concert live · le groupe sur scène"}};
+  function apply(){var l=localStorage.getItem('w2b_lang')||'es';if(!EV[l])l='es';var d=EV[l];
+    document.getElementById('ev_k').textContent=d.k;document.getElementById('ev_h').textContent=d.h;document.getElementById('ev_p').textContent=d.p;
+    document.getElementById('cs1').textContent=d.cs1;document.getElementById('cs2').textContent=d.cs2;document.getElementById('cs3').textContent=d.cs3;}
+  apply();
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',apply)});
+})();
+</script>
+</body></html>
