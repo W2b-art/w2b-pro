@@ -17,7 +17,7 @@ const RATES={
 };
 const VIEW={es:"Ver serie",en:"View series",fr:"Voir la série"};
 const T={
- es:{nav_work:"Trabajo",nav_gastro:"Gastronomía",nav_eventos:"Eventos",nav_moda:"Moda",nav_retrato:"Retrato",nav_studio:"Estudio",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",scroll:"Baja",menu:"Menú",menu_close:"Cerrar",
+ es:{nav_work:"Trabajo",nav_gastro:"Gastronomía",nav_eventos:"Eventos",nav_moda:"Moda",nav_retrato:"Retrato",nav_studio:"Fotógrafo",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",scroll:"Baja",menu:"Menú",menu_close:"Cerrar",
   room_gastro_k:"01.1",room_gastro_h:"Gastronomía",room_gastro_p:"Platos, sala y oficio en su luz real, listos para la carta y la prensa.",
   room_eventos_k:"01.2",room_eventos_h:"Eventos",room_eventos_p:"Los instantes clave y la atmósfera, entregados rápido y listos para publicar.",
   room_moda_k:"01.3",room_moda_h:"Moda",room_moda_p:"Medellín · Córcega",
@@ -25,7 +25,7 @@ const T={
   room_cta:"Ver la serie",
   hero_t1:"Imágenes que",hero_t2:"se ganan su lugar.",sec_work:"Trabajo seleccionado",
   stmt1:"Hago las fotos para que se usen: en la carta, en un feed, en una campaña. Siempre pensadas para publicarse.",stmt_by:"Guillaume Delye · Fotógrafo · Medellín",
-  sec_studio:"Estudio",studio_h:"Fotógrafo francés, con base en Medellín.",
+  sec_studio:"Fotógrafo",studio_h:"Fotógrafo francés, con base en Medellín.",
   studio_p1:"Trabajo entre Colombia, Francia y el Mediterráneo. Editorial, gastronomía, eventos y retrato. Cada sesión llega lista para publicar: con color, retoque y una dirección clara.",
   studio_p2:"Del brief a la entrega en 10 a 14 días. Respondo en menos de 48 horas.",
   fact1:"Editorial",fact2:"Gastronomía",fact3:"Eventos",fact4:"Retrato",
@@ -34,15 +34,15 @@ const T={
   nav_art:"Portafolio de autor",svc_estimate:"Estimar mi presupuesto",
   book1:"¿Tienes un proyecto? Cuéntamelo.",book_cta:"Enviar un brief",book_book:"Reservar sesión",
   foot_art:"Portafolio de autor ↗",foot_terms:"Términos",foot_privacy:"Privacidad",draft:"Maqueta",
-  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Moda y editorial, retrato y producto. Gastronomía y eventos tienen su propia página. Toca una imagen para verla en grande.",
-  studio_k:"Estudio",studio_h1:"Hago imágenes que trabajan para ti.",
+  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Moda, gastronomía, eventos y retrato: cada serie tiene su propia página. Toca una serie para verla completa.",
+  studio_k:"Fotógrafo",studio_h1:"Hago imágenes que trabajan para ti.",
   studio_lp:"Soy Guillaume Delye, fotógrafo francés con base en Medellín. Hago imágenes que se ganan su lugar en una carta o un dossier de prensa. Trabajo entre Colombia, Francia y el Mediterráneo, y cada sesión se entrega lista para publicar.",
   studio_lp2:"Del brief a la entrega, normalmente en 10 a 14 días. Editorial, gastronomía, eventos y retrato.",
   svc_k:"Servicios",svc_h:"Cómo trabajamos, y cuánto cuesta.",
   svc_p:"Un proceso claro, un precio cerrado y una entrega lista para usar. Sin sorpresas.",
   con_k:"Contacto",con_big1:"Hablemos de",con_big2:"tu proyecto.",
   con_email:"Correo",con_ig:"Instagram",con_wa:"WhatsApp",con_art:"Fotografía de autor",clients_label:"Confían en mí",con_note:"Basado en Medellín, Colombia. Escríbeme por WhatsApp o correo, respondo en menos de 48 h."},
- en:{nav_work:"Work",nav_gastro:"Hospitality",nav_eventos:"Events",nav_moda:"Fashion",nav_retrato:"Portraits",nav_studio:"Studio",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",scroll:"Scroll",menu:"Menu",menu_close:"Close",
+ en:{nav_work:"Work",nav_gastro:"Hospitality",nav_eventos:"Events",nav_moda:"Fashion",nav_retrato:"Portraits",nav_studio:"Photographer",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",scroll:"Scroll",menu:"Menu",menu_close:"Close",
   room_gastro_k:"01.1",room_gastro_h:"Hospitality",room_gastro_p:"Dishes, room and craft in their real light, ready for the menu and the press.",
   room_eventos_k:"01.2",room_eventos_h:"Events",room_eventos_p:"Key moments and atmosphere, delivered fast and ready to publish.",
   room_moda_k:"01.3",room_moda_h:"Fashion",room_moda_p:"Medellín · Corsica",
@@ -50,7 +50,7 @@ const T={
   room_cta:"View the series",
   hero_t1:"Images that",hero_t2:"earn their place.",sec_work:"Selected Work",
   stmt1:"I make images meant to be used: on the menu, on a feed, in a campaign. Always made to be published.",stmt_by:"Guillaume Delye · Photographer · Medellín",
-  sec_studio:"Studio",studio_h:"French photographer, based in Medellín.",
+  sec_studio:"Photographer",studio_h:"French photographer, based in Medellín.",
   studio_p1:"I work between Colombia, France and the Mediterranean. Editorial, hospitality, events and portrait. Every shoot ships ready to publish: colour-graded, retouched, with a clear direction.",
   studio_p2:"Brief to delivery in 10 to 14 days. I reply within 48 hours.",
   fact1:"Editorial",fact2:"Hospitality",fact3:"Events",fact4:"Portrait",
@@ -59,15 +59,15 @@ const T={
   nav_art:"Fine-art portfolio",svc_estimate:"Estimate my budget",
   book1:"Got a project? Tell me about it.",book_cta:"Send a brief",book_book:"Book a session",
   foot_art:"Fine-art portfolio ↗",foot_terms:"Terms",foot_privacy:"Privacy",draft:"Mockup",
-  work_k:"Portfolio",work_h:"Selected Work",work_p:"Fashion and editorial, portraits and product. Hospitality and events each have their own page. Tap an image to view it large.",
-  studio_k:"Studio",studio_h1:"I make images that work for you.",
+  work_k:"Portfolio",work_h:"Selected Work",work_p:"Fashion, hospitality, events and portraits — each series has its own page. Tap a series to see it in full.",
+  studio_k:"Photographer",studio_h1:"I make images that work for you.",
   studio_lp:"I'm Guillaume Delye, a French photographer based in Medellín. I make pictures that earn their place on a menu or a press release. I work between Colombia, France and the Mediterranean, and every shoot ships ready to publish.",
   studio_lp2:"Brief to delivery, usually in 10 to 14 days. Editorial, hospitality, events and portrait.",
   svc_k:"Services",svc_h:"How it works, and what it costs.",
   svc_p:"A clear process, a fixed price and a ready-to-use delivery. No surprises.",
   con_k:"Contact",con_big1:"Let's talk about",con_big2:"your project.",
   con_email:"Email",con_ig:"Instagram",con_wa:"WhatsApp",con_art:"Fine-art photography",clients_label:"Trusted by",con_note:"Based in Medellín, Colombia. Reach me on WhatsApp or email, I reply within 48h."},
- fr:{nav_work:"Travail",nav_gastro:"Gastronomie",nav_eventos:"Événements",nav_moda:"Mode",nav_retrato:"Portrait",nav_studio:"Studio",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",scroll:"Défiler",menu:"Menu",menu_close:"Fermer",
+ fr:{nav_work:"Travail",nav_gastro:"Gastronomie",nav_eventos:"Événements",nav_moda:"Mode",nav_retrato:"Portrait",nav_studio:"Photographe",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",scroll:"Défiler",menu:"Menu",menu_close:"Fermer",
   room_gastro_k:"01.1",room_gastro_h:"Gastronomie",room_gastro_p:"Les plats, la salle et le geste dans leur vraie lumière, prêts pour la carte et la presse.",
   room_eventos_k:"01.2",room_eventos_h:"Événements",room_eventos_p:"Les moments clés et l'ambiance, livrés vite et prêts à publier.",
   room_moda_k:"01.3",room_moda_h:"Mode",room_moda_p:"Medellín · Corse",
@@ -75,7 +75,7 @@ const T={
   room_cta:"Voir la série",
   hero_t1:"Des images qui",hero_t2:"gagnent leur place.",sec_work:"Travail sélectionné",
   stmt1:"Je fais des images faites pour servir : sur la carte, sur un feed, dans une campagne. Toujours pensées pour être publiées.",stmt_by:"Guillaume Delye · Photographe · Medellín",
-  sec_studio:"Studio",studio_h:"Photographe français, basé à Medellín.",
+  sec_studio:"Photographe",studio_h:"Photographe français, basé à Medellín.",
   studio_p1:"Je travaille entre la Colombie, la France et la Méditerranée. Éditorial, gastronomie, événements et portrait. Chaque séance est livrée prête à publier : étalonnée, retouchée, avec une direction claire.",
   studio_p2:"Du brief à la livraison en 10 à 14 jours. Je réponds sous 48 heures.",
   fact1:"Éditorial",fact2:"Gastronomie",fact3:"Événements",fact4:"Portrait",
@@ -84,8 +84,8 @@ const T={
   nav_art:"Portfolio d'auteur",svc_estimate:"Estimer mon budget",
   book1:"Un projet ? Raconte-le-moi.",book_cta:"Envoyer un brief",book_book:"Réserver une séance",
   foot_art:"Portfolio d'auteur ↗",foot_terms:"Conditions",foot_privacy:"Confidentialité",draft:"Maquette",
-  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Mode et éditorial, portrait et produit. Gastronomie et événements ont leur propre page. Touchez une image pour la voir en grand.",
-  studio_k:"Studio",studio_h1:"Je fais des images qui travaillent pour toi.",
+  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Mode, gastronomie, événements et portrait — chaque série a sa propre page. Touchez une série pour la voir en entier.",
+  studio_k:"Photographe",studio_h1:"Je fais des images qui travaillent pour toi.",
   studio_lp:"Je suis Guillaume Delye, photographe français basé à Medellín. Je fais des images qui gagnent leur place sur une carte ou un dossier de presse. Je travaille entre la Colombie, la France et la Méditerranée, et chaque séance est livrée prête à publier.",
   studio_lp2:"Du brief à la livraison, en général sous 10 à 14 jours. Éditorial, gastronomie, événements et portrait.",
   svc_k:"Services",svc_h:"Comment on travaille, et combien ça coûte.",
@@ -93,11 +93,9 @@ const T={
   con_k:"Contact",con_big1:"Parlons de",con_big2:"ton projet.",
   con_email:"Email",con_ig:"Instagram",con_wa:"WhatsApp",con_art:"Photographie d'auteur",clients_label:"Ils me font confiance",con_note:"Basé à Medellín, Colombie. Écris-moi sur WhatsApp ou par email, je réponds sous 48 h."}
 };
-/* rail link set — reduced to reflect real delivered proof: Gastronomía and
-   Eventos get full-weight primary entries, Moda and Retrato (no delivered
-   case study yet per the council) get smaller "sec" entries. */
-const MENU_PRI=[["hospitality","restaurants.html","nav_gastro"],["events","eventos.html","nav_eventos"]];
-const MENU_SEC=[["fashion","work.html#fashion","nav_moda"],["portraits","work.html#portraits","nav_retrato"]];
+/* rail link set — all four series now have their own dedicated page
+   (gastronomía/eventos/moda/retrato), so all four are full-weight entries. */
+const MENU_PRI=[["hospitality","restaurants.html","nav_gastro"],["events","eventos.html","nav_eventos"],["fashion","moda.html","nav_moda"],["portraits","retrato.html","nav_retrato"]];
 const MENU_REST=[["studio","studio.html","nav_studio"],["services","services.html","nav_services"],["booking","booking.html","nav_book"],["contact","contact.html","nav_contact"]];
 
 let lang=localStorage.getItem('w2b_lang')||'es'; if(!T[lang])lang='es';
@@ -117,7 +115,6 @@ function buildRail(){
       <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="13" y2="12"/><line x1="4" y1="17" x2="17" y2="17"/></svg>
       <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="display:none"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav>${MENU_PRI.map(([id,href,k])=>navLink(id,href,k)).join('')}
-      ${MENU_SEC.map(([id,href,k])=>navLink(id,href,k,'sec')).join('')}
       <span class="rail-div" aria-hidden="true"></span>
       ${MENU_REST.map(([id,href,k])=>navLink(id,href,k)).join('')}
       <a class="xart" href="https://w2bphotography.com/" aria-label="${T[lang].nav_art}"><img src="images/ui/w2b-logo.png" alt=""><span data-i18n="nav_art">${T[lang].nav_art}</span></a>
@@ -213,7 +210,14 @@ function initHero(){
   const isDay=document.documentElement.getAttribute('data-theme')==='light';
   const HERO=(isDay?window.HERO_DAY:window.HERO_NIGHT)||window.HERO_NIGHT||[];
   const HCAP=(isDay?window.HCAP_DAY:window.HCAP_NIGHT)||window.HCAP_NIGHT||[];
-  slidesEl.innerHTML=HERO.map((s,i)=>`<div class="slide${i?'':' on'}"><img src="${s}" ${i?'loading="lazy"':'fetchpriority="high"'} alt="${HCAP[i]||''}"></div>`).join('');
+  /* Two image layers per slide: .slide-bg is a blurred, cover-cropped copy
+     that fills the full-bleed box; .slide-fg sits on top at object-fit:contain
+     so the photo's real composition always shows in full — a portrait-
+     oriented shot no longer gets its subject cropped out to fill a
+     landscape box. */
+  slidesEl.innerHTML=HERO.map((s,i)=>{const pri=i?'loading="lazy"':'fetchpriority="high"';
+    return `<div class="slide${i?'':' on'}"><img class="slide-bg" src="${s}" ${pri} alt="" aria-hidden="true"><img class="slide-fg" src="${s}" ${pri} alt="${HCAP[i]||''}"></div>`;
+  }).join('');
   dotsEl.innerHTML=HERO.map((_,i)=>`<button aria-label="Slide ${i+1}" aria-current="${i===0}"></button>`).join('');
   const S=[...slidesEl.children],D=[...dotsEl.children];let hi=0,timer=null;
   const cap=()=>{if(capEl)capEl.textContent=HCAP[hi]||''};

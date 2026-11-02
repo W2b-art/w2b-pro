@@ -296,7 +296,12 @@ a{color:inherit;text-decoration:none}
 .slides{position:absolute;inset:0}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
 .slide.on{opacity:1}
-.slide img{width:100%;height:100%;object-fit:cover}
+/* two-layer slide: .slide-bg fills the box (blurred, cropped, never the
+   thing people actually look at); .slide-fg sits on top at object-fit:contain
+   so the real photo is always shown whole, portrait or landscape. */
+.slide-bg,.slide-fg{position:absolute;inset:0;width:100%;height:100%}
+.slide-bg{object-fit:cover;filter:blur(34px) brightness(.55) saturate(1.15);transform:scale(1.18)}
+.slide-fg{object-fit:contain}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,15,13,.5) 0%,rgba(18,15,13,.08) 26%,rgba(18,15,13,.16) 56%,rgba(18,15,13,.9) 100%)}
 .hero-foot{position:absolute;z-index:2;left:0;right:0;bottom:clamp(1.6rem,4vw,3rem)}
 .hero-foot .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem}
@@ -321,9 +326,7 @@ a{color:inherit;text-decoration:none}
   .hero-foot .wrap{flex-direction:column;align-items:flex-start;gap:.9rem}
   .hero-sb{align-items:flex-start;text-align:left}
   .hero-lead .tag{font-size:clamp(1.5rem,6vw,2.1rem);max-width:13ch}
-  .slide img{object-position:center 38%}
-  .slide:nth-child(2) img{object-position:center 18%} /* toast: faces/arms sit high in frame */
-  .slide:nth-child(3) img{object-position:center 28%} /* guitarist: already portrait-cropped */
+  .slide-bg{object-position:center 30%}
   .scrollcue{display:none}
 }
 
@@ -508,6 +511,12 @@ a{color:inherit;text-decoration:none}
    ============================================================ */
 .room{position:relative;padding:var(--space-52) 0}
 @media(min-width:900px){.room{padding:var(--space-84) 0}}
+/* .sec-lab already carries its own bottom padding — stacking a room's full
+   top padding on top of that right after the section header left a dead
+   gap big enough to read as missing content ("Selected Work" -> huge void
+   -> "Hospitality"). Only the room directly following a section header
+   needs this trimmed; rooms between each other keep their normal padding. */
+.sec-lab + .room{padding-top:0}
 .room-head{display:flex;align-items:baseline;gap:var(--space-20);margin-bottom:var(--space-32)}
 .room-head .n{color:var(--amber);flex:none}
 .room-head h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.6rem,1.2rem + 1.8vw,2.6rem);letter-spacing:-.01em}

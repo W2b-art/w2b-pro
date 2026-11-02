@@ -20,9 +20,13 @@
 @media(max-width:600px){.aud{grid-template-columns:1fr}}
 .aud-card{position:relative;overflow:hidden;border-radius:.9rem;border:1px solid var(--line);min-height:clamp(8rem,18vw,10rem);cursor:pointer;background:var(--ground-2);color:var(--bone);text-align:left;isolation:isolate;transition:transform .18s}
 .aud-card:active{transform:scale(.985)}
-.aud-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;opacity:.55;transition:opacity .4s,transform .6s cubic-bezier(.2,.7,.2,1)}
-.aud-card:hover .bg{opacity:.7;transform:scale(1.05)}
-.aud-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,15,13,.25),rgba(18,15,13,.8))}
+.aud-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-3;opacity:.6;filter:blur(16px) brightness(.65) saturate(1.1);transform:scale(1.15);transition:opacity .4s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.aud-card:hover .bg{opacity:.75;transform:scale(1.2)}
+/* .bg (blurred, cropped) fills the short landscape card; .bg-fg (contained,
+   never cropped) sits above it so a portrait photo still shows in full —
+   same two-layer technique as the hero, see site.css .slide-bg/.slide-fg */
+.aud-card .bg-fg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:contain}
+.aud-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,15,13,.2),rgba(18,15,13,.82))}
 .aud-card .lab{position:absolute;left:1.1rem;bottom:1rem;right:1.1rem}
 .aud-card .lab b{font-family:"Fraunces",serif;font-weight:400;font-size:1.5rem;display:block}
 .aud-card .lab span{color:var(--bone-dim);font-size:.92rem}
@@ -39,6 +43,7 @@
 .step p{margin-top:.7rem;color:var(--bone-dim);max-width:52ch}
 .step .det{margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
 .sc-note{margin-top:1.2rem;font-style:italic;font-family:"Fraunces",serif;color:var(--bone-dim)}
+.cat-desc{max-width:52ch;color:var(--bone-dim);margin-top:1rem;line-height:1.6}
 .field label{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:.5rem}
 .field input{width:100%;max-width:28rem;background:var(--ground);border:1px solid var(--line);border-radius:.6rem;color:var(--bone);font:inherit;font-size:.95rem;padding:.75rem .9rem}
 .field input:focus-visible,#bf_msg:focus-visible{outline:1px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
@@ -54,10 +59,10 @@
   <nav>
     <a href="restaurants.html" data-i18n="nav_gastro">Gastronomía</a>
     <a href="eventos.html" data-i18n="nav_eventos">Eventos</a>
-    <a href="work.html#fashion" class="sec" data-i18n="nav_moda">Moda</a>
-    <a href="work.html#portraits" class="sec" data-i18n="nav_retrato">Retrato</a>
+    <a href="moda.html" data-i18n="nav_moda">Moda</a>
+    <a href="retrato.html" data-i18n="nav_retrato">Retrato</a>
     <span class="rail-div" aria-hidden="true"></span>
-    <a href="studio.html" data-i18n="nav_studio">Estudio</a>
+    <a href="studio.html" data-i18n="nav_studio">Fotógrafo</a>
     <a href="services.html" data-i18n="nav_services">Servicios</a>
     <a href="booking.html" data-i18n="nav_book" aria-current="page">Reservar</a>
     <a href="contact.html" data-i18n="nav_contact">Contacto</a>
@@ -82,14 +87,15 @@
   <div class="gate-q meta" data-i18n="gate_q">¿Para quién es la sesión?</div>
   <div class="aud" id="aud"></div>
   <div class="chips" id="chips"></div>
-
-  <div class="steps" id="steps"></div>
+  <p class="cat-desc" id="cat_desc"></p>
 
   <section style="padding:clamp(2.5rem,6vw,4.5rem) 0 1rem">
     <div class="series-head"><span class="n meta">—</span><h2 data-i18n="sc_h">Un vistazo a este trabajo</h2><span class="ln"></span></div>
     <div class="masonry m3" id="sc"></div>
     <p class="sc-note" id="sc-note" hidden></p>
   </section>
+
+  <div class="steps" id="steps"></div>
 
   <section class="room room--interrupt" style="border-top:1px solid var(--line);border-bottom:0">
     <div class="wrap" style="max-width:40rem">
@@ -125,11 +131,11 @@
 const AUD={entreprise:{es:["Empresa","Restaurantes, marcas, eventos"],en:["Business","Restaurants, brands, events"],fr:["Entreprise","Restaurants, marques, événements"]},
   particular:{es:["Particular","Retratos, parejas"],en:["Personal","Portraits, couples"],fr:["Particulier","Portraits, couples"]}};
 const CATS={entreprise:[["gastronomia",{es:"Gastronomía",en:"Food & drink",fr:"Gastronomie"}],["eventos",{es:"Eventos",en:"Events",fr:"Événements"}],["moda",{es:"Moda",en:"Fashion",fr:"Mode"}]],
-  particular:[["retrato",{es:"Retrato",en:"Portrait",fr:"Portrait"}],["boda",{es:"Boda",en:"Wedding",fr:"Mariage",soon:true}]]};
+  particular:[["retrato",{es:"Retrato",en:"Portrait",fr:"Portrait"}],["modelo",{es:"Portfolio de modelo",en:"Model portfolio",fr:"Portfolio de mannequin"}],["bailarines",{es:"Bailarines",en:"Dancers",fr:"Danseurs"}],["boda",{es:"Boda",en:"Wedding",fr:"Mariage",soon:true}]]};
 const SOON={es:"El portafolio de bodas está en preparación. Escríbeme y hablamos de tu día.",en:"The wedding portfolio is in the works — write to me and let's talk about your day.",fr:"Le portfolio mariage est en préparation — écris-moi et parlons de ton jour."};
 const AUDCOVER={entreprise:'gastronomia',particular:'retrato'};
 const T={
- es:{nav_work:"Trabajo",nav_studio:"Estudio",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",nav_art:"Portafolio de autor",
+ es:{nav_work:"Trabajo",nav_studio:"Fotógrafo",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",nav_art:"Portafolio de autor",
   b_k:"Reservar",b_h:"Reservar tu sesión, paso a paso.",b_lede:"No necesitas experiencia. Elige tu tipo de sesión y te muestro cómo trabajamos juntos, de principio a fin.",
   gate_q:"¿Para quién es la sesión?",sc_h:"Un vistazo a este trabajo",draft:"Maqueta",foot_terms:"Términos",foot_privacy:"Privacidad",
   menu:"Menú",menu_close:"Cerrar",
@@ -148,7 +154,7 @@ const T={
    ["Preparamos la sesión","Fijamos la fecha, la lista de tomas, la locación y la logística. Sabes exactamente qué se va a producir.","Un plan claro antes del día"],
    ["El día de la sesión","Llego con mi equipo técnico y dirijo la sesión de principio a fin. Eficiente, discreto, respetuoso con tu equipo y tus clientes.","Yo dirijo, tú te concentras"],
    ["Recibes tus imágenes","Te entrego una galería editada, lista para publicar, en todos los formatos útiles y con licencia para tu comunicación.","Galería lista en 10 a 14 días"]]}},
- en:{nav_work:"Work",nav_studio:"Studio",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",nav_art:"Fine-art portfolio",
+ en:{nav_work:"Work",nav_studio:"Photographer",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",nav_art:"Fine-art portfolio",
   b_k:"Book",b_h:"Booking your session, step by step.",b_lede:"You do not need any experience. Pick your type of session and I show you how we work together, start to finish.",
   gate_q:"Who is the session for?",sc_h:"A look at this work",draft:"Mockup",foot_terms:"Terms",foot_privacy:"Privacy",
   menu:"Menu",menu_close:"Close",
@@ -167,7 +173,7 @@ const T={
    ["We prepare the shoot","We lock the date, the shot list, the location and the logistics. You know exactly what will be produced.","A clear plan before the day"],
    ["Shoot day","I arrive with my gear and run the session end to end. Efficient, discreet, respectful of your teams and your guests.","I direct, you stay focused"],
    ["You receive your images","I deliver an edited, publish-ready gallery in every useful format, licensed for your communications.","Gallery ready in 10 to 14 days"]]}},
- fr:{nav_work:"Travail",nav_studio:"Studio",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",nav_art:"Portfolio d'auteur",
+ fr:{nav_work:"Travail",nav_studio:"Photographe",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",nav_art:"Portfolio d'auteur",
   b_k:"Réserver",b_h:"Réserver ta séance, étape par étape.",b_lede:"Pas besoin d'expérience. Choisis ton type de séance et je te montre comment on travaille ensemble, du début à la fin.",
   gate_q:"Pour qui est la séance ?",sc_h:"Un aperçu de ce travail",draft:"Maquette",foot_terms:"Conditions",foot_privacy:"Confidentialité",
   menu:"Menu",menu_close:"Fermer",
@@ -197,6 +203,7 @@ function firstPhoto(c){const a=window.BOOKING[c];return a&&a.length?a[0].s:''}
 function renderAud(){
   $('#aud').innerHTML=Object.entries(AUD).map(([k,v])=>`<button class="aud-card" data-aud="${k}" aria-pressed="${k===audience}">
     <span class="bg" style="background-image:url('${firstPhoto(AUDCOVER[k])}')"></span>
+    <img class="bg-fg" src="${firstPhoto(AUDCOVER[k])}" alt="">
     <span class="lab"><b>${v[lang][0]}</b><span>${v[lang][1]}</span></span></button>`).join('');
   $$('#aud .aud-card').forEach(b=>b.addEventListener('click',()=>{audience=b.dataset.aud;cat=CATS[audience][0][0];renderAll()}));
 }
@@ -204,15 +211,33 @@ function renderChips(){
   $('#chips').innerHTML=CATS[audience].map(([id,l])=>`<button class="chip" data-cat="${id}" aria-pressed="${id===cat}">${l[lang]}${l.soon?`<span class="soon">${{es:'pronto',en:'soon',fr:'bientôt'}[lang]}</span>`:''}</button>`).join('');
   $$('#chips .chip').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;renderAll()}));
 }
+const CAT_DESC={
+  gastronomia:{es:"Platos, sala y equipo en su mejor luz: fotografía pensada para la carta, redes y prensa, con entrega rápida para publicar sin esperar.",en:"Dishes, dining room and team in their best light — photography built for menus, social and press, delivered fast so you can publish without waiting.",fr:"Les plats, la salle et l'équipe dans leur meilleure lumière — une photographie pensée pour la carte, les réseaux et la presse, livrée vite pour publier sans attendre."},
+  eventos:{es:"El pulso del evento en tiempo real: los instantes que importan, listos para publicar antes de que termine la noche.",en:"The pulse of the event in real time — the moments that matter, ready to publish before the night is over.",fr:"Le pouls de l'événement en temps réel — les instants qui comptent, prêts à publier avant la fin de la soirée."},
+  moda:{es:"Dirección de arte editorial para tu marca: una narrativa visual con identidad propia, no solo producto bien iluminado.",en:"Editorial art direction for your brand — a visual narrative with its own identity, not just well-lit product.",fr:"Une direction artistique éditoriale pour ta marque — un récit visuel avec sa propre identité, pas juste un produit bien éclairé."},
+  retrato:{es:"Un retrato que se siente como tú, no como una pose forzada. Dirigido con calma, pensado para que te sientas cómodo frente a la cámara.",en:"A portrait that feels like you, not a forced pose. Directed calmly, built to make you comfortable in front of the camera.",fr:"Un portrait qui te ressemble, pas une pose forcée. Dirigé avec calme, pensé pour que tu te sentes à l'aise devant l'objectif."},
+  modelo:{es:"Portfolio construido para casting y agencias: variedad de looks, luz y actitud en una sola sesión.",en:"A portfolio built for casting and agencies — a range of looks, light and attitude in one session.",fr:"Un portfolio pensé pour le casting et les agences — plusieurs looks, lumières et attitudes en une seule séance."},
+  bailarines:{es:"Movimiento capturado en su punto exacto: energía real, no una pose congelada de estudio.",en:"Movement caught at its exact peak — real energy, not a frozen studio pose.",fr:"Le mouvement capté à son point exact — une énergie réelle, pas une pose figée de studio."},
+  boda:{es:"Una jornada contada con honestidad, de los instantes discretos a los que todos recuerdan.",en:"A day told honestly, from the quiet moments to the ones everyone remembers.",fr:"Une journée racontée avec sincérité, des instants discrets à ceux dont on se souvient."}
+};
+function renderCatDesc(){const d=CAT_DESC[cat];$('#cat_desc').textContent=(d&&d[lang])||'';}
 function renderSteps(){
   const set=(T[lang].steps[audience])||T[lang].steps.particular||[];
   $('#steps').innerHTML=set.map((s,i)=>`<div class="step"><div class="sn">${String(i+1).padStart(2,'0')}</div>
     <div><h3>${s[0]}</h3><p>${s[1]}</p><div class="det">✓ ${s[2]}</div></div></div>`).join('');
 }
 let FLAT=[];
+/* #sc reuses the site-wide .masonry/.mcol/.mitem CSS that work.html's
+   JS-balanced gallery defines — but without real .mcol columns underneath,
+   that CSS does nothing and the images just sit as loose flex children.
+   No ar data here to height-balance like work.html does, so a simple
+   round-robin into 3 columns is enough for a fixed 4-5 image showcase. */
 function renderShowcase(){
   const items=window.BOOKING[cat]||[];FLAT=items;
-  $('#sc').innerHTML=items.map((it,i)=>`<button class="mitem" data-i="${i}" aria-label="${it.a}"><img src="${it.s}" alt="${it.a}" loading="lazy"></button>`).join('');
+  const cols=[[],[],[]];
+  items.forEach((it,i)=>cols[i%3].push({it,i}));
+  $('#sc').innerHTML=cols.map(col=>`<div class="mcol">${col.map(({it,i})=>
+    `<button class="mitem" data-i="${i}" aria-label="${it.a}"><img src="${it.s}" alt="${it.a}" loading="lazy"></button>`).join('')}</div>`).join('');
   $$('#sc .mitem').forEach(b=>b.addEventListener('click',()=>openLB(+b.dataset.i)));
   const soon=(CATS[audience].find(c=>c[0]===cat)||[])[1];
   const sn=$('#sc-note');if(soon&&soon.soon){sn.hidden=false;sn.textContent=SOON[lang];}else sn.hidden=true;
@@ -230,7 +255,7 @@ addEventListener('keydown',e=>{if(!$('#lb').classList.contains('open'))return;if
 
 function applyI18n(){document.documentElement.lang=lang;const d=T[lang];$$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!=null)el.textContent=d[k];});$$('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
   const mt=$('.menu-txt');if(mt){const railOpen=$('#rail')&&$('#rail').classList.contains('open');mt.textContent=railOpen?d.menu_close:d.menu;}}
-function renderAll(){applyI18n();renderAud();renderChips();renderSteps();renderShowcase();}
+function renderAll(){applyI18n();renderAud();renderChips();renderCatDesc();renderShowcase();renderSteps();}
 $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('w2b_lang',lang);renderAll()}));
 function toggleMenu(open){
   const rail=$('#rail'),scrim=$('#railScrim'),btn=$('.menu-btn');

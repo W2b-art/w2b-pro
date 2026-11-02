@@ -19,9 +19,15 @@
 .d-step{margin:clamp(1.8rem,4vw,2.6rem) 0 0}
 .d-lab{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
 .d-lab .sn{color:var(--bone-faint)}
-.opts{display:flex;flex-wrap:wrap;gap:.55rem}
-.opt{font-family:"Instrument Sans",sans-serif;font-weight:500;font-size:.98rem;padding:.62rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--bone);cursor:pointer;transition:background .2s,color .2s,border-color .2s;text-align:left}
+.opts{display:flex;flex-wrap:wrap;gap:.75rem}
+.opt{font-family:"Instrument Sans",sans-serif;font-weight:650;font-size:.98rem;padding:.72rem 1.3rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--bone);cursor:pointer;transition:background .2s,color .2s,border-color .2s;text-align:left}
 .opt:hover{border-color:var(--bone-dim)}
+/* each step opens as the previous choice is made, instead of showing the
+   whole form at once — see revealStep()/hideStep() below */
+#step-svc,#qwrap,#step-est{margin-top:0}
+#step-svc.open,#qwrap.open{margin-top:clamp(1.8rem,4vw,2.6rem);padding-top:clamp(1.6rem,3.5vw,2.2rem);border-top:1px solid var(--line-soft)}
+#step-est.open{margin-top:clamp(1.8rem,4vw,2.6rem)}
+#qwrap:not(.open) .d-lab,#qwrap:not(.open) .opts{display:none}
 /* outlined, not a solid warm-fill pill — pulling back from the
    terracotta-pill-on-cream look */
 .opt[aria-pressed="true"]{background:rgba(212,160,68,.14);color:var(--bone);border-color:var(--amber)}
@@ -57,11 +63,11 @@
 
   <div class="d-step"><div class="d-lab"><span class="sn">01</span><span id="l_aud"></span></div>
     <div class="opts" id="aud"></div></div>
-  <div class="d-step"><div class="d-lab"><span class="sn">02</span><span id="l_svc"></span></div>
+  <div class="d-step" id="step-svc" hidden><div class="d-lab"><span class="sn">02</span><span id="l_svc"></span></div>
     <div class="opts" id="svc"></div></div>
-  <div class="d-step" id="qwrap"></div>
+  <div class="d-step" id="qwrap" hidden></div>
 
-  <div class="est">
+  <div class="est" id="step-est" hidden>
     <div class="est-row">
       <span class="est-k" id="est_k"></span>
       <span class="switch cur" role="group" aria-label="Currency"><button data-cur="EUR">€</button><span class="sep">·</span><button data-cur="COP">$</button></span>
@@ -189,7 +195,22 @@
    ]
   };
 
-  let aud='entreprise', svcId=null, sel={};
+  let aud=null, svcId=null, sel={};
+
+  /* progressive disclosure: each step stays out of the layout (hidden) until
+     the previous choice is made, then fades/rises in via the site's .reveal
+     pattern — "each choice opens another line" instead of showing the whole
+     form at once. */
+  function revealStep(id){
+    const el=document.getElementById(id);if(!el||!el.hidden&&el.classList.contains('open'))return;
+    el.hidden=false;el.classList.add('open','reveal');
+    void el.offsetWidth; // force reflow so the next class change transitions
+    requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('in')));
+  }
+  function hideStep(id){
+    const el=document.getElementById(id);if(!el)return;
+    el.hidden=true;el.classList.remove('open','reveal','in');
+  }
 
   function fmt(n,ratio){
     if(cur==='COP'){const v=Math.round(n*(ratio||4000)/50000)*50000;return '$'+v.toLocaleString('es-CO');}
@@ -213,7 +234,7 @@
   function renderAud(){
     $('#aud').innerHTML=['entreprise','particular'].map(a=>
       `<button class="opt" data-a="${a}" aria-pressed="${a===aud}">${UI[lang].aud[a]}</button>`).join('');
-    $$('#aud .opt').forEach(b=>b.onclick=()=>{aud=b.dataset.a;svcId=svcList()[0].id;sel={};renderAll();});
+    $$('#aud .opt').forEach(b=>b.onclick=()=>{aud=b.dataset.a;svcId=null;sel={};renderAll();});
   }
   function renderSvc(){
     $('#svc').innerHTML=svcList().map(s=>
@@ -272,7 +293,12 @@
     document.documentElement.lang=lang;
     $$('.cur [data-cur]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===cur));
   }
-  function renderAll(){applyStatic();renderAud();renderSvc();renderQ();renderEst();}
+  function renderAll(){
+    applyStatic();renderAud();
+    if(aud){renderSvc();revealStep('step-svc');}else hideStep('step-svc');
+    if(svcId){renderQ();renderEst();revealStep('qwrap');revealStep('step-est');}
+    else{hideStep('qwrap');hideStep('step-est');}
+  }
 
   /* ---- Formspree capture: fires alongside the WhatsApp/email handoff so
      every pre-quote leaves a durable, searchable record, without blocking
@@ -301,7 +327,6 @@
     document.querySelectorAll('[data-cur]').forEach(b=>b.addEventListener('click',()=>{
       cur=b.dataset.cur;localStorage.setItem('w2b_currency',cur);renderAll();}));
   }
-  if(!svcId)svcId=svcList()[0].id;
   // let site.js build the rail first
   setTimeout(function(){wire();renderAll();},0);
 })();
