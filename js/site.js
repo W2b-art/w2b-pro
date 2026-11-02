@@ -235,8 +235,14 @@ function imgTag(src,alt,opts){
   opts=opts||{};
   const cls=opts.cls?` class="${opts.cls}"`:'';
   const loading=opts.eager?'':' loading="lazy"';
+  /* ar = width/height, already computed per item in gallery-data.js for
+     masonry column-balancing (see balanceCols). Reusing it here reserves
+     the image's real box before it loads, instead of height:auto — the
+     masonry grid otherwise has no intrinsic size to lay out against and
+     every image loading in shifts the columns below it. */
+  const style=opts.ar?` style="aspect-ratio:${opts.ar}"`:'';
   if(!opts.widths||!opts.widths.length){
-    return `<img src="${src}" alt="${alt}"${cls}${loading}>`;
+    return `<img src="${src}" alt="${alt}"${cls}${style}${loading}>`;
   }
   const base=src.replace(/\.[a-z]+$/i,'');
   const widths=opts.widths;
@@ -249,7 +255,7 @@ function imgTag(src,alt,opts){
   return `<picture>`+
     `<source type="image/avif" srcset="${srcset('avif')}" sizes="${sizes}">`+
     `<source type="image/webp" srcset="${srcset('webp')}" sizes="${sizes}">`+
-    `<img src="${fallback}" srcset="${srcset('jpg')}" sizes="${sizes}" alt="${alt}"${cls}${loading}>`+
+    `<img src="${fallback}" srcset="${srcset('jpg')}" sizes="${sizes}" alt="${alt}"${cls}${style}${loading}>`+
   `</picture>`;
 }
 
@@ -286,7 +292,7 @@ function balanceCols(items,startIdx,cols){
   });
   buckets.forEach(b=>b.sort((a,c)=>a.idx-c.idx)); // restore curated order within each column
   return buckets.map(bucket=>`<div class="mcol">${bucket.map(({it,idx})=>
-    `<button class="mitem" data-idx="${idx}" aria-label="${it.alt}">${imgTag(it.src,it.alt,{widths:it.widths,sizes:it.sizes})}</button>`).join('')}</div>`).join('');
+    `<button class="mitem" data-idx="${idx}" aria-label="${it.alt}">${imgTag(it.src,it.alt,{widths:it.widths,sizes:it.sizes,ar:it.ar})}</button>`).join('')}</div>`).join('');
 }
 window.renderGalleries=function(){
   const host=$('#series-host');if(!host||!window.GALLERY)return;
@@ -304,7 +310,7 @@ window.renderGalleries=function(){
     const mas=balanceCols(rest,startIdx,cols);
     html+=`<section class="series" id="${cat}">
       <div class="series-head"><span class="n meta">0${n}</span><h2>${c.label[lang]}</h2><span class="scount meta">— ${items.length}</span><span class="ln"></span><span class="splace meta">${c.place}</span></div>
-      <button class="feature feat-${cfg.f}" data-idx="${featIdx}" aria-label="${items[0].alt}">${imgTag(items[0].full,items[0].alt,{eager:true,widths:items[0].fullWidths,sizes:items[0].sizes})}</button>
+      <button class="feature feat-${cfg.f}" data-idx="${featIdx}" aria-label="${items[0].alt}">${imgTag(items[0].full,items[0].alt,{eager:true,widths:items[0].fullWidths,sizes:items[0].sizes,ar:items[0].ar})}</button>
       <div class="masonry m${cfg.cols}">${mas}</div></section>`;
   }
   host.innerHTML=html;
