@@ -44,6 +44,13 @@
 .step .det{margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
 .sc-note{margin-top:1.2rem;font-style:italic;font-family:"Fraunces",serif;color:var(--bone-dim)}
 .cat-desc{max-width:52ch;color:var(--bone-dim);margin-top:1rem;line-height:1.6}
+/* a strip, not a grid: every photo shares one height (capped so the
+   tallest one still never gets oversized) and keeps its own natural
+   width — no cropping, real breathing room between frames. */
+.sc-strip{display:flex;gap:clamp(.9rem,2.2vw,1.5rem);overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:.4rem}
+.sc-strip .mitem{flex:0 0 auto;display:block;border:0;padding:0;margin:0;background:none;cursor:pointer;height:clamp(13rem,30vw,20rem)}
+.sc-strip .mitem img{display:block;height:100%;width:auto;max-width:none;border:1px solid var(--line);transition:border-color .25s,opacity .25s}
+.sc-strip .mitem:hover img,.sc-strip .mitem:focus-visible img{border-color:var(--amber);opacity:.92}
 .field label{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:.5rem}
 .field input{width:100%;max-width:28rem;background:var(--ground);border:1px solid var(--line);border-radius:.6rem;color:var(--bone);font:inherit;font-size:.95rem;padding:.75rem .9rem}
 .field input:focus-visible,#bf_msg:focus-visible{outline:1px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
@@ -91,7 +98,7 @@
 
   <section style="padding:clamp(2.5rem,6vw,4.5rem) 0 1rem">
     <div class="series-head"><span class="n meta">—</span><h2 data-i18n="sc_h">Un vistazo a este trabajo</h2><span class="ln"></span></div>
-    <div class="masonry m3" id="sc"></div>
+    <div class="sc-strip" id="sc"></div>
     <p class="sc-note" id="sc-note" hidden></p>
   </section>
 
@@ -142,18 +149,50 @@ const T={
   bf_h:"Cuéntame tu proyecto",bf_p:"Escribe un par de líneas. Te confirmo por WhatsApp o correo en menos de 48 h.",
   bf_name:"Nombre",f_email:"Email",bf_msg:"Tu proyecto",bf_consent:"Acepto que mis datos se traten para responder a mi solicitud.",bf_submit:"Enviar solicitud",
   bf_sent:"Recibido. Te escribo en menos de 48 h. También puedes seguir por WhatsApp o correo.",bf_subject:"Reserva",
-  steps:{particular:[["Me escribes","Me cuentas tu idea en un mensaje corto: qué quieres fotografiar y para qué. Sin compromiso, respondo rápido.","Respuesta en menos de 48 h"],
-   ["Hablamos 20 minutos","Una llamada corta para entender tu proyecto y a quién quieres llegar. Aquí resolvemos todas tus dudas.","Por WhatsApp o videollamada"],
-   ["Recibes una propuesta clara","Te envío un presupuesto sencillo y un moodboard con la dirección visual. Sabes exactamente qué vas a recibir.","Precio cerrado, sin sorpresas"],
-   ["Preparamos la sesión","Fijamos la fecha y afinamos los detalles: la lista de tomas, los tiempos, el estilo. Llegas tranquilo.","Un plan claro antes del día"],
-   ["El día de la sesión","Llego con mi equipo técnico y te guío en todo momento. Es relajado y natural, no tienes que posar como un profesional.","Yo te dirijo, tú te relajas"],
-   ["Recibes tus fotos","Te entrego una galería editada y lista para usar. Fotos que hacen que tu proyecto se vea como merece.","Galería lista en 10 a 14 días"]],
-   entreprise:[["Me contactas","Descríbeme el proyecto en unas líneas: qué quieres fotografiar, para qué uso y para cuándo. Sin compromiso.","Respuesta en menos de 48 h"],
-   ["Una llamada de 20 minutos","Una llamada corta para enmarcar los objetivos, el público y los entregables. Alineamos el mensaje antes de fotografiar.","Por WhatsApp o videollamada"],
-   ["Una propuesta clara","Recibes una cotización cerrada y un moodboard con la dirección visual. Alcance, formatos y licencia de uso por escrito.","Precio cerrado, sin sorpresas"],
-   ["Preparamos la sesión","Fijamos la fecha, la lista de tomas, la locación y la logística. Sabes exactamente qué se va a producir.","Un plan claro antes del día"],
-   ["El día de la sesión","Llego con mi equipo técnico y dirijo la sesión de principio a fin. Eficiente, discreto, respetuoso con tu equipo y tus clientes.","Yo dirijo, tú te concentras"],
-   ["Recibes tus imágenes","Te entrego una galería editada, lista para publicar, en todos los formatos útiles y con licencia para tu comunicación.","Galería lista en 10 a 14 días"]]}},
+  steps:{
+   gastronomia:[["Me escribes","Cuéntame del restaurante o la marca: qué necesitas (carta, redes, prensa) y para cuándo. Sin compromiso, respondo rápido.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Repasamos el menú o los platos clave, el estilo de la carta y a quién le hablas. Aquí definimos qué se fotografía.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Cotización cerrada y referencias visuales: luz, encuadre, estilo de mesa. Sabes exactamente qué vas a recibir.","Precio cerrado, sin sorpresas"],
+    ["Preparamos la sesión","Fijamos fecha y horario de cocina, la lista de platos y quién monta cada plato.","Un plan claro antes del día"],
+    ["El día de la sesión","Llego con mi equipo y trabajo junto a cocina, aprovechando la luz natural o montando la mía. Rápido, sin parar el servicio.","Discreto, no interrumpe el servicio"],
+    ["Recibes tus fotos","Galería editada, lista para carta, redes y prensa.","Galería lista en 10 a 14 días"]],
+   eventos:[["Me escribes","Cuéntame el evento: fecha, lugar, tipo (festival, fiesta, concierto) y qué necesitas cubrir. Sin compromiso.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Repasamos el itinerario, los momentos clave que no te puedes perder y cómo se van a usar las fotos.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Cotización cerrada según duración y cobertura (uno o dos fotógrafos).","Precio cerrado, sin sorpresas"],
+    ["Preparamos la cobertura","Confirmamos horarios, accesos y los momentos que no pueden faltar.","Un plan claro antes del evento"],
+    ["El día del evento","Cubro en tiempo real, me muevo con el público y el escenario, sin interrumpir nada.","Me adapto al ritmo del evento"],
+    ["Recibes tus fotos","Selección editada, lista para publicar rápido, antes de que el evento deje de ser noticia.","Entrega exprés disponible"]],
+   moda:[["Me escribes","Cuéntame la dirección: campaña, editorial o lookbook. Qué marca, qué prendas, qué mood.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Definimos el moodboard, la locación y el número de looks.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Cotización cerrada, moodboard de dirección visual y licencia de uso.","Precio cerrado, sin sorpresas"],
+    ["Preparamos la sesión","Casting si hace falta, locación, styling, lista de looks y timing del día.","Un plan claro antes del día"],
+    ["El día de la sesión","Dirijo la sesión completa: modelo, luz y styling en cámara.","Dirección completa en set"],
+    ["Recibes tus fotos","Galería editada en la dirección acordada, lista para campaña o redes.","Galería lista en 10 a 14 días"]],
+   retrato:[["Me escribes","Me cuentas tu idea en un mensaje corto: qué quieres fotografiar y para qué. Sin compromiso, respondo rápido.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Una llamada corta para entender tu proyecto y a quién quieres llegar. Aquí resolvemos todas tus dudas.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Te envío un presupuesto sencillo y un moodboard con la dirección visual.","Precio cerrado, sin sorpresas"],
+    ["Preparamos la sesión","Fijamos la fecha y afinamos los detalles: look, locación, los tiempos.","Un plan claro antes del día"],
+    ["El día de la sesión","Te guío en todo momento. Es relajado y natural, no tienes que posar como un profesional.","Yo te dirijo, tú te relajas"],
+    ["Recibes tus fotos","Galería editada y lista para usar.","Galería lista en 10 a 14 días"]],
+   modelo:[["Me escribes","Cuéntame qué necesitas: portfolio para casting, una agencia o redes. Cuántos looks quieres cubrir.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Revisamos referencias, el número de looks y el estilo: comercial, editorial o beauty.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Precio cerrado según número de looks y locaciones.","Precio cerrado, sin sorpresas"],
+    ["Preparamos la sesión","Definimos looks, locaciones (estudio o exterior) y el orden del día.","Un plan claro antes del día"],
+    ["El día de la sesión","Varios cambios de look, dirección de pose y expresión para que tengas variedad real.","Variedad de looks en una sesión"],
+    ["Recibes tus fotos","Selección editada de cada look, lista para tu portfolio o book.","Galería lista en 10 a 14 días"]],
+   bailarines:[["Me escribes","Cuéntame tu estilo (breaking, urbano, contemporáneo) y para qué lo necesitas: portfolio, batalla, redes.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Hablamos de los movimientos o rutinas que quieres capturar y el lugar.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Precio cerrado según duración y si es en estudio o en calle.","Precio cerrado, sin sorpresas"],
+    ["Preparamos la sesión","Definimos movimientos clave, vestuario y locación: estudio, calle o evento.","Un plan claro antes del día"],
+    ["El día de la sesión","Disparo en ráfaga para captar el movimiento en su punto exacto, no una pose posada.","Movimiento real, no posado"],
+    ["Recibes tus fotos","Selección editada de los mejores instantes, lista para portfolio o redes.","Galería lista en 10 a 14 días"]],
+   boda:[["Me escribes","Cuéntame la fecha y el estilo de boda que imaginas. El portafolio está en preparación, pero conversemos.","Respuesta en menos de 48 h"],
+    ["Hablamos 20 minutos","Hablamos de tu día, tus prioridades y qué momentos no te puedes perder.","Por WhatsApp o videollamada"],
+    ["Recibes una propuesta clara","Cotización a medida según duración y cobertura.","Precio cerrado, sin sorpresas"],
+    ["Preparamos el día","Timeline del día, locaciones y los momentos clave.","Un plan claro antes del día"],
+    ["El día de la boda","Cubro discretamente los instantes reales, sin interrumpir la celebración.","Discreto, sin interrumpir"],
+    ["Recibes tus fotos","Galería editada de tu día.","Galería lista en 10 a 14 días"]]
+  }},
  en:{nav_work:"Work",nav_studio:"Photographer",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",nav_art:"Fine-art portfolio",
   b_k:"Book",b_h:"Booking your session, step by step.",b_lede:"You do not need any experience. Pick your type of session and I show you how we work together, start to finish.",
   gate_q:"Who is the session for?",sc_h:"A look at this work",draft:"Mockup",foot_terms:"Terms",foot_privacy:"Privacy",
@@ -161,18 +200,50 @@ const T={
   bf_h:"Tell me about your project",bf_p:"A couple of lines is enough. I confirm by WhatsApp or email within 48h.",
   bf_name:"Name",f_email:"Email",bf_msg:"Your project",bf_consent:"I agree my data may be processed to answer my request.",bf_submit:"Send request",
   bf_sent:"Received. I'll write back within 48h. You can still send it on WhatsApp or email too.",bf_subject:"Booking",
-  steps:{particular:[["You reach out","Tell me your idea in a short message: what you want to photograph and what for. No commitment, I reply fast.","Reply within 48h"],
-   ["We talk for 20 minutes","A short call to understand your project and who you want to reach. This is where we clear up every doubt.","On WhatsApp or video call"],
-   ["You get a clear proposal","I send you a simple quote and a moodboard with the visual direction. You know exactly what you will get.","Fixed price, no surprises"],
-   ["We prepare the session","We lock the date and fine-tune the details: shot list, timing, styling. You arrive relaxed.","A clear plan before the day"],
-   ["Shoot day","I arrive with my gear and guide you the whole way. It is relaxed and natural, you do not have to pose like a pro.","I direct, you relax"],
-   ["You receive your photos","I deliver an edited gallery, ready to use. Photos that make your project look the way it deserves.","Gallery ready in 10 to 14 days"]],
-   entreprise:[["You reach out","Describe the project in a few lines: what you want to photograph, for which use and for when. No commitment.","Reply within 48h"],
-   ["A 20-minute call","A short call to frame the goals, the audience and the deliverables. We align the message before we shoot.","On WhatsApp or video call"],
-   ["A clear proposal","You get a fixed quote and a moodboard with the visual direction. Scope, formats and usage licence set out in writing.","Fixed price, no surprises"],
-   ["We prepare the shoot","We lock the date, the shot list, the location and the logistics. You know exactly what will be produced.","A clear plan before the day"],
-   ["Shoot day","I arrive with my gear and run the session end to end. Efficient, discreet, respectful of your teams and your guests.","I direct, you stay focused"],
-   ["You receive your images","I deliver an edited, publish-ready gallery in every useful format, licensed for your communications.","Gallery ready in 10 to 14 days"]]}},
+  steps:{
+   gastronomia:[["You reach out","Tell me about the restaurant or brand: what you need (menu, social, press) and by when. No commitment, I reply fast.","Reply within 48h"],
+    ["We talk for 20 minutes","We go over the menu or key dishes, the carte's style and who you're talking to. This is where we define what gets shot.","On WhatsApp or video call"],
+    ["You get a clear proposal","Fixed quote plus visual references: light, framing, table styling. You know exactly what you'll get.","Fixed price, no surprises"],
+    ["We prepare the session","We lock the date and kitchen timing, the dish list and who plates each one.","A clear plan before the day"],
+    ["Shoot day","I arrive with my gear and work alongside the kitchen, using natural light or bringing my own. Fast, without stopping service.","Discreet, doesn't interrupt service"],
+    ["You receive your photos","Edited gallery, ready for the menu, social and press.","Gallery ready in 10 to 14 days"]],
+   eventos:[["You reach out","Tell me about the event: date, venue, type (festival, party, concert) and what you need covered. No commitment.","Reply within 48h"],
+    ["We talk for 20 minutes","We go over the run of show, the key moments you can't miss, and how the photos will be used.","On WhatsApp or video call"],
+    ["You get a clear proposal","Fixed quote based on duration and coverage (one or two photographers).","Fixed price, no surprises"],
+    ["We prepare the coverage","We confirm timing, access and the moments that can't be missed.","A clear plan before the event"],
+    ["Event day","I cover it in real time, moving with the crowd and the stage, without getting in the way.","I adapt to the event's pace"],
+    ["You receive your photos","Edited selection, ready to publish fast, while the event is still news.","Express delivery available"]],
+   moda:[["You reach out","Tell me the direction: campaign, editorial or lookbook. Which brand, which pieces, which mood.","Reply within 48h"],
+    ["We talk for 20 minutes","We set the moodboard, the location and the number of looks.","On WhatsApp or video call"],
+    ["You get a clear proposal","Fixed quote, a visual-direction moodboard and usage licence.","Fixed price, no surprises"],
+    ["We prepare the session","Casting if needed, location, styling, look list and the day's timing.","A clear plan before the day"],
+    ["Shoot day","I direct the whole session: model, light and styling on camera.","Full direction on set"],
+    ["You receive your photos","Edited gallery in the agreed direction, ready for campaign or social.","Gallery ready in 10 to 14 days"]],
+   retrato:[["You reach out","Tell me your idea in a short message: what you want to photograph and what for. No commitment, I reply fast.","Reply within 48h"],
+    ["We talk for 20 minutes","A short call to understand your project and who you want to reach. This is where we clear up every doubt.","On WhatsApp or video call"],
+    ["You get a clear proposal","I send you a simple quote and a moodboard with the visual direction.","Fixed price, no surprises"],
+    ["We prepare the session","We lock the date and fine-tune the details: look, location, timing.","A clear plan before the day"],
+    ["Shoot day","I guide you the whole way. It's relaxed and natural, you don't have to pose like a pro.","I direct, you relax"],
+    ["You receive your photos","Edited gallery, ready to use.","Gallery ready in 10 to 14 days"]],
+   modelo:[["You reach out","Tell me what you need: a portfolio for casting, an agency or social. How many looks you want covered.","Reply within 48h"],
+    ["We talk for 20 minutes","We go over references, the number of looks and the style: commercial, editorial or beauty.","On WhatsApp or video call"],
+    ["You get a clear proposal","Fixed price based on number of looks and locations.","Fixed price, no surprises"],
+    ["We prepare the session","We set looks, locations (studio or outdoors) and the day's order.","A clear plan before the day"],
+    ["Shoot day","Several look changes, pose and expression direction so you get real variety.","A real range of looks in one session"],
+    ["You receive your photos","Edited selection of each look, ready for your portfolio or book.","Gallery ready in 10 to 14 days"]],
+   bailarines:[["You reach out","Tell me your style (breaking, urban, contemporary) and what you need it for: portfolio, battle, social.","Reply within 48h"],
+    ["We talk for 20 minutes","We talk through the moves or routines you want captured, and the location.","On WhatsApp or video call"],
+    ["You get a clear proposal","Fixed price based on duration and whether it's studio or street.","Fixed price, no surprises"],
+    ["We prepare the session","We set key moves, wardrobe and location: studio, street or event.","A clear plan before the day"],
+    ["Shoot day","I shoot in bursts to catch the movement at its exact peak, not a posed shot.","Real movement, not posed"],
+    ["You receive your photos","Edited selection of the best moments, ready for portfolio or social.","Gallery ready in 10 to 14 days"]],
+   boda:[["You reach out","Tell me the date and the kind of wedding you're picturing. The wedding portfolio is still in the works, but let's talk.","Reply within 48h"],
+    ["We talk for 20 minutes","We talk through your day, your priorities and the moments you can't miss.","On WhatsApp or video call"],
+    ["You get a clear proposal","Custom quote based on duration and coverage.","Fixed price, no surprises"],
+    ["We prepare the day","Day timeline, locations and the key moments.","A clear plan before the day"],
+    ["Wedding day","I cover the real moments discreetly, without interrupting the celebration.","Discreet, never in the way"],
+    ["You receive your photos","Edited gallery of your day.","Gallery ready in 10 to 14 days"]]
+  }},
  fr:{nav_work:"Travail",nav_studio:"Photographe",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",nav_art:"Portfolio d'auteur",
   b_k:"Réserver",b_h:"Réserver ta séance, étape par étape.",b_lede:"Pas besoin d'expérience. Choisis ton type de séance et je te montre comment on travaille ensemble, du début à la fin.",
   gate_q:"Pour qui est la séance ?",sc_h:"Un aperçu de ce travail",draft:"Maquette",foot_terms:"Conditions",foot_privacy:"Confidentialité",
@@ -180,18 +251,50 @@ const T={
   bf_h:"Raconte-moi ton projet",bf_p:"Quelques lignes suffisent. Je confirme par WhatsApp ou email sous 48 h.",
   bf_name:"Nom",f_email:"Email",bf_msg:"Ton projet",bf_consent:"J'accepte que mes données soient traitées pour répondre à ma demande.",bf_submit:"Envoyer la demande",
   bf_sent:"Reçu. Je réponds sous 48 h. Tu peux aussi envoyer par WhatsApp ou email.",bf_subject:"Réservation",
-  steps:{particular:[["Tu m'écris","Tu me racontes ton idée en un court message : ce que tu veux photographier et pourquoi. Sans engagement, je réponds vite.","Réponse en moins de 48 h"],
-   ["On se parle 20 minutes","Un court appel pour comprendre ton projet et qui tu veux toucher. C'est ici qu'on lève tous les doutes.","Sur WhatsApp ou en visio"],
-   ["Tu reçois une proposition claire","Je t'envoie un devis simple et un moodboard avec la direction visuelle. Tu sais exactement ce que tu vas recevoir.","Prix ferme, sans surprise"],
-   ["On prépare la séance","On fixe la date et on affine les détails : prises, timing, style. Tu arrives tranquille.","Un plan clair avant le jour J"],
-   ["Le jour de la séance","J'arrive avec mon matériel et je te guide à chaque instant. C'est détendu et naturel, tu n'as pas à poser comme un pro.","Je dirige, tu te détends"],
-   ["Tu reçois tes photos","Je te livre une galerie retouchée, prête à l'emploi. Des photos qui font que ton projet se voie comme il le mérite.","Galerie prête sous 10 à 14 jours"]],
-   entreprise:[["Vous me contactez","Vous me décrivez le projet en quelques lignes : ce que vous voulez photographier, pour quel usage et pour quelle échéance. Sans engagement.","Réponse sous 48 h"],
-   ["Un échange de 20 minutes","Un appel court pour cadrer les objectifs, la cible et les livrables attendus. On aligne le message avant de photographier.","Sur WhatsApp ou en visio"],
-   ["Une proposition claire","Vous recevez un devis ferme et un moodboard avec la direction visuelle. Périmètre, formats et licence d'usage définis noir sur blanc.","Prix ferme, sans surprise"],
-   ["On prépare la séance","On verrouille la date, la liste de plans, le lieu et la logistique. Vous savez exactement ce qui sera produit.","Un plan clair avant le jour J"],
-   ["Le jour de la séance","J'arrive avec mon matériel et je dirige la séance de bout en bout. Efficace, discret, respectueux de vos équipes et de vos clients.","Je dirige, vous restez concentré"],
-   ["Vous recevez vos images","Je livre une galerie retouchée, prête à publier, dans tous les formats utiles et sous licence pour votre communication.","Galerie prête sous 10 à 14 jours"]]}
+  steps:{
+   gastronomia:[["Tu m'écris","Raconte-moi le restaurant ou la marque : ce dont tu as besoin (carte, réseaux, presse) et pour quand. Sans engagement, je réponds vite.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On passe en revue le menu ou les plats clés, le style de la carte et à qui tu t'adresses. C'est ici qu'on définit ce qui sera photographié.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Devis ferme et références visuelles : lumière, cadrage, style de table. Tu sais exactement ce que tu vas recevoir.","Prix ferme, sans surprise"],
+    ["On prépare la séance","On fixe la date et les horaires de cuisine, la liste des plats et qui dresse chaque assiette.","Un plan clair avant le jour J"],
+    ["Le jour de la séance","J'arrive avec mon matériel et je travaille avec la cuisine, en lumière naturelle ou avec la mienne. Rapide, sans interrompre le service.","Discret, n'interrompt pas le service"],
+    ["Tu reçois tes photos","Galerie retouchée, prête pour la carte, les réseaux et la presse.","Galerie prête sous 10 à 14 jours"]],
+   eventos:[["Tu m'écris","Raconte-moi l'événement : date, lieu, type (festival, soirée, concert) et ce qu'il faut couvrir. Sans engagement.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On revoit le déroulé, les moments clés à ne pas manquer et comment les photos seront utilisées.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Devis ferme selon la durée et la couverture (un ou deux photographes).","Prix ferme, sans surprise"],
+    ["On prépare la couverture","On confirme les horaires, les accès et les moments à ne pas manquer.","Un plan clair avant l'événement"],
+    ["Le jour de l'événement","Je couvre en temps réel, je me déplace avec le public et la scène, sans rien interrompre.","Je m'adapte au rythme de l'événement"],
+    ["Tu reçois tes photos","Sélection retouchée, prête à publier vite, pendant que l'événement fait encore l'actualité.","Livraison express possible"]],
+   moda:[["Tu m'écris","Raconte-moi la direction : campagne, éditorial ou lookbook. Quelle marque, quelles pièces, quelle ambiance.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On définit le moodboard, le lieu et le nombre de looks.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Devis ferme, moodboard de direction visuelle et licence d'usage.","Prix ferme, sans surprise"],
+    ["On prépare la séance","Casting si besoin, lieu, stylisme, liste des looks et timing du jour.","Un plan clair avant le jour J"],
+    ["Le jour de la séance","Je dirige toute la séance : mannequin, lumière et stylisme en direct.","Direction complète sur le plateau"],
+    ["Tu reçois tes photos","Galerie retouchée dans la direction convenue, prête pour campagne ou réseaux.","Galerie prête sous 10 à 14 jours"]],
+   retrato:[["Tu m'écris","Tu me racontes ton idée en un court message : ce que tu veux photographier et pourquoi. Sans engagement, je réponds vite.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","Un court appel pour comprendre ton projet et qui tu veux toucher. C'est ici qu'on lève tous les doutes.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Je t'envoie un devis simple et un moodboard avec la direction visuelle.","Prix ferme, sans surprise"],
+    ["On prépare la séance","On fixe la date et on affine les détails : look, lieu, timing.","Un plan clair avant le jour J"],
+    ["Le jour de la séance","Je te guide à chaque instant. C'est détendu et naturel, tu n'as pas à poser comme un pro.","Je dirige, tu te détends"],
+    ["Tu reçois tes photos","Galerie retouchée, prête à l'emploi.","Galerie prête sous 10 à 14 jours"]],
+   modelo:[["Tu m'écris","Raconte-moi ce dont tu as besoin : un portfolio pour du casting, une agence ou les réseaux. Combien de looks tu veux couvrir.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On passe en revue les références, le nombre de looks et le style : commercial, éditorial ou beauté.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Prix ferme selon le nombre de looks et de lieux.","Prix ferme, sans surprise"],
+    ["On prépare la séance","On définit les looks, les lieux (studio ou extérieur) et l'ordre du jour.","Un plan clair avant le jour J"],
+    ["Le jour de la séance","Plusieurs changements de look, direction de pose et d'expression pour une vraie variété.","Une vraie variété de looks en une séance"],
+    ["Tu reçois tes photos","Sélection retouchée de chaque look, prête pour ton portfolio ou ton book.","Galerie prête sous 10 à 14 jours"]],
+   bailarines:[["Tu m'écris","Raconte-moi ton style (breaking, urbain, contemporain) et pour quoi tu en as besoin : portfolio, battle, réseaux.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On parle des mouvements ou routines que tu veux capturer, et du lieu.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Prix ferme selon la durée et si c'est en studio ou dans la rue.","Prix ferme, sans surprise"],
+    ["On prépare la séance","On définit les mouvements clés, la tenue et le lieu : studio, rue ou événement.","Un plan clair avant le jour J"],
+    ["Le jour de la séance","Je shoote en rafale pour capter le mouvement à son point exact, pas une pose figée.","Un vrai mouvement, pas une pose"],
+    ["Tu reçois tes photos","Sélection retouchée des meilleurs instants, prête pour portfolio ou réseaux.","Galerie prête sous 10 à 14 jours"]],
+   boda:[["Tu m'écris","Raconte-moi la date et le mariage que tu imagines. Le portfolio mariage est en préparation, mais parlons-en.","Réponse en moins de 48 h"],
+    ["On se parle 20 minutes","On parle de ta journée, tes priorités et les moments à ne pas manquer.","Sur WhatsApp ou en visio"],
+    ["Tu reçois une proposition claire","Devis sur mesure selon la durée et la couverture.","Prix ferme, sans surprise"],
+    ["On prépare la journée","Timeline du jour, lieux et moments clés.","Un plan clair avant le jour J"],
+    ["Le jour du mariage","Je couvre discrètement les instants réels, sans interrompre la célébration.","Discret, jamais dans tes pattes"],
+    ["Tu reçois tes photos","Galerie retouchée de ta journée.","Galerie prête sous 10 à 14 jours"]]
+  }
  }
 };
 let lang=localStorage.getItem('w2b_lang')||'es'; if(!T[lang])lang='es';
@@ -222,22 +325,15 @@ const CAT_DESC={
 };
 function renderCatDesc(){const d=CAT_DESC[cat];$('#cat_desc').textContent=(d&&d[lang])||'';}
 function renderSteps(){
-  const set=(T[lang].steps[audience])||T[lang].steps.particular||[];
+  const set=(T[lang].steps[cat])||T[lang].steps.retrato||[];
   $('#steps').innerHTML=set.map((s,i)=>`<div class="step"><div class="sn">${String(i+1).padStart(2,'0')}</div>
     <div><h3>${s[0]}</h3><p>${s[1]}</p><div class="det">✓ ${s[2]}</div></div></div>`).join('');
 }
 let FLAT=[];
-/* #sc reuses the site-wide .masonry/.mcol/.mitem CSS that work.html's
-   JS-balanced gallery defines — but without real .mcol columns underneath,
-   that CSS does nothing and the images just sit as loose flex children.
-   No ar data here to height-balance like work.html does, so a simple
-   round-robin into 3 columns is enough for a fixed 4-5 image showcase. */
 function renderShowcase(){
   const items=window.BOOKING[cat]||[];FLAT=items;
-  const cols=[[],[],[]];
-  items.forEach((it,i)=>cols[i%3].push({it,i}));
-  $('#sc').innerHTML=cols.map(col=>`<div class="mcol">${col.map(({it,i})=>
-    `<button class="mitem" data-i="${i}" aria-label="${it.a}"><img src="${it.s}" alt="${it.a}" loading="lazy"></button>`).join('')}</div>`).join('');
+  $('#sc').innerHTML=items.map((it,i)=>
+    `<button class="mitem" data-i="${i}" aria-label="${it.a}"><img src="${it.s}" alt="${it.a}" loading="lazy"></button>`).join('');
   $$('#sc .mitem').forEach(b=>b.addEventListener('click',()=>openLB(+b.dataset.i)));
   const soon=(CATS[audience].find(c=>c[0]===cat)||[])[1];
   const sn=$('#sc-note');if(soon&&soon.soon){sn.hidden=false;sn.textContent=SOON[lang];}else sn.hidden=true;
