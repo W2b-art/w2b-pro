@@ -41,8 +41,8 @@ body {
 }
 
 img { display: block; max-width: 100%; }
-a { color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid var(--gold-border); transition: border-color 0.2s; }
-a:hover { border-color: var(--gold); }
+a { color: var(--gold-dark); text-decoration: underline; text-decoration-color: var(--gold-border); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+a:hover { text-decoration-color: var(--gold); }
 
 /* ── Document page layout ──────────────────────────────────── */
 .doc-page {

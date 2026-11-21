@@ -56,9 +56,13 @@ ul  { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── Scrollbar ─────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track  { background: var(--bg); }
-::-webkit-scrollbar-thumb  { background: var(--gold); border-radius: 2px; }
+:root { scrollbar-color: var(--gold) var(--bg); scrollbar-width: thin; }
+@supports not (scrollbar-color: auto) {
+  :root { scrollbar-width: auto; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track  { background: var(--bg); }
+  ::-webkit-scrollbar-thumb  { background: var(--gold); border-radius: 2px; }
+}
 
 /* ── Navigation ────────────────────────────────────────────── */
 .nav {
