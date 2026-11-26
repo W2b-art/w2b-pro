@@ -124,10 +124,31 @@ function isAuthed(req) {
 // ---------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------
+// Which categories a live page actually shows: site.js's renderGalleries
+// only puts a category on the page when some body has
+// data-only="<category>" (a dedicated page) — scanned fresh so this
+// stays correct as pages are added. Found 2026-11-26: "products" has 6
+// photos in window.GALLERY and no page at all (no products.html, and
+// work.html explicitly data-skips every category) — editing it here
+// currently has no visible effect on the site.
+function liveCategoryIds() {
+  const ids = new Set();
+  for (const f of fs.readdirSync(ROOT)) {
+    if (!f.endsWith('.html')) continue;
+    let html;
+    try { html = fs.readFileSync(path.join(ROOT, f), 'utf8'); } catch (e) { continue; }
+    const m = /data-only="([^"]+)"/.exec(html);
+    if (m) ids.add(m[1]);
+  }
+  return ids;
+}
+
 function buildState() {
   const { data } = parseGalleryFile(fs.readFileSync(GALLERY_DATA_PATH, 'utf8'));
+  const live = liveCategoryIds();
   const galleries = Object.keys(data).map((cat) => ({
     id: cat,
+    live: live.has(cat),
     images: data[cat].map((im, idx) => ({ idx, src: im.src, full: im.full, alt: im.alt || '', ar: im.ar || null }))
   }));
 
