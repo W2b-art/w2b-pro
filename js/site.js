@@ -17,7 +17,7 @@ const RATES={
 };
 const VIEW={es:"Ver serie",en:"View series",fr:"Voir la série"};
 const T={
- es:{nav_work:"Trabajo",nav_gastro:"Gastronomía",nav_eventos:"Eventos",nav_moda:"Moda",nav_retrato:"Retrato",nav_studio:"Fotógrafo",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",scroll:"Baja",menu:"Menú",menu_close:"Cerrar",
+ es:{nav_work:"Trabajo",nav_gastro:"Gastronomía",nav_eventos:"Eventos",nav_moda:"Moda",nav_retrato:"Retrato",nav_products:"Producto",nav_studio:"Fotógrafo",nav_services:"Servicios",nav_book:"Reservar",nav_contact:"Contacto",scroll:"Baja",menu:"Menú",menu_close:"Cerrar",
   room_gastro_k:"01.1",room_gastro_h:"Gastronomía",room_gastro_p:"Platos, sala y oficio en su luz real, listos para la carta y la prensa.",
   room_eventos_k:"01.2",room_eventos_h:"Eventos",room_eventos_p:"Los instantes clave y la atmósfera, entregados rápido y listos para publicar.",
   room_moda_k:"01.3",room_moda_h:"Moda",room_moda_p:"Medellín · Córcega",
@@ -34,7 +34,7 @@ const T={
   nav_art:"Portafolio de autor",svc_estimate:"Estimar mi presupuesto",
   book1:"¿Tienes un proyecto? Cuéntamelo.",book_cta:"Enviar un brief",book_book:"Reservar sesión",
   foot_art:"Portafolio de autor ↗",foot_terms:"Términos",foot_privacy:"Privacidad",draft:"Maqueta",
-  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Moda, gastronomía, eventos y retrato: cada serie tiene su propia página. Toca una serie para verla completa.",
+  work_k:"Portafolio",work_h:"Trabajo seleccionado",work_p:"Moda, gastronomía, eventos, retrato y producto: cada serie tiene su propia página. Toca una serie para verla completa.",
   studio_k:"Fotógrafo",studio_h1:"Hago imágenes que trabajan para ti.",
   studio_lp:"Soy Guillaume Delye, fotógrafo francés con base en Medellín. Hago imágenes que se ganan su lugar en una carta o un dossier de prensa. Trabajo entre Colombia, Francia y el Mediterráneo, y cada sesión se entrega lista para publicar.",
   studio_lp2:"Del brief a la entrega, normalmente en 10 a 14 días. Editorial, gastronomía, eventos y retrato.",
@@ -42,7 +42,7 @@ const T={
   svc_p:"Un proceso claro, un precio cerrado y una entrega lista para usar. Sin sorpresas.",
   con_k:"Contacto",con_big1:"Hablemos de",con_big2:"tu proyecto.",
   con_email:"Correo",con_ig:"Instagram",con_wa:"WhatsApp",con_art:"Fotografía de autor",clients_label:"Confían en mí",con_note:"Basado en Medellín, Colombia. Escríbeme por WhatsApp o correo, respondo en menos de 48 h."},
- en:{nav_work:"Work",nav_gastro:"Hospitality",nav_eventos:"Events",nav_moda:"Fashion",nav_retrato:"Portraits",nav_studio:"Photographer",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",scroll:"Scroll",menu:"Menu",menu_close:"Close",
+ en:{nav_work:"Work",nav_gastro:"Hospitality",nav_eventos:"Events",nav_moda:"Fashion",nav_retrato:"Portraits",nav_products:"Product",nav_studio:"Photographer",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",scroll:"Scroll",menu:"Menu",menu_close:"Close",
   room_gastro_k:"01.1",room_gastro_h:"Hospitality",room_gastro_p:"Dishes, room and craft in their real light, ready for the menu and the press.",
   room_eventos_k:"01.2",room_eventos_h:"Events",room_eventos_p:"Key moments and atmosphere, delivered fast and ready to publish.",
   room_moda_k:"01.3",room_moda_h:"Fashion",room_moda_p:"Medellín · Corsica",
@@ -59,7 +59,7 @@ const T={
   nav_art:"Fine-art portfolio",svc_estimate:"Estimate my budget",
   book1:"Got a project? Tell me about it.",book_cta:"Send a brief",book_book:"Book a session",
   foot_art:"Fine-art portfolio ↗",foot_terms:"Terms",foot_privacy:"Privacy",draft:"Mockup",
-  work_k:"Portfolio",work_h:"Selected Work",work_p:"Fashion, hospitality, events and portraits — each series has its own page. Tap a series to see it in full.",
+  work_k:"Portfolio",work_h:"Selected Work",work_p:"Fashion, hospitality, events, portraits and product — each series has its own page. Tap a series to see it in full.",
   studio_k:"Photographer",studio_h1:"I make images that work for you.",
   studio_lp:"I'm Guillaume Delye, a French photographer based in Medellín. I make pictures that earn their place on a menu or a press release. I work between Colombia, France and the Mediterranean, and every shoot ships ready to publish.",
   studio_lp2:"Brief to delivery, usually in 10 to 14 days. Editorial, hospitality, events and portrait.",
@@ -67,7 +67,7 @@ const T={
   svc_p:"A clear process, a fixed price and a ready-to-use delivery. No surprises.",
   con_k:"Contact",con_big1:"Let's talk about",con_big2:"your project.",
   con_email:"Email",con_ig:"Instagram",con_wa:"WhatsApp",con_art:"Fine-art photography",clients_label:"Trusted by",con_note:"Based in Medellín, Colombia. Reach me on WhatsApp or email, I reply within 48h."},
- fr:{nav_work:"Travail",nav_gastro:"Gastronomie",nav_eventos:"Événements",nav_moda:"Mode",nav_retrato:"Portrait",nav_studio:"Photographe",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",scroll:"Défiler",menu:"Menu",menu_close:"Fermer",
+ fr:{nav_work:"Travail",nav_gastro:"Gastronomie",nav_eventos:"Événements",nav_moda:"Mode",nav_retrato:"Portrait",nav_products:"Produit",nav_studio:"Photographe",nav_services:"Services",nav_book:"Réserver",nav_contact:"Contact",scroll:"Défiler",menu:"Menu",menu_close:"Fermer",
   room_gastro_k:"01.1",room_gastro_h:"Gastronomie",room_gastro_p:"Les plats, la salle et le geste dans leur vraie lumière, prêts pour la carte et la presse.",
   room_eventos_k:"01.2",room_eventos_h:"Événements",room_eventos_p:"Les moments clés et l'ambiance, livrés vite et prêts à publier.",
   room_moda_k:"01.3",room_moda_h:"Mode",room_moda_p:"Medellín · Corse",
@@ -84,7 +84,7 @@ const T={
   nav_art:"Portfolio d'auteur",svc_estimate:"Estimer mon budget",
   book1:"Un projet ? Raconte-le-moi.",book_cta:"Envoyer un brief",book_book:"Réserver une séance",
   foot_art:"Portfolio d'auteur ↗",foot_terms:"Conditions",foot_privacy:"Confidentialité",draft:"Maquette",
-  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Mode, gastronomie, événements et portrait — chaque série a sa propre page. Touchez une série pour la voir en entier.",
+  work_k:"Portfolio",work_h:"Travail sélectionné",work_p:"Mode, gastronomie, événements, portrait et produit — chaque série a sa propre page. Touchez une série pour la voir en entier.",
   studio_k:"Photographe",studio_h1:"Je fais des images qui travaillent pour toi.",
   studio_lp:"Je suis Guillaume Delye, photographe français basé à Medellín. Je fais des images qui gagnent leur place sur une carte ou un dossier de presse. Je travaille entre la Colombie, la France et la Méditerranée, et chaque séance est livrée prête à publier.",
   studio_lp2:"Du brief à la livraison, en général sous 10 à 14 jours. Éditorial, gastronomie, événements et portrait.",
@@ -95,7 +95,7 @@ const T={
 };
 /* rail link set — all four series now have their own dedicated page
    (gastronomía/eventos/moda/retrato), so all four are full-weight entries. */
-const MENU_PRI=[["hospitality","restaurants.html","nav_gastro"],["events","eventos.html","nav_eventos"],["fashion","moda.html","nav_moda"],["portraits","retrato.html","nav_retrato"]];
+const MENU_PRI=[["hospitality","restaurants.html","nav_gastro"],["events","eventos.html","nav_eventos"],["fashion","moda.html","nav_moda"],["portraits","retrato.html","nav_retrato"],["products","products.html","nav_products"]];
 const MENU_REST=[["studio","studio.html","nav_studio"],["services","services.html","nav_services"],["booking","booking.html","nav_book"],["contact","contact.html","nav_contact"]];
 
 let lang=localStorage.getItem('w2b_lang')||'es'; if(!T[lang])lang='es';

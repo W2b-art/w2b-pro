@@ -53,10 +53,11 @@ const PAGE_TEXT_FILES = [
   { id: 'eventos', label: 'Events gallery page', file: path.join(ROOT, 'eventos.html'), rel: 'eventos.html', varName: 'EV', langs: ['es', 'en', 'fr'] },
   { id: 'moda', label: 'Fashion gallery page', file: path.join(ROOT, 'moda.html'), rel: 'moda.html', varName: 'MD', langs: ['es', 'en', 'fr'] },
   { id: 'restaurants', label: 'Hospitality gallery page', file: path.join(ROOT, 'restaurants.html'), rel: 'restaurants.html', varName: 'RS', langs: ['es', 'en', 'fr'] },
-  { id: 'retrato', label: 'Portraits gallery page', file: path.join(ROOT, 'retrato.html'), rel: 'retrato.html', varName: 'RT', langs: ['es', 'en', 'fr'] }
+  { id: 'retrato', label: 'Portraits gallery page', file: path.join(ROOT, 'retrato.html'), rel: 'retrato.html', varName: 'RT', langs: ['es', 'en', 'fr'] },
+  { id: 'products', label: 'Products gallery page', file: path.join(ROOT, 'products.html'), rel: 'products.html', varName: 'PRD', langs: ['es', 'en', 'fr'] }
 ];
 
-const GIT_SCOPE = ['images', 'js/gallery-data.js', 'js/site.js', 'booking.html', 'devis.html', 'eventos.html', 'moda.html', 'restaurants.html', 'retrato.html'];
+const GIT_SCOPE = ['images', 'js/gallery-data.js', 'js/site.js', 'booking.html', 'devis.html', 'eventos.html', 'moda.html', 'restaurants.html', 'retrato.html', 'products.html', 'work.html'];
 
 function git(args) {
   return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' });
