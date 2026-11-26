@@ -1,0 +1,4 @@
+node_modules/
+*.tmp
+.admin/config.json
+.admin/_upload_tmp/
